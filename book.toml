@@ -1,0 +1,11 @@
+[book]
+authors = ["CobaltStar (iThome)"]
+language = "zh-TW"
+multilingual = false
+src = "src"
+title = "區塊鏈到底在幹嘛 - 30天系列"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = ""
