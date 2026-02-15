@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day28|現實中的區塊鏈(5)：Ethereum的EVM與智能合約 - 區塊鏈到底在幹嘛 - 30天系列</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">區塊鏈到底在幹嘛 - 30天系列</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day28現實中的區塊鏈5ethereum的evm與智能合約"><a class="header" href="#day28現實中的區塊鏈5ethereum的evm與智能合約">Day28|現實中的區塊鏈(5)：Ethereum的EVM與智能合約</a></h1>
+<h1 id="ethereum"><a class="header" href="#ethereum">Ethereum</a></h1>
+<p>在經過昨天的操作之後，應該也可以發現Bitcoin的使用相對簡單，主要都是圍繞在金流的交易與驗證上，而今天與明天要來解說的Ethereum則著重在智能合約的實作上，但因為篇幅有限，所以主要重點會放置在合約的運行方式與架構上。</p>
+<h2 id="圖靈完備性"><a class="header" href="#圖靈完備性">圖靈完備性</a></h2>
+<p>Ethereum與Bitcoin最大的不同就是具備了<code>圖靈完備性</code>，在提到圖靈完備性之前就必須先提到圖靈機─圖靈機簡單而言可以看作是一個依據幾個簡單、基本的指令來執行工作的機器，理想上的圖靈機具有無限大的儲存空間與運算能力，所有計算上的工作都可以被這台圖靈機解決。如果你有學習過<a href="https://zh.wikipedia.org/zh-tw/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80">組合語言</a>的話，那麼這些簡單指令集你就可以把它視做組合語言。</p>
+<p><img src="http://b.blog.xuite.net/b/b/5/2/11519069/blog_33884/txt/32646708/6.jpg" alt="Turing Machine" /></p>
+<p>圖片來源: <a href="https://blog.xuite.net/wellsli/002/32646708-%E8%A8%88%E7%AE%97%E6%A9%9F%E7%90%86%E8%AB%96%E7%9A%84%E5%A7%8B%E7%A5%96---%E5%9C%96%E9%9D%88%E6%A9%9F">計算機理論的始祖---圖靈機</a></p>
+<p>因此圖靈完備性指的是如果我們可以將所有可計算的問題丟給機器去解決，那麼這台機器就稱為有圖靈完備性。而Ethereum則是具有圖靈完備性的區塊鏈，如果把Ethereum想像成一台電腦，那麼你可以把所有想要解決的問題都丟上Ethereum去執行與求解。</p>
+<h2 id="ethereum-virtual-machineevm"><a class="header" href="#ethereum-virtual-machineevm">Ethereum Virtual Machine(EVM)</a></h2>
+<p>但為了確保區塊鏈上的各個節點能夠對同樣一段程式碼產出同樣的結果，所以Ethereum的程式碼中也內建了可以用來執行指令的<code>Ethereum Virtual Machine(EVM)</code>，這裡的EVM具有圖靈完備性，理論上你可以把任何計算上的問題通通丟給EVM去解決，並且由於區塊鏈不可竄改的特性，在執行結果上也是可靠的，所有人都得依據同樣的邏輯或原則來做事，執行完的結果也會被送入區塊鏈永久儲存。至於EVM裏頭有哪些指令可以使用你可以參考下圖。</p>
+<p><img src="images/day28_49840.png" alt="EVM" /></p>
+<p>圖片來源: <a href="https://medium.com/mycrypto/the-ethereum-virtual-machine-how-does-it-work-9abac2b7c9e">Medium</a></p>
+<p>EVM的另一個好處是提供了一個像是<a href="https://zh.wikipedia.org/zh-tw/%E6%B2%99%E7%9B%92_(%E9%9B%BB%E8%85%A6%E5%AE%89%E5%85%A8)">沙盒(Sandbox)</a>的環境，意旨所有在沙盒裏頭執行的指令都會像監牢一樣被隔離開來無法影響到外界區塊鏈的運作，這保障了在區塊鏈上執行程式碼時的安全性。</p>
+<p>雖然說EVM具備了圖靈完備性，但因為區塊鏈的特性讓世界上所有人共用一個電腦，會導致每個人能夠使用到的運算量十分有限，實務上使用通常不會拿來計算複雜的數學問題，而是僅作基本的四則或邏輯運算。為了控管每個人能夠用的運算量，EVM導入了Gas機制來透過自由經濟的方式來限制使用。</p>
+<p>對於EVM的架構有興趣深入探討的話，<a href="https://fullstacks.org/materials/ethereumbook/14_evm.html">這裡</a>是一個很好的參考來源。</p>
+<h2 id="ethereum的gas機制"><a class="header" href="#ethereum的gas機制">Ethereum的Gas機制</a></h2>
+<p>區塊鏈上的運算資源與空間都是寶貴了，為了避免一般使用者濫用，Ethereum使用<code>Gas</code>機制來限制每個區塊內所能允許的運算量與手續費多寡。Gas的由來就跟名字一樣，與加油雷同，所以等等在舉例上就會以加油站為例。</p>
+<p><img src="https://www.insuredasap.com/wp-content/uploads/sites/77/2017/12/gas-station-insurance-chicago-illinois.jpg" alt="Gas station" /></p>
+<p>圖片來源: <a href="https://www.insuredasap.com/business/auto-service-dealerships/gas-station-insurance-get-quote/">insuredasap</a></p>
+<p>在講Gas之前我們先來介紹ETH的計量單位：</p>
+<blockquote>
+<p>1 Ether = 1,000,000,000,000,000,000 Wei (10^18)<br />
+1 Gwei = 1,000,000,000 Wei (10^9)</p>
+</blockquote>
+<p>在Gas機制下有三個主要名詞：Gas、Gas Price、Gas Limit：</p>
+<ul>
+<li>Gas<br />
+Gas相當於汽油幾公升，在EVM的執行過程中每一個指令都需要耗費相對應的Gas，越複雜的邏輯需要花費的Gas也就越多。</li>
+<li>Gas Price<br />
+Gas Price意思就是你願意為每個Gas付出多少錢，單位是Gwei。</li>
+<li>Gas Limit<br />
+Gas Limit是你願意為這筆交易最多購買多少Gas，會有Gas Limit的限制是因為在智能合約真正被執行前，沒有人會知道執行過程中究竟會耗去多少Gas作為運算用，所以Gas Limit的限制就是為了讓每次執行的智能合約都有手續費的上限。</li>
+</ul>
+<p>以台北開車到高雄為例，Gas Price便是你願意為每公升的汽油付出多少費用、Gas Limit就是你願意為這趟旅程最多花幾公升的汽油，因此這一趟旅程的花費(手續費)上限就是。</p>
+<blockquote>
+<p>手續費上限 = Gas Limit * Gas Price</p>
+</blockquote>
+<p>但這只是手續費上限，沒有用到的Gas是可以退還的，所以這趟旅程真正要繳納的手續費是：</p>
+<blockquote>
+<p>手續費 = Gas Used * Gas Price</p>
+</blockquote>
+<p>但如果手續費不足導致旅途(交易)失敗，那麼已花去的手續費是不會退還的，畢竟礦工已經嘗試幫你執行怎可讓人白做工！</p>
+<p>至於怎麼樣判別每個步驟的手續費多寡呢？在<a href="https://ethereum.github.io/yellowpaper/paper.pdf">Ethereum的黃皮書</a>(下圖)裡，其實就有定義了每個步驟所需要耗去的Gas數目，比方說大家最常用的交易所需要耗費的Gas為21000個。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day29_1.JPG" alt="Gas" /></p>
+<p>圖片來源: <a href="https://ethereum.github.io/yellowpaper/paper.pdf">insuredasap</a></p>
+<p>實際上Ethereum規定了每個區塊的Gas上限是<code>800萬Gas</code>，就相當於打包每個區塊的礦工都有800萬Gas可供販售，至於販售給誰就完全根據誰出的Gas Price較高來決定，與Gas Limit毫無關係。就好比每個加油站(新區塊)都有800萬公升(Gas)可供販售，要優先販售給誰就由大家願意出的單價(Gas Price)來決定，所以出的Gas Price越高，你的交易就能夠越快被打包進入區塊。</p>
+<p>至於如何決定現在應該要出多少Gas Price?</p>
+<p>在<a href="https://ethgasstation.info/">ethgasstation</a>中你可以查閱到目前多少的Gas Price可以在多久內被打包:</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day29_2.JPG" alt="Gas" /></p>
+<p>圖片來源: <a href="https://ethgasstation.info/">ethgasstation</a></p>
+<p>比方說這筆交易有點急，你想要在2分鐘內被打包的話，那麼建議你出的Gas Price便是8 Gwei/Gas，至於你實際會支出的手續費多寡以現在約ETH市價約185 USD來計算便是:</p>
+<blockquote>
+<p>手續費 = 21000 Gas * 8 Gwei/Gas * 10^(-9) * 185(USD/ETH) ~ 0.031 USD</p>
+</blockquote>
+<p>上圖的0.031 USD就是這樣被計算出來的！</p>
+<h2 id="智能合約smart-contract"><a class="header" href="#智能合約smart-contract">智能合約(Smart Contract)</a></h2>
+<p><code>智能合約</code>通常指的是之後在EVM裡被執行的程式碼，一個常見智能合約的比喻是自動販賣機：定義了你按下甚麼按鈕、投了多少錢後發生甚麼結果，這些邏輯都可以寫成智能合約後送上Ethereum。另一個例子是資產轉移的智能合約(<a href="https://blockgeeks.com/guides/different-smart-contract-platforms/">來源</a>)，我們可以讓智能合約在收到足夠的款項之後自動轉移不動產的產權。</p>
+<p><img src="https://blockgeeks.com/wp-content/uploads/2018/05/image7.png" alt="Smart contract" /></p>
+<p>圖片來源: <a href="https://blockgeeks.com/guides/different-smart-contract-platforms/">blockgeeks</a></p>
+<p>在智能合約送上Ethereum前都會先被編譯成Bytecode，常見的Bytecode列表你可以在<a href="https://ethervm.io/#opcodes">ethervm</a>看到所有的opcode。你也可以嘗試直接使用<a href="https://blog.fukuball.com/ethereum-%E9%96%8B%E7%99%BC%E7%AD%86%E8%A8%98-23smart-contract-%E5%88%9D%E6%8E%A2%E5%BE%9E-bytecode-%E5%88%B0-solidity/">Bytecode</a>來撰寫智能合約。</p>
+<p>至於實際執行智能合約會需要耗費多少Gas? 你可以在<a href="https://docs.google.com/spreadsheets/d/1n6mRqkBz3iWcOlRem_mO09GtSKEKrAsfO7Frgx18pNU/edit#gid=0">這裡</a>查詢到在智能合約編譯成Bytecode後執行每一單一指令所需要耗費的Gas數目，下表是一些簡單指令所需要耗費的Gas數目(<a href="https://ethereum.stackexchange.com/questions/72211/setting-array-in-solidity/72225">來源</a>)，如果智能合約牽涉到的運算越複雜、查詢的資料越多，那麼需要花費的Gas數目也越多。比方說加減指令只需要3 Gas便可以完成，但是查詢Account的餘額需要400 Gas，而開創一個新的Account甚至需要花費32000個Gas！</p>
+<pre><code>Operation         Gas           Description
+ADD/SUB           3             Arithmetic operation
+MUL/DIV           5             Arithmetic operation
+ADDMOD/MULMOD     8             Arithmetic operation
+AND/OR/XOR        3             Bitwise logic operation
+LT/GT/SLT/SGT/EQ  3             Comparison operation
+POP               2             Stack operation 
+PUSH/DUP/SWAP     3             Stack operation
+MLOAD/MSTORE      3             Memory operation
+JUMP              8             Unconditional jump
+JUMPI             10            Conditional jump
+SLOAD             200           Storage operation
+SSTORE            5,000/20,000  Storage operation
+BALANCE           400           Get balance of an account
+CREATE            32,000        Create a new account using CREATE
+CALL              25,000        Create a new account using CALL
+</code></pre>
+<h2 id="decentralized-applicationdapp"><a class="header" href="#decentralized-applicationdapp">Decentralized Application(DAPP)</a></h2>
+<p><code>Decentralized Application(DAPP)</code>指的是智能合約與前端集合在一起供使用者使用的APP，相較於一般APP有中心化的Server與營運方負責維護，DAPP的使用與運算通常是由智能合約負責，主要的資料也是從區塊鏈中所取得，也因此日後的使用與營運一般都交由礦工來負責執行，除非有寫特定的後門，否則沒有人可以上去竄改資料或合約執行的結果，使用者一般使用Ethereum的錢包便可以參與互動。</p>
+<p><img src="images/day28_29244.png" alt="DAPP" /></p>
+<p>圖片來源: <a href="https://towardsdatascience.com/what-is-a-dapp-a455ac5f7def">What is a DAPP?</a></p>
+<p>雖然DAPP相較一般APP容易讓人信賴，但區塊鏈本身有令人詬病的兩大缺陷：</p>
+<ul>
+<li>無法即時交易、每次指令都需要耗去手續費</li>
+<li>UX體驗不良</li>
+</ul>
+<p>無法即時交易是因為需要等待礦工打包上鏈後才能確保指令的確進入區塊鏈，但即便是平均出塊時間只有15秒的Ethereum，每次下完指令後平均也要等待1~2分鐘才能夠知道指令的執行結果，並且每次指令都需要花去相對應的ETH，長時間的等待與頻繁地花費是DAPP的致命傷─並不是所有人都有耐心等待也願意花手續費的。也因此側鏈、鏈下交易的技術也在蓬勃發展中，希望能夠解決無法即時交易的致命傷。</p>
+<p>另一個是UX體驗不良:在使用DAPP前你必須先擁有區塊鏈的錢包，但目前有接觸並持有錢包的人少之又少，你可以在<a href="https://dappradar.com/">DappRadar</a>中看到全世界每天超過1000人次使用的DAPP大約只有十來個，對比目前Android、IOS上APP動輒百萬起跳的使用頻率差距非常地大。</p>
+<p>今天我們講解完了基本Ethereum的架構與手續費計算，明天我們來體驗一下如何撰寫與使用基本的智能合約！</p>
+<p>到目前為止的文章都會放置在<a href="https://github.com/lkm543/it_iron_man_2019">Github</a>上。</p>
+<h1 id="ref"><a class="header" href="#ref">Ref:</a></h1>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E7%81%B5%E6%9C%BA">Wikipedia-圖靈機</a></li>
+<li><a href="https://blog.xuite.net/wellsli/002/32646708-%E8%A8%88%E7%AE%97%E6%A9%9F%E7%90%86%E8%AB%96%E7%9A%84%E5%A7%8B%E7%A5%96---%E5%9C%96%E9%9D%88%E6%A9%9F">計算機理論的始祖---圖靈機</a></li>
+<li><a href="https://medium.com/@ksin751119/ethereum-dapp%E5%88%9D%E5%BF%83%E8%80%85%E4%B9%8B%E8%B7%AF-3-%E7%B0%A1%E4%BB%8Bethereum-%E4%B9%99%E5%A4%AA%E5%9D%8A-smart-contract-%E6%99%BA%E8%83%BD%E5%90%88%E7%B4%84-7a0dfd32662f">Ethereum Dapp初心者之路(3): 簡介Ethereum(乙太坊)、Smart Contract(智能合約)</a></li>
+<li><a href="https://blog.fukuball.com/ethereum-%E9%96%8B%E7%99%BC%E7%AD%86%E8%A8%98-23smart-contract-%E5%88%9D%E6%8E%A2%E5%BE%9E-bytecode-%E5%88%B0-solidity/">Ethereum 開發筆記 2–3：Smart Contract 初探，從 Bytecode 到 Solidity</a></li>
+<li><a href="https://medium.com/mycrypto/the-ethereum-virtual-machine-how-does-it-work-9abac2b7c9e">The Ethereum Virtual Machine — How does it work?</a></li>
+<li><a href="https://medium.com/@daniel.mars622/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%8D%80%E5%A1%8A%E9%8F%88%E6%99%BA%E8%83%BD%E5%90%88%E7%B4%84%E5%9F%BA%E7%A4%8E%E4%BB%8B%E7%B4%B9-b7317347a612">以太坊區塊鏈智能合約基礎介紹</a></li>
+<li><a href="https://ethereum.stackexchange.com/questions/72211/setting-array-in-solidity/72225">setting array in Solidity</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="day27.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="day29.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="day27.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="day29.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day23|P2P網路(4)：升級之路上的岔路口-軟分岔與硬分岔 - 區塊鏈到底在幹嘛 - 30天系列</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">區塊鏈到底在幹嘛 - 30天系列</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day23p2p網路4升級之路上的岔路口-軟分岔與硬分岔"><a class="header" href="#day23p2p網路4升級之路上的岔路口-軟分岔與硬分岔">Day23|P2P網路(4)：升級之路上的岔路口-軟分岔與硬分岔</a></h1>
+<h1 id="升級之路上的岔路口"><a class="header" href="#升級之路上的岔路口">升級之路上的岔路口</a></h1>
+<p><img src="images/day23_78481.jpg" alt="Fork Road" /></p>
+<p>圖片來源：<a href="https://www.danblewett.com/the-necessity-of-failure-the-fork-in-the-road/">danblewett</a></p>
+<p>昨天我們提到網路廣播的延遲會產生不可避免的<code>暫時性分岔</code>，而今天要提的分岔則跟整個P2P網路的軟體升級有關。一般網站或APP升級都會由中心化伺服器負責軟體更新，或是派送新版本的軟體到用戶端要求用戶安裝。但去中心化的P2P網路則不同，因為每個節點都是獨立平等的存在，所以如果要更新目前運作的軟體版本，節點也有可能拒絕或是選擇另一個版本繼續運作，因此根據新版本在原本P2P網路中是否會互相排斥或是相容就會分成<code>軟分岔(Soft Fork)</code>與<code>硬分岔(Hard Fork)</code>。</p>
+<p>軟分岔(Soft Fork)與硬分岔(Hard Fork)跟暫時性分岔有一個很大的不同：暫時性分岔不牽涉到程式碼或是協定的更動，只是因為網路延遲造成短期間無法同步所有資料的現象，而軟分岔(Soft Fork)與硬分岔(Hard Fork)則會<strong>永久更動現行運作的程式碼</strong> 。更動程式碼的原因有很多，最常見的幾種分別是：</p>
+<ol>
+<li>新增過去沒有的功能：</li>
+</ol>
+<p>2012年3月份Bitcoin根據BIP16新增了<a href="https://www.binance.vision/zt/security/what-is-a-multisig-wallet">多重簽名</a>的付款方式，詳情可以參考<a href="https://en.bitcoin.it/wiki/Pay_to_script_hash">這裡</a>。</p>
+<ol start="2">
+<li>回溯過去的資料：</li>
+</ol>
+<p>2016年DAO(the Decentralized Autonomous Organization)被盜走了360萬顆ETH，為了追回被盜取的ETH，採取硬分岔的方式回溯到資產轉移之前，相關<a href="https://www.ithome.com.tw/news/107405">新聞報導</a>。</p>
+<ol start="3">
+<li>修改某部分運行的參數：</li>
+</ol>
+<p>XMR為了對抗ASIC固定每半年會更新一次挖礦的參數。</p>
+<p>既然軟分岔(Soft Fork)與硬分岔(Hard Fork)都跟節點運行的軟體升級有關，那麼首先來談談節點們又是如何決定升級的方向與內容呢？</p>
+<h2 id="從社群提案到接受"><a class="header" href="#從社群提案到接受">從社群提案到接受</a></h2>
+<p>去中心化的區塊鏈並沒有權威的中心機構來決定未來升級的方向與內容，因此未來升級方向的提案、討論、決定都是仰賴社群意見的協助，為了凝聚社群共識與方便大家提案，社群也會在Github上開啟專門的Repository來標示各提案的內容，有意參與討論的人都可以在下自由留言。</p>
+<h3 id="bipbitcoin-improvement-proposals"><a class="header" href="#bipbitcoin-improvement-proposals">BIP(Bitcoin Improvement Proposals)</a></h3>
+<p>Bitcoin的改善協議稱為<code>Bitcoin Improvement Proposals(BIP)</code>，你可以到<a href="https://github.com/bitcoin/bips">Github</a>上看到Bitcoin至今的所有BIP與社群的意見。BIP是社群間彼此溝通想法的方式，一旦議題被社群廣泛接受就會被收入BIP，下圖便是BIP收入後大致的運作流程與可能結果。</p>
+<p><img src="images/day23_33978.png" alt="BIP" /></p>
+<p>圖片來源：<a href="https://en.bitcoin.it/wiki/Bitcoin_Improvement_Proposals">Bitcoin Wiki</a></p>
+<p>每個BIP在被當作草稿(<code>Draft</code>)提出後會有四種可能：被廣泛接受後被實作在鏈上(<code>Accepted</code>)、被社群拒絕(<code>Rejected</code>)、發起者自己撤銷提案(<code>Withdrawn</code>)、推遲提案(<code>Deferred</code>)。值得一提的是或許是開源社群的習慣，社群很少直接拒絕(Reject)某個提案，而通常以推遲(Deferred)或自行撤回(Withdrawn)的方式結束，少數幾個被Rejected例外就是想把區塊容量依照中本聰原本的想法擴容至2MB的<a href="https://github.com/bitcoin/bips/blob/master/bip-0109.mediawiki">BIP109</a>，提出BIP109的是與中本聰一起參與過的Gavin Andresen，該次Reject也間接導致後續Bitcoin社群的分裂與BCH的分岔，甚至還有專人架設<a href="http://bip109.com/">網站</a>聲援Bitcoin應該要照原本中本聰理想的實行BIP109。</p>
+<h3 id="eipethereum-improvement-proposals"><a class="header" href="#eipethereum-improvement-proposals">EIP(Ethereum Improvement Proposals)</a></h3>
+<p>與Bitcoin的BIP類似，社群經過提案後會產生相對應的<code>Ethereum Improvement Proposals(EIP)</code>，Ethereum主要由乙太坊基金會在開發與維持社群，因此與Bitcoin不同的是在營運上較為中心化，官方對於EIP會發出相應的ERC討論。</p>
+<p>ERC的全名是<code>Ethereum Request for Comments</code>，就是徵求社群間的意見，此時ERC的編號與EIP通常會一致，最有名的EIP與ERC莫過於<a href="https://medium.com/myethacademy/%E5%88%B0%E5%BA%95%E4%BB%80%E9%BA%BC%E6%98%AFerc-20-49d052e8d290">ERC20</a>成為代幣的標準並引發2017-2018年間的ICO熱潮，在<a href="https://eips.ethereum.org/">這裡</a>你也可以看到所有的EIP列表。</p>
+<h2 id="軟分岔soft-fork與硬分岔hard-fork"><a class="header" href="#軟分岔soft-fork與硬分岔hard-fork">軟分岔(Soft Fork)與硬分岔(Hard Fork)</a></h2>
+<p>在P2P網路中每個節點對於是否要接受新提案都是自由的，也就是每個節點所運行的區塊鏈版本不一定一致，在P2P網路中也可能會有多個版本共存，根據<strong>是否要接受過去版本的資訊可以分成軟分岔(Soft Fork)與硬分岔(Hard Fork)</strong> 。</p>
+<ul>
+<li>軟分岔(Soft Fork)─更新後仍然可以接受與過去版本間形成部份的共識</li>
+<li>硬分岔(Hard Fork)─更新後完全無法與舊版本形成共識</li>
+</ul>
+<p>如果你對軟體有點概念的話，軟體開發中所講到的<strong>向後相容</strong> 的概念(對過去的版本相容)就是軟分岔！</p>
+<h2 id="軟分岔soft-fork"><a class="header" href="#軟分岔soft-fork">軟分岔(Soft Fork)</a></h2>
+<p>軟分岔(Soft Fork)的定義是舊節點不升級也可以相容於部分的共識，因為共識可以在新舊版本間形成，所以<strong>新舊版本可以共存在同一條鏈之上</strong> 。</p>
+<p><img src="https://bitcoin.org/img/dev/en-soft-fork.svg" alt="Soft Fork" /></p>
+<p>圖片來源：<a href="https://www.mycryptopedia.com/hard-fork-soft-fork-explained/">mycryptopedia</a></p>
+<p>軟分岔以<strong>功能的更新</strong> 居多，亦即雖然可以相容在同一條鏈上，但舊版本會沒有辦法使用新版本所推出的功能，就像是你可以使用Word2017去開啟Word2013的檔案，但如果你仍然在使用Word2013就會沒辦法使用某些Word2017才有的新功能了。</p>
+<h2 id="硬分岔hard-fork"><a class="header" href="#硬分岔hard-fork">硬分岔(Hard Fork)</a></h2>
+<p>硬分岔(Hard Fork)的定義是舊節點不升級就無法相容於新節點產生的共識，因為共識不能在新舊版本間形成，所以<strong>新舊版本不能共存在同一條鏈之上</strong> ，所以一旦網路中還有兩種版本在運行，則兩種版本就會岔開分成兩條獨立的鏈，各走各的路。</p>
+<p><img src="https://bitcoin.org/img/dev/en-hard-fork.svg" alt="Soft Fork" /></p>
+<p>圖片來源：<a href="https://www.mycryptopedia.com/hard-fork-soft-fork-explained/">mycryptopedia</a></p>
+<p>之所以新舊版本不能共存的原因通常在於<strong>共識規則的更新</strong> ，如果未更新成新的共識規則會導致舊版本無法驗證新版本所產生的區塊。</p>
+<h3 id="ifoinitail-fork-offering"><a class="header" href="#ifoinitail-fork-offering">IFO(Initail Fork Offering)</a></h3>
+<p>因為P2P網路可自由進出的關係，單一節點也可以採取自行開發的新硬分岔版本而跟多數節點脫離。任何人也都可以分岔出屬於自己的區塊鏈，因此有一陣子因為ICO被法令限制的關係，IFO成為某些人手中的印鈔機─你可以可以輕易的分岔出一條區塊鏈然後把部分的挖礦所得直接配給自己(在<a href="https://medium.com/@jordan.baczuk/how-to-fork-bitcoin-part-1-397598ef7e66">這裡</a>及<a href="https://medium.com/@jordan.baczuk/how-to-fork-bitcoin-part-2-59b9eddb49a4">這裡</a>你可以學到如何岔出一條自己的Bitcoin)，雖然硬分岔在技術上是容易的，但分岔出的幣種市場是否能接受則仰賴市場上的共識了！實際上這些幣多半會因為流通量太低而成為一攤死水沒人理睬。</p>
+<p><img src="images/day23_19576.jpg" alt="XMR Fork" /></p>
+<p>圖片來源：<a href="https://steemit.com/monero/@cryptocurrencyhk/monero-monero">steemit</a></p>
+<p>像是為了因應XMR修改演算法對抗比特大陸的ASIC，許多社群與礦機商分岔出了Monero Classic(XMC)、Monero-Classic(XMC)、Monero 0(XMZ)及Monero Original(XMO)，不過這些分岔出的幣多半都在一攤死水的狀態了。在<a href="https://steemit.com/monero/@cryptocurrencyhk/monero-monero">這裡</a>你可以看到更多進一步的消息。</p>
+<h3 id="歷史上知名的硬分岔"><a class="header" href="#歷史上知名的硬分岔">歷史上知名的硬分岔</a></h3>
+<p>歷史上最知名的兩次硬分岔莫過於<a href="https://ethereumclassic.github.io/">Ethereum Classic(ETC)</a>自Ethereum分岔出與<a href="https://www.bitcoincash.org/">Bitcoin Cash(BCH)</a>自Bitcoin分岔出的這兩段故事了。</p>
+<h4 id="etc的分岔"><a class="header" href="#etc的分岔">ETC的分岔</a></h4>
+<p>ETC的分岔起因於Ethereum為了拯救在2016年6月17日<a href="https://www.ithome.com.tw/news/106614">DAO被駭走的360萬顆ETH</a>而採取硬分岔回溯的行為，ETC的支持者認為這違反了區塊鏈不可竄改的精神，於是拒絕了Ethereum的提案留在舊鏈形成了Ethereum Classic(ETC)，真的說起來的話Ethereum Classic(ETC)才是真正的Ethereum。</p>
+<h4 id="bch的分岔"><a class="header" href="#bch的分岔">BCH的分岔</a></h4>
+<p>BCH的分岔則是因為不認同目前把持Bitcoin發展方向的Core所規劃的未來藍圖(<a href="https://www.blocktempo.com/lightning-network/">閃電網路</a>、<a href="https://www.blocktempo.com/understand-segwit-in3mins/">隔離驗證</a>等方向)，認為透過增加區塊容量到8MB就可以很容易解決目前TPS(Transactions per Second)過低的問題，也因此BCH新的共識規則便是8MB的區塊大小，但既然共識規則改變了，BCH新的共識規則自然無法相容於舊Bitcoin的1MB容量，於是兩者就分岔出不同鏈各走各的路了！</p>
+<p>到目前為止的文章都會放置在<a href="https://github.com/lkm543/it_iron_man_2019">Github</a>上。</p>
+<h1 id="ref"><a class="header" href="#ref">Ref:</a></h1>
+<ul>
+<li><a href="https://www.mycryptopedia.com/hard-fork-soft-fork-explained/">BlockchainHard ForkSoft Fork Blockchain Soft Fork &amp; Hard Fork Explained</a></li>
+<li><a href="https://medium.com/@crypto.peng/%E4%BB%80%E9%BA%BC%E6%98%AF%E5%8D%80%E5%A1%8A%E9%8F%88%E5%88%86%E5%8F%89-%E4%BB%80%E9%BA%BC%E5%8F%88%E6%98%AF%E7%A1%AC%E5%88%86%E5%8F%89-%E8%BB%9F%E5%88%86%E5%8F%89-2246d1d28d84">什麼是區塊鏈分叉? 什麼又是硬分叉/軟分叉?</a></li>
+<li><a href="https://www.inside.com.tw/article/13733-fork-soft-hard">【硬塞科技字典】區塊鏈的分叉是什麼？還分為軟的和硬的？</a></li>
+<li><a href="https://medium.com/@jordan.baczuk/how-to-fork-bitcoin-part-1-397598ef7e66">How to Fork Bitcoin — Part 1</a></li>
+<li><a href="https://medium.com/@jordan.baczuk/how-to-fork-bitcoin-part-2-59b9eddb49a4">How to Fork Bitcoin — Part 2</a></li>
+<li><a href="https://bitcointalk.org/index.php?topic=225690.0">Complete Guide on How to Create a New Alt Coin</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_bitcoin_forks">Wikipedia-List of bitcoin forks</a></li>
+<li><a href="https://kknews.cc/zh-tw/finance/mkbayb6.html">一文讀懂BIP、EIP、ERC等相關概念</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="day22.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="day24.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="day22.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="day24.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

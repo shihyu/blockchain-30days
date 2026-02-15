@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="old-ie" lang="et" xml:lang="et"><![endif]-->
+<!--[if gt IE 8]><!--><html prefix="og: http://ogp.me/ns/fb#"  lang="et" xml:lang="et"><!--<![endif]-->
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Kursused - Arvutiteaduse instituut</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/res/fa/css/all.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="/res/css/bootstrap.min.css?v=20210326" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css"/>
+    <link rel="stylesheet" href="/res/css/theme.css?v=202601201"/>
+
+    <!--[if lt IE 9]>
+    <script src="/res/js/html5.js"></script>
+    <![endif]-->
+	
+	<script src="/res/js/jquery.min.js"></script>
+    	    	<!-- Matomo -->
+	<script>
+	var _paq = window._paq = window._paq || [];
+	/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+	_paq.push(['trackPageView']);
+	_paq.push(['enableLinkTracking']);
+	(function() {
+		var u="//matomo.hpc.ut.ee/";
+		_paq.push(['setTrackerUrl', u+'matomo.php']);
+		_paq.push(['setSiteId', '26']);
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+	})();
+	</script>
+	<!-- End Matomo Code -->
+	  </head>
+  <body>
+    <div class="container-fluid">
+		<div class="row header">
+			<div class="d-flex flex-column">
+				<div class="d-flex logo align-items-center flex-fill">
+					<a href="/">
+						<img src="/res/img/ut_logo_submark_sinine.svg" alt="Arvutiteaduse instituut">
+					</a>
+					<div class="header-links pl-5 my-auto align-items-center font-weight-bold d-flex flex-column justify-content-between flex-fill">
+						<a href="/" target="_blank">
+							<i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
+							Courses.cs.ut.ee
+							<i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
+						</a>
+						<a href="https://cs.ut.ee" target="_blank">
+							<i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
+							Arvutiteaduse instituut
+							<i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
+						</a>
+						<a href="https://ut.ee" target="_blank">
+							<i class="fas fa-chevron-left"></i><i class="fas fa-chevron-left"></i>
+							Tartu Ülikool
+							<i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row header-bar text-light">
+			<div class="mr-auto align-self-center">
+				<ol class="breadcrumb p-0 pl-2 text-light">    <li class="breadcrumb-item"><a href="/courses">Kursused</a></li>
+
+      <li class="active breadcrumb-item">2025/26 kevad</li>
+  </ol>
+			</div>
+			<div class="my-auto mx-3">
+				<input type="checkbox" id="darkmode">
+				<label for="darkmode" class="check-trail">
+					<span class="check-handler"></span>
+				</label>
+			</div>
+						<script>
+				const darkModeSwitch = document.querySelector('input[type="checkbox"]#darkmode');
+				// select theme value if it allready exist in cliend local storage
+				var currentTheme = localStorage.getItem('theme');
+				if (currentTheme) {
+					document.body.setAttribute('data-theme', currentTheme);
+					if (currentTheme === 'dark') {
+						darkModeSwitch.checked = true;
+					}
+				}
+			</script>
+			<div class="langs align-self-stretch">
+																			<a class="lang-button align-self-center waves-effect nav-link" href="/user/lang/en?userlang=en&amp;redirect=%2F"  title="English">EN
+					</a>
+										</div>
+						<div id="login-hud" class="align-self-center">
+				<a class="nav-link login-button" href="/user/login">Logi sisse</a>
+			</div>
+					</div>
+		
+		<div class="row">
+			<div class="col px-0">
+				<div class="page-header pl-2 pb-2 mt-4 mb-2 border-bottom">
+					<!--PageHeaderFmt-->
+					<h1>Arvutiteaduse instituudi kursused</h1>
+<!--/PageHeaderFmt-->
+
+									</div>
+			</div>
+		</div>
+		<div class="row">
+			<!--PageLeftFmt-->
+			<div class="col-md-3 px-0 align-self-stretch sidebar-container">
+								<div class="searchbox p-2">
+					<script async src="https://cse.google.com/cse.js?cx=011682676399854422059:txubf96tbcc">
+					</script>
+					<div class="gcse-searchbox-only"></div>
+				</div>
+								<nav class="sidebar"><ul>
+      <li>
+      <a href="/courses/index/2026/fall" class="py-2 ">2026/27 sügis</a>
+    </li>
+      <li>
+      <a href="/courses/index/2026/spring" class="py-2 selflink">2025/26 kevad</a>
+    </li>
+      <li>
+      <a href="/courses/index/2025/fall" class="py-2 ">2025/26 sügis</a>
+    </li>
+    <li><a href="/courses/old" class="py-2 ">Kursuste arhiiv</a></li>
+  <hr>
+</ul>
+<ul class="mt-3">
+  <li><a href="/t/news" class="py-2">Uudised ja info</a></li>
+  <li><a href="/t/textbooks_and_software" class="py-2"></i>Õpikud ja tarkvara</a></li>
+  <hr>
+</ul>
+<ul class="mt-3">
+  
+  <li><a href="https://ut.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22604dd6a8-fe1f-40b7-93c6-54420bb65ff0%22" target="_blank" class="py-2">Panopto</a></li>
+  <li><a href="https://uttv.ee/otsing#teema=221" target="_blank" class="py-2">UTTV</a></li>
+  <li><a href="https://www.youtube.com/@unitartucs" target="_blank" class="py-2">Youtube</a></li>
+  <li><a href="https://ois2.ut.ee" target="_blank" class="py-2">ÕIS</a></li>
+  <li><a href="https://moodle.ut.ee/course/index.php?categoryid=142" target="_blank" class="py-2">Moodle</a></li>
+</ul>
+</nav>
+            </div>
+<!--/PageLeftFmt-->
+
+            <div class="col-md-9 px-0">
+				<article class="content">
+					      <h2>2025/26 kevad</h2>
+        <ul class="course-list">
+              <li class="border-bottom " data-id="5748">
+          <a class="py-2" href="/2026/ONLINEML2026/spring"><span class="course-code">LTAT.02.040</span>  Projektipõhine sissejuhatus masinõppesse (veebis)</a>
+        </li>
+              <li class="border-bottom " data-id="5615">
+          <a class="py-2" href="/2026/Andmebaasid/spring"><span class="course-code">LTAT.03.004</span> Andmebaasid</a>
+        </li>
+              <li class="border-bottom " data-id="5834">
+          <a class="py-2" href="/2026/Andmebaasid_SO/spring"><span class="course-code">LTAT.SO.004</span> Andmebaasid (sessioonõpe)</a>
+        </li>
+              <li class="border-bottom " data-id="5726">
+          <a class="py-2" href="/2026/dbseminar/spring"><span class="course-code">LTAT.02.037</span> Andmebaaside seminar</a>
+        </li>
+              <li class="border-bottom " data-id="5861">
+          <a class="py-2" href="/2026/dataviz/spring"><span class="course-code">LTAT.02.008</span> Andmete visualiseerimine ja esitlus</a>
+        </li>
+              <li class="border-bottom " data-id="5732">
+          <a class="py-2" href="/2026/datahelper/spring"><span class="course-code">LTAT.00.999</span> Andmeteaduse abimees 2026</a>
+        </li>
+              <li class="border-bottom " data-id="5873">
+          <a class="py-2" href="/2026/decm/spring"><span class="course-code">LTAT.02.026</span> Andmetehnika mitteinformaatikutele</a>
+        </li>
+              <li class="border-bottom " data-id="5813">
+          <a class="py-2" href="/2026/turve/spring"><span class="course-code">LTAT.06.002</span> Andmeturve</a>
+        </li>
+              <li class="border-bottom " data-id="5714">
+          <a class="py-2" href="/2026/cg-pro/spring"><span class="course-code">MTAT.03.328</span> Arvutigraafika projekt</a>
+        </li>
+              <li class="border-bottom " data-id="5633">
+          <a class="py-2" href="/2026/cg-sem/spring"><span class="course-code">MTAT.03.305</span> Arvutigraafika seminar</a>
+        </li>
+              <li class="border-bottom " data-id="5723">
+          <a class="py-2" href="/2026/compimaging/spring"><span class="course-code">LTAT.02.025</span> Arvutuslik pildistamine</a>
+        </li>
+              <li class="border-bottom " data-id="5760">
+          <a class="py-2" href="/2026/IoT/spring"><span class="course-code">LTAT.06.020</span> Asjade Internet</a>
+        </li>
+              <li class="border-bottom " data-id="5840">
+          <a class="py-2" href="/2026/AKT/spring"><span class="course-code">LTAT.03.006</span> Automaadid, keeled ja translaatorid</a>
+        </li>
+              <li class="border-bottom " data-id="5720">
+          <a class="py-2" href="/2026/AKTSP/spring"><span class="course-code">LTAT.03.023</span> Automaatide, keelte ja translaatorite süvenduspraktikum</a>
+        </li>
+              <li class="border-bottom " data-id="5740">
+          <a class="py-2" href="/2026/FundamentalsAD/spring"><span class="course-code">LTAT.06.011</span> Autonoomse juhtimise alused</a>
+        </li>
+              <li class="border-bottom " data-id="5802">
+          <a class="py-2" href="/2026/bioinfo/spring"><span class="course-code">MTAT.03.239</span> Bioinformaatika</a>
+        </li>
+              <li class="border-bottom " data-id="5805">
+          <a class="py-2" href="/2026/bioseminar/spring"><span class="course-code">MTAT.03.242</span> Bioinformaatika seminar</a>
+        </li>
+              <li class="border-bottom " data-id="5822">
+          <a class="py-2" href="/2026/BDA/spring"><span class="course-code">MTAT.03.319</span> Business Data Analytics</a>
+        </li>
+              <li class="border-bottom " data-id="5846">
+          <a class="py-2" href="/2026/CSM/spring"><span class="course-code">LTAT.05.036</span> Cyber Security Management</a>
+        </li>
+              <li class="border-bottom " data-id="5855">
+          <a class="py-2" href="/2026/CSM_CE/spring"><span class="course-code">LTAT.CE.036</span> Cyber Security Management (CE)</a>
+        </li>
+              <li class="border-bottom " data-id="5565">
+          <a class="py-2" href="/2026/digit/spring"><span class="course-code">LTAT.00.020</span> Digitaalne maailmapilt</a>
+        </li>
+              <li class="border-bottom " data-id="5594">
+          <a class="py-2" href="/2026/DIP/spring"><span class="course-code">LTAT.02.036</span> Digitaalne Pilditöötlus</a>
+        </li>
+              <li class="border-bottom " data-id="5790">
+          <a class="py-2" href="/2026/DIIP/spring"><span class="course-code">LTAT.05.019</span> Digitaalse innovatsiooni ettevõtlusprojekt</a>
+        </li>
+              <li class="border-bottom " data-id="5652">
+          <a class="py-2" href="/2026/esi/spring"><span class="course-code">MTAT.03.229</span> Ettevõttesüsteemide integreerimine</a>
+        </li>
+              <li class="border-bottom " data-id="5754">
+          <a class="py-2" href="/2026/ds/spring"><span class="course-code">LTAT.06.007</span> Hajussüsteemid</a>
+        </li>
+              <li class="border-bottom " data-id="5786">
+          <a class="py-2" href="/2026/dssem/spring"><span class="course-code">MTAT.08.024</span> Hajussüsteemide seminar</a>
+        </li>
+              <li class="border-bottom " data-id="5825">
+          <a class="py-2" href="/2026/ISSE-ResSem/spring"><span class="course-code">LTAT.05.042</span> Infosüsteemide ja tarkvaratehnika uurimisseminar</a>
+        </li>
+              <li class="border-bottom " data-id="5685">
+          <a class="py-2" href="/2026/infsec/spring"><span class="course-code">MTAT.07.028</span> Infoturve</a>
+        </li>
+              <li class="border-bottom " data-id="5816">
+          <a class="py-2" href="/2026/HCI/spring"><span class="course-code">LTAT.05.007</span> Inimese ja arvuti interaktsioon</a>
+        </li>
+              <li class="border-bottom " data-id="5742">
+          <a class="py-2" href="/2026/AutVehProj/spring"><span class="course-code">LTAT.06.012</span> Isejuhtivate sõidukite projekt</a>
+        </li>
+              <li class="border-bottom " data-id="5609">
+          <a class="py-2" href="/2026/moderncrypto/spring"><span class="course-code">MTAT.07.002</span> Kaasaegne krüptoloogia</a>
+        </li>
+              <li class="border-bottom " data-id="5705">
+          <a class="py-2" href="/2026/ReTechBIP2026/spring"><span class="course-code">LTAT.00.031</span> Kestlikud digiteenused ja sotsiaalne ettevõtlus Euroopas</a>
+        </li>
+              <li class="border-bottom " data-id="5673">
+          <a class="py-2" href="/2026/vfa/spring"><span class="course-code">LTAT.03.017</span> Kontrollitud funktsionaalsed algoritmid</a>
+        </li>
+              <li class="border-bottom " data-id="5655">
+          <a class="py-2" href="/2026/cryptoseminar/spring"><span class="course-code">MTAT.07.022</span> Krüptograafia ja küberturvalisuse uurimisseminar</a>
+        </li>
+              <li class="border-bottom " data-id="5708">
+          <a class="py-2" href="/2026/DS4UM/spring"><span class="course-code">LTAT.06.014</span> Linnaliikluse andmeteadus</a>
+        </li>
+              <li class="border-bottom " data-id="5661">
+          <a class="py-2" href="/2026/loogika/spring"><span class="course-code">LTAT.03.021</span> Loogika arvutiteaduses</a>
+        </li>
+              <li class="border-bottom " data-id="5769">
+          <a class="py-2" href="/2026/NLP/spring"><span class="course-code">LTAT.01.001</span> Loomuliku keele töötlus</a>
+        </li>
+              <li class="border-bottom " data-id="5788">
+          <a class="py-2" href="/2026/MLOps/spring"><span class="course-code">LTAT.02.038</span> MLOpsi põhitõed</a>
+        </li>
+              <li class="border-bottom " data-id="5711">
+          <a class="py-2" href="/2026/MM/spring"><span class="course-code">LTAT.06.016</span> Mobiilsuse modelleerimine</a>
+        </li>
+              <li class="border-bottom " data-id="5624">
+          <a class="py-2" href="/2026/multimeedia/spring"><span class="course-code">MTAT.03.132</span> Multimeedia</a>
+        </li>
+              <li class="border-bottom " data-id="5591">
+          <a class="py-2" href="/2026/OOP/spring"><span class="course-code">LTAT.03.003</span> Objektorienteeritud programmeerimine</a>
+        </li>
+              <li class="border-bottom " data-id="5702">
+          <a class="py-2" href="/2026/opsys/spring"><span class="course-code">MTAT.08.006</span> Operatsioonisüsteemid</a>
+        </li>
+              <li class="border-bottom " data-id="5730">
+          <a class="py-2" href="/2026/PDL/spring"><span class="course-code">LTAT.06.030</span> Paralleelsus süvaõppes </a>
+        </li>
+              <li class="border-bottom " data-id="5766">
+          <a class="py-2" href="/2026/pdss/spring"><span class="course-code">LTAT.06.010</span> Pervasiivse andmeteaduse seminar</a>
+        </li>
+              <li class="border-bottom " data-id="5780">
+          <a class="py-2" href="/2026/cloud/spring"><span class="course-code">LTAT.06.008</span> Pilvetehnoloogia</a>
+        </li>
+              <li class="border-bottom " data-id="5603">
+          <a class="py-2" href="/2026/pqc/spring"><span class="course-code">LTAT.04.015</span> Postkvant Krüptograafia</a>
+        </li>
+              <li class="border-bottom " data-id="5777">
+          <a class="py-2" href="/2026/praktika/spring"><span class="course-code">MTAT.03.206</span> Praktika informaatikas</a>
+        </li>
+              <li class="border-bottom " data-id="5864">
+          <a class="py-2" href="/2026/Andmekaitse/spring"><span class="course-code">LTAT.02.009</span> Privaatsus ja andmekaitse - eetilised, õiguslikud ja IT aspektid</a>
+        </li>
+              <li class="border-bottom " data-id="5736">
+          <a class="py-2" href="/2026/privacy_tech/spring"><span class="course-code">LTAT.04.007</span> Privaatsust säilitavad tehnoloogiad</a>
+        </li>
+              <li class="border-bottom " data-id="5849">
+          <a class="py-2" href="/2026/progeng/spring"><span class="course-code">LTAT.03.001</span> Programmeerimine</a>
+        </li>
+              <li class="border-bottom " data-id="5619">
+          <a class="py-2" href="/2026/cpp/spring"><span class="course-code">LTAT.03.025</span> Programmeerimine keeles C++</a>
+        </li>
+              <li class="border-bottom " data-id="5630">
+          <a class="py-2" href="/2026/cppeng/spring"><span class="course-code">MTAT.03.158</span> Programmeerimine keeles C++</a>
+        </li>
+              <li class="border-bottom " data-id="5646">
+          <a class="py-2" href="/2026/prog-alused/spring"><span class="course-code">MTAT.03.236</span> Programmeerimise alused</a>
+        </li>
+              <li class="border-bottom " data-id="5746">
+          <a class="py-2" href="/2026/progalused2/spring"><span class="course-code">MTAT.03.256</span> Programmeerimise alused II</a>
+        </li>
+              <li class="border-bottom " data-id="5691">
+          <a class="py-2" href="/2026/proglang/spring"><span class="course-code">MTAT.03.271</span> Programmeerimiskeelte uurimisseminar</a>
+        </li>
+              <li class="border-bottom " data-id="5717">
+          <a class="py-2" href="/2026/programming-games/spring"><span class="course-code">MTAT.03.315</span> Programmeerimismustrid arvutimängudes</a>
+        </li>
+              <li class="border-bottom " data-id="5583">
+          <a class="py-2" href="/2026/appcrypto/spring"><span class="course-code">MTAT.07.017</span> Rakenduslik krüptograafia</a>
+        </li>
+              <li class="border-bottom " data-id="5843">
+          <a class="py-2" href="/2026/RMCs/spring"><span class="course-code">LTAT.05.028</span> Research Methods in Cybersecurity</a>
+        </li>
+              <li class="border-bottom " data-id="5627">
+          <a class="py-2" href="/2026/ids/spring"><span class="course-code">LTAT.04.022</span> Sissejuhatus ründe tuvastamisse ja ennetamisse</a>
+        </li>
+              <li class="border-bottom " data-id="5682">
+          <a class="py-2" href="/2026/scml/spring"><span class="course-code">MTAT.03.317</span> Special Course in Machine Learning: Biomedical Computer Vision</a>
+        </li>
+              <li class="border-bottom " data-id="5870">
+          <a class="py-2" href="/2026/bdm/spring"><span class="course-code">LTAT.02.003</span> Suurandmete haldus</a>
+        </li>
+              <li class="border-bottom " data-id="5688">
+          <a class="py-2" href="/2026/DL4CV/spring"><span class="course-code">LTAT.02.028</span> Sügavõpe masinnägemises</a>
+        </li>
+              <li class="border-bottom " data-id="5831">
+          <a class="py-2" href="/2026/sa/spring"><span class="course-code">LTAT.06.003</span> Süsteemihaldus</a>
+        </li>
+              <li class="border-bottom " data-id="5669">
+          <a class="py-2" href="/2026/SWT2026/spring"><span class="course-code">LTAT.05.006</span> Tarkvara testimine</a>
+        </li>
+              <li class="border-bottom " data-id="5837">
+          <a class="py-2" href="/2026/softsec/spring"><span class="course-code">LTAT.03.024</span> Tarkvara turvalisus</a>
+        </li>
+              <li class="border-bottom " data-id="5819">
+          <a class="py-2" href="/2026/SEP/spring"><span class="course-code">MTAT.03.278</span> Tarkvaraettevõtluse projekt</a>
+        </li>
+              <li class="border-bottom " data-id="5606">
+          <a class="py-2" href="/2026/SEMS2026/spring"><span class="course-code">LTAT.00.028</span> Tarkvaratehnika magistriõppe seminar I</a>
+        </li>
+              <li class="border-bottom " data-id="5612">
+          <a class="py-2" href="/2026/spm/spring"><span class="course-code">MTAT.03.325</span> Tarkvaratoodete juhtimine</a>
+        </li>
+              <li class="border-bottom " data-id="5752">
+          <a class="py-2" href="/2026/trp/spring"><span class="course-code">LTAT.02.039</span> Tehisintellekti rakendamise projekt</a>
+        </li>
+              <li class="border-bottom " data-id="5744">
+          <a class="py-2" href="/2026/nai-seminar/spring"><span class="course-code">MTAT.03.292</span> Tehisliku ja loomuliku mõistuse seminar</a>
+        </li>
+              <li class="border-bottom " data-id="5858">
+          <a class="py-2" href="/2026/nn/spring"><span class="course-code">LTAT.02.001</span> Tehisnärvivõrgud</a>
+        </li>
+              <li class="border-bottom " data-id="5799">
+          <a class="py-2" href="/2026/TCS/spring"><span class="course-code">LTAT.04.001</span> Teoreetiline informaatika</a>
+        </li>
+              <li class="border-bottom " data-id="5784">
+          <a class="py-2" href="/2026/healthdata/spring"><span class="course-code">LTAT.02.013</span> Terviseandmete analüütika</a>
+        </li>
+              <li class="border-bottom " data-id="5758">
+          <a class="py-2" href="/2026/tai/spring"><span class="course-code">LTAT.06.027</span> Usaldusväärne tehisintellekt</a>
+        </li>
+              <li class="border-bottom " data-id="5756">
+          <a class="py-2" href="/2026/atai/spring"><span class="course-code">LTAT.06.028</span> Usaldusväärne tehisintellekt edasijõudnutele</a>
+        </li>
+              <li class="border-bottom " data-id="5586">
+          <a class="py-2" href="/2026/websec/spring"><span class="course-code">LTAT.04.018</span> Veebi turvalisus</a>
+        </li>
+              <li class="border-bottom " data-id="5828">
+          <a class="py-2" href="/2026/VeebilehtedeLoomine/spring"><span class="course-code">MTAT.03.297</span> Veebilehtede loomine</a>
+        </li>
+              <li class="border-bottom " data-id="5796">
+          <a class="py-2" href="/2026/wsds/spring"><span class="course-code">LTAT.06.018</span> Veebiteenuste ja hajussüsteemide arendus </a>
+        </li>
+              <li class="border-bottom " data-id="5597">
+          <a class="py-2" href="/2026/evolution-of-video-games/spring"><span class="course-code">LTAT.02.019</span> Videomängude arengulugu</a>
+        </li>
+              <li class="border-bottom " data-id="5738">
+          <a class="py-2" href="/2026/vr/spring"><span class="course-code">LTAT.06.019</span> Virtuaalreaalsus</a>
+        </li>
+              <li class="border-bottom " data-id="5852">
+          <a class="py-2" href="/2026/VT2/spring"><span class="course-code">LTAT.06.013</span> Võrgutehnoloogia II</a>
+        </li>
+              <li class="border-bottom " data-id="5750">
+          <a class="py-2" href="/2026/BA/spring"><span class="course-code">MTAT.03.310</span> Ärianalüüs</a>
+        </li>
+              <li class="border-bottom " data-id="5772">
+          <a class="py-2" href="/2026/bpm/spring"><span class="course-code">MTAT.03.231</span> Äriprotsesside juhtimine</a>
+        </li>
+              <li class="border-bottom " data-id="5643">
+          <a class="py-2" href="/2026/pm/spring"><span class="course-code">LTAT.05.025</span> Äriprotsesside kaeve</a>
+        </li>
+          </ul>
+  				</article>
+            </div>
+			        </div>
+
+          <div class="row">
+            <div class="col px-0">
+              <div class="post-content">
+                              </div>
+            </div>
+          </div>
+    </div>
+	<div class="d-flex justify-content-center px-md-2 container-fluid">
+      <footer class="">
+		<div class="d-flex flex-wrap">
+			<div class="mr-auto">
+			  <ul class="breadcrumb p-0">
+				<li class="breadcrumb-item"><a href="http://cs.ut.ee/" target="_blank" class="pl-0">Arvutiteaduse instituut</a></li>
+				<li class="breadcrumb-item"><a href="http://reaalteadused.ut.ee/" target="_blank">Loodus- ja täppisteaduste valdkond</a></li>
+				<li class="breadcrumb-item"><a href="http://www.ut.ee/" target="_blank">Tartu Ülikool</a></li>
+			  </ul>
+			</div>
+			<div class="text-right" style="visibility: hidden" id="in-case-of-problems">
+			  Tehniliste probleemide või küsimuste korral kirjuta:  <div id="ati-error-email"></div></br>Kursuse sisu ja korralduslike küsimustega pöörduge kursuse korraldajate poole.
+			</div>
+		</div>
+		<div class="copyright" style="max-width: 1200px">
+			Õppematerjalide varalised autoriõigused kuuluvad Tartu Ülikoolile. Õppematerjalide kasutamine on lubatud autoriõiguse seaduses ettenähtud teose vaba kasutamise eesmärkidel ja tingimustel. Õppematerjalide kasutamisel on kasutaja kohustatud viitama õppematerjalide autorile.</br>
+			Õppematerjalide kasutamine muudel eesmärkidel on lubatud ainult Tartu Ülikooli eelneval kirjalikul nõusolekul.</br>
+							<a href="/res/courses kasutustingimused (est).pdf" target="_blank">Courses’i keskkonna kasutustingimused</a>
+					</div>
+      </footer>
+	</div>
+	<script src="/res/js/popper.min.js"></script>
+    <script src="/res/js/bootstrap.min.js?v=20210326"></script>
+    <script src="/res/js/courses.js?v=20230906"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script>
+      if (window.atob) {
+        var prot = window.atob('bWFpbHRvOg==');
+        var addr = window.atob("Y3MuY291cnNlc0B1dC5lZQ==");
+        $('<a>', {
+          href: prot + addr,
+          text: addr
+        }).replaceAll('#ati-error-email');
+		$('#in-case-of-problems').css('visibility', 'visible');
+      }
+    </script>
+		<script>
+		$('.searchbox').bind("DOMNodeInserted", function(e){
+			if ( $( ".gsc-search-button" ).length ) {
+		   		$(".gsc-search-button").prop('value', 'Otsi');
+			}
+		});
+	</script>
+	  </body>
+</html>

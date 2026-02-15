@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day01|前言：區塊鏈的誕生 - 區塊鏈到底在幹嘛 - 30天系列</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">區塊鏈到底在幹嘛 - 30天系列</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day01前言區塊鏈的誕生"><a class="header" href="#day01前言區塊鏈的誕生">Day01|前言：區塊鏈的誕生</a></h1>
+<h1 id="用共識來信任"><a class="header" href="#用共識來信任">用共識來信任</a></h1>
+<p>區塊鏈簡而言之是透過共識來解決信任的問題，不只有區塊鏈如此，共識實質上決定現實中許多東西，比方說公眾人物的風評或是市場上的<strong>價值</strong> ：股票或黃金的價值就是透過共識決定出來的，如果世界上有一群人覺得黃金目前的價格被嚴重低估，為了追求利潤他們就會買入黃金同時使價格被拉高到一定的水準，但如果有另一群人覺得黃金目前的價格被嚴重高估，他們就會賣出手上的黃金避險，也連帶使價格拉低，如此反覆直到價格維持在大眾的共識上下進行動態平衡，這也是市場經濟的原理。</p>
+<h1 id="共識如何被形塑"><a class="header" href="#共識如何被形塑">共識如何被形塑</a></h1>
+<p>但說的簡單，共識的形塑往往並非那麼單純與透明，過程也不全然完全由大眾掌握，以剛剛的交易過程為例，現實中的交易我們是透過中間人(銀行或券商)來知道所有人願意出的價格，這個過程中我們信賴券商所提供的資訊並藉此做出反應，但券商有沒有可能造假或是透過資訊的優先來營利？另一個常見的例子是貨幣，貨幣由政府發行，我們基於信賴政府的公信力或強制力而願意收受政府發行的法定貨幣，並且在大部分的時間裡我們信任政府會維持貨幣的穩定發行與價值。但政府有沒有可能失信？當然有，而且濫發鈔票造成的惡性通膨在歷史上屢見不鮮。</p>
+<h1 id="你的錢不是你的錢"><a class="header" href="#你的錢不是你的錢">你的錢不是你的錢</a></h1>
+<p>2008年的金融風暴讓人們開始認知到銀行不一定可以被信任，銀行收走我們的錢後並沒有有效的管控，而貨幣持續的通貨膨脹，在過去120年來讓貨幣的購買力下跌了30倍，截至今天也還在下跌中。</p>
+<p><img src="images/day01_91158.jpg" alt="Purchasing Power of US Dollar" /><br />
+圖片來源：<a href="https://observationsandnotes.blogspot.com/">Observations</a></p>
+<p>貨幣購買力下降的主因除了經濟成長外，也與政府不斷發行新貨幣進入市場有相關，小幅的通貨膨脹是正常的經濟活動，但貨幣流通量增加的速度實際上遠遠超出你我的想像，下圖是美金流通量的歷史。</p>
+<p><img src="https://goldsilverworlds.com/wp-content/uploads/2014/04/US_Currency_circulation_1920_2014.jpg" alt="US Currency in Circulation" /><br />
+圖片來源：<a href="https://goldsilverworlds.com/">Gold Silver Worlds</a></p>
+<p>所以問題來了，要怎麼信任你手中的貨幣在未來是有價值的？但除了政府之外，又能相信誰具有公信力可以發行大家都能接受的貨幣？又怎能保證發行者在未來不會繼續超發呢？除了被政府法規管制與規範的銀行外，誰又有能力幫大眾保管資產或交易？<br />
+<img src="images/day01_37201.jpg" alt="USD – Purchasing Power &amp; Currency in Circulation" /><br />
+圖片來源：<a href="https://bmg-group.com/">BMG Group Inc.</a></p>
+<h1 id="be-your-own-bank"><a class="header" href="#be-your-own-bank">Be your own bank.</a></h1>
+<p>Bitcoin一開始便是為了解決誰可以是有公信力的發行者、誰又可以是公正的保管者的問題。中本聰提供的解決方案就是把貨幣的發行與詮釋權發還給大眾，並搭配密碼學來確保大眾手上的資料難以被竄改(這也是為什麼有時候會被叫成加密貨幣)，也就是人人手上都可以有帳本、每個人都是銀行來保證了共識的公正與執行，也因此Bitcoin的最初願景便是<code>"Be your own bank."</code>。值得一提的是區塊鏈並不是非常新的概念，銀行間很早就以類似分散式帳本的技術在做資料的交換與溝通，但狹義的公鏈與傳統分散式帳本最大的不同就是<code>Permissionless</code>，也就是你若有意願加入並分享帳本的話並不需要任何人的允許，透過成員間的自由的加入與退出來達成去中心化與社群共治的目標。</p>
+<p>值得一提的是，數位資產的概念早在區塊鍊之前就已經出現，那時候已經能夠以非對稱加密的數位簽章(之後會再提)來核可與發送交易，而中本聰的貢獻則是嘗試以P2P網路的形式解決了同一筆資產可能會重複被花用的狀況(雙花攻擊，之後也會再提及)。下面這行字是來自於Bitcoin白皮書的原文：</p>
+<blockquote>
+<p>Digital signatures provide part of the solution, but the main benefits are lost if a trusted third party is still required to prevent double-spending. We propose a solution to the double-spending problem using a peer-to-peer network.</p>
+</blockquote>
+<h1 id="系列文的架構"><a class="header" href="#系列文的架構">系列文的架構</a></h1>
+<p>區塊鏈日新月異，至今也在不斷改變與成長中，為了瞭解區塊鍊的架構，明天開始會先探討如何利用密碼學與python建立一個最基礎簡單的區塊鏈，並從中了解到區塊鏈運行過程中需要哪些領域的基礎知識，再分別細談這些基礎知識中的密碼學、P2P網路、共識後，最後看看這些東西是如何出現在現實中的區塊鏈(以Bitcoin、Ethereum為主)。</p>
+<p>區塊鏈每年都在變，但基礎架構與科學是不變的，期望透過簡單復刻→基礎理論解說→實際例子的過程中掌握區塊鏈的核心概念，即便有下一世代的區塊鏈出現，也可以很快掌握住。</p>
+<h1 id="ref"><a class="header" href="#ref">Ref:</a></h1>
+<ul>
+<li><a href="https://bmg-group.com/usd-purchasing-power-currency-in-circulation/">USD – Purchasing Power – Currency in Circulation</a></li>
+<li><a href="https://observationsandnotes.blogspot.com/2011/04/100-year-declining-value-of-us-dollar.html">The Decrease in Purchasing Power of the U.S. Dollar Since 1900</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="day02.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="day02.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

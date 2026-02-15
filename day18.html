@@ -1,0 +1,279 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day18|關於挖礦的兩三事(3)：挖礦實戰 - 區塊鏈到底在幹嘛 - 30天系列</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">區塊鏈到底在幹嘛 - 30天系列</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day18關於挖礦的兩三事3挖礦實戰"><a class="header" href="#day18關於挖礦的兩三事3挖礦實戰">Day18|關於挖礦的兩三事(3)：挖礦實戰</a></h1>
+<h1 id="如何開始挖礦"><a class="header" href="#如何開始挖礦">如何開始挖礦</a></h1>
+<p>今天我們來簡單談一下如何挖礦，以及如果有興趣要挖礦的話該怎麼開始以及有那些眉角需要注意！</p>
+<h2 id="選擇幣種演算法"><a class="header" href="#選擇幣種演算法">選擇幣種/演算法</a></h2>
+<p>參與挖礦的第一步就是選擇想要挖的幣種，現在主流可以挖的幣有BTC、ETH、ZEC、ZCL、XMR、DASH、DCR等，雖說幣種繁多，但只要想挖的幣種使用的演算法是相同的，便可以隨意切換而且算力不會受到任何影響，用演算法區分會比較適當。其中又可以分成三種主流的挖礦方式：ASIC挖礦、Nicehash挖礦以及GPU挖礦。</p>
+<h3 id="asic挖礦"><a class="header" href="#asic挖礦">ASIC挖礦</a></h3>
+<p>首先是ASIC挖礦，這類幣種代表礦機廠商已經開發出ASIC，而且官方沒有要對抗(修改演算法或參數)的打算，因此已經都被ASIC攻陷，普通家用電腦或已經沒有競爭的空間。而且ASIC買來也只有挖礦的用途，並無法挪作他用，所以一旦礦機商推陳出新，舊機台也只能直接報廢。</p>
+<p>如果是ASIC的話，你可以到<a href="https://www.asicminervalue.com/">Asicminervalue</a>查看每種機台的報酬率(像下圖)，沒意外的話報酬率都十分低。即便看起來每月利潤相當豐厚的幣種，也只是因為ASIC還沒大舉進入市面的假象，一旦礦機大舉入市，帳面上的收益會直接崩盤，所以大部分的情況下都應該直接避免購買ASIC，我身邊買ASIC的人通常賺錢的比例....非常低。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day19_2.JPG" alt="ASIC Demo" /></p>
+<h3 id="gpu挖礦"><a class="header" href="#gpu挖礦">GPU挖礦</a></h3>
+<p>另一種方式是透過家用的顯示卡來挖礦，這種挖礦方式的好處是假使不挖了，GPU還是能夠拿來使用，這類幣種所採用的演算法便是我們昨天提到的Proof by bandwidth或是利用多種演算法交錯來抵禦ASIC，也因為尚未被ASIC大舉進攻，通常個體挖礦也還能夠保持一定的收益，你可以在<a href="https://whattomine.com/">Whattomine</a>裡查看每一張顯卡或算力的收益，比方說一張<a href="https://www.amd.com/zh-hant/products/graphics/radeon-rx-570">AMD RX570</a>就可以在<a href="https://whattomine.com/coins?utf8=%E2%9C%93&amp;adapt_q_380=0&amp;adapt_q_fury=0&amp;adapt_q_470=0&amp;adapt_q_480=0&amp;adapt_q_570=1&amp;adapt_570=true&amp;adapt_q_580=0&amp;adapt_q_vega56=0&amp;adapt_q_vega64=0&amp;adapt_q_vii=0&amp;adapt_q_1050Ti=0&amp;adapt_q_10606=0&amp;adapt_q_1070=0&amp;adapt_q_1070Ti=0&amp;adapt_q_1080=0&amp;adapt_q_1080Ti=0&amp;adapt_q_1660=0&amp;adapt_q_1660Ti=0&amp;adapt_q_2060=0&amp;adapt_q_2070=0&amp;adapt_q_2080=0&amp;adapt_q_2080Ti=0&amp;eth=true&amp;factor%5Beth_hr%5D=27.9&amp;factor%5Beth_p%5D=120.0&amp;zh=true&amp;factor%5Bzh_hr%5D=19.0&amp;factor%5Bzh_p%5D=100.0&amp;cnh=true&amp;factor%5Bcnh_hr%5D=640.0&amp;factor%5Bcnh_p%5D=110.0&amp;cng=true&amp;factor%5Bcng_hr%5D=640.0&amp;factor%5Bcng_p%5D=110.0&amp;cnr=true&amp;factor%5Bcnr_hr%5D=730.0&amp;factor%5Bcnr_p%5D=120.0&amp;cnf=true&amp;factor%5Bcnf_hr%5D=1250.0&amp;factor%5Bcnf_p%5D=110.0&amp;eqa=true&amp;factor%5Beqa_hr%5D=85.0&amp;factor%5Beqa_p%5D=100.0&amp;cc=true&amp;factor%5Bcc_hr%5D=0.0&amp;factor%5Bcc_p%5D=0.0&amp;cr29=true&amp;factor%5Bcr29_hr%5D=0.0&amp;factor%5Bcr29_p%5D=0.0&amp;ct31=true&amp;factor%5Bct31_hr%5D=0.2&amp;factor%5Bct31_p%5D=100.0&amp;eqb=true&amp;factor%5Beqb_hr%5D=13.0&amp;factor%5Beqb_p%5D=110.0&amp;ns=true&amp;factor%5Bns_hr%5D=700.0&amp;factor%5Bns_p%5D=140.0&amp;bcd=true&amp;factor%5Bbcd_hr%5D=8.6&amp;factor%5Bbcd_p%5D=110.0&amp;tt10=true&amp;factor%5Btt10_hr%5D=11.5&amp;factor%5Btt10_p%5D=110.0&amp;x16r=true&amp;factor%5Bx16r_hr%5D=6.5&amp;factor%5Bx16r_p%5D=110.0&amp;phi2=true&amp;factor%5Bphi2_hr%5D=0.0&amp;factor%5Bphi2_p%5D=0.0&amp;xn=true&amp;factor%5Bxn_hr%5D=0.0&amp;factor%5Bxn_p%5D=0.0&amp;hx=true&amp;factor%5Bhx_hr%5D=6.6&amp;factor%5Bhx_p%5D=110.0&amp;zlh=true&amp;factor%5Bzlh_hr%5D=12.5&amp;factor%5Bzlh_p%5D=100.0&amp;ppw=true&amp;factor%5Bppw_hr%5D=6.7&amp;factor%5Bppw_p%5D=130.0&amp;x25x=true&amp;factor%5Bx25x_hr%5D=0.7&amp;factor%5Bx25x_p%5D=75.0&amp;mtp=true&amp;factor%5Bmtp_hr%5D=0.0&amp;factor%5Bmtp_p%5D=0.0&amp;lrev3=true&amp;factor%5Blrev3_hr%5D=33.5&amp;factor%5Blrev3_p%5D=120.0&amp;factor%5Bcost%5D=0.1&amp;sort=Profitability24&amp;volume=0&amp;revenue=24h&amp;factor%5Bexchanges%5D%5B%5D=&amp;factor%5Bexchanges%5D%5B%5D=binance&amp;factor%5Bexchanges%5D%5B%5D=bitfinex&amp;factor%5Bexchanges%5D%5B%5D=bitforex&amp;factor%5Bexchanges%5D%5B%5D=bittrex&amp;factor%5Bexchanges%5D%5B%5D=cryptobridge&amp;factor%5Bexchanges%5D%5B%5D=dove&amp;factor%5Bexchanges%5D%5B%5D=exmo&amp;factor%5Bexchanges%5D%5B%5D=gate&amp;factor%5Bexchanges%5D%5B%5D=graviex&amp;factor%5Bexchanges%5D%5B%5D=hitbtc&amp;factor%5Bexchanges%5D%5B%5D=hotbit&amp;factor%5Bexchanges%5D%5B%5D=ogre&amp;factor%5Bexchanges%5D%5B%5D=poloniex&amp;factor%5Bexchanges%5D%5B%5D=stex&amp;dataset=Main&amp;commit=Calculate">這裡</a>看到它的算力與利潤分別為多少，評估後再決定要不要下去。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day19_1.JPG" alt="RX 570 Demo" /></p>
+<h3 id="nicehash挖礦"><a class="header" href="#nicehash挖礦">Nicehash挖礦</a></h3>
+<p>另一種挖礦方式是持有硬體，但不直接參與特定的礦池挖礦，而是透過<a href="https://www.nicehash.com/">Nicehash</a>這個算力租賃平台把自身的算力售予別人，Nicehash在接受到你的算力後，會直接結算BTC給你，對於想要直接獲取BTC的人實在方便許多，同時也提供了一種利用GPU來獲取BTC的方式。Nicehash比較特殊的作法是它會檢測你每一張顯示卡對於各個演算法下的效能，接著根據購買者對於每個演算法的出價決定我們的顯示卡究竟要採用哪個演算法。</p>
+<p><img src="images/day18_18040.png" alt="Nicehash" /></p>
+<p>圖片來源：<a href="https://www.inverse.com/article/39221-nicehash-robbed-of-78-million-worth-of-bitcoin">inverse.com</a></p>
+<p>Nicehash的另一種使用方式就是購買別人的算力，通常是礦池在剛始建立時缺乏算力而無法穩定出塊與吸引其他人加入時會使用到，<a href="https://justhodl.blogspot.com/2018/03/nicehash-buy-hashrate-mining.html">這裡</a>有詳細的買算力教學，有興趣的話可以閱讀，不過另一種用法就是被攻擊者拿來租借後進行51%攻擊了(之後會再詳述)。</p>
+<h3 id="ethereum的算力預估"><a class="header" href="#ethereum的算力預估">Ethereum的算力預估</a></h3>
+<p>目前主流的個體挖礦都是Ethereum了，因此下面的教學主要都是以ETH為主，這裡提供一個簡單的方式去粗略預估每種顯卡的算力：把顯卡的<code>記憶體頻寬除以8000Bytes</code>便是大概的算力值(h/s，每秒可以算幾個hash)。原理就是我們昨天說的─Dagger-Hashimoto演算法是Proof by bandwidth，因此根據顯卡的頻寬就能夠大概把算力估計出來(但只有在軟體已經針對硬體優化過的狀況下適用)。</p>
+<p>以RX570為例，你可以在<a href="https://www.techpowerup.com/gpu-specs/radeon-rx-570.c2939">這裡</a>看到RX570的頻寬大約是224GB/s，除以8000 Bytes後便大約是28 Mh/s，跟實際上超頻後的最大值31Mh/s相距不遠。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day19_3.JPG" alt="570 Spec" /></p>
+<p>至於另一張家用神卡<a href="https://www.geforce.com/hardware/desktop-gpus/geforce-gtx-1050-ti/specifications">1050ti</a>的記憶體頻寬約在112GB/s上下，換算出的算力大約14Mh/s。</p>
+<h2 id="選擇硬體"><a class="header" href="#選擇硬體">選擇硬體</a></h2>
+<p>選擇好欲挖掘的幣種與演算法後，接著就可以來選擇要添購的硬體，這裡我們以Ethereum為例，組成礦機的過程大致上跟組裝一台電腦一樣，但在同一台主機上我們可能會插上十幾張顯卡！</p>
+<h3 id="cpuramssd網路"><a class="header" href="#cpuramssd網路">CPU、RAM、SSD、網路</a></h3>
+<p>為了讓礦機能夠順利運行，因此一般電腦的零組件是不可少的，但又為了節省成本，因此在CPU、RAM、SSD、網路選擇最基本/廉價的硬體即可，也就是通常只會搭配4GB的RAM與128GB的SSD(建議不要用HDD，不然等待重開機的過程會讓你想死)，CPU大部分人都選用便宜堪用的<a href="https://ark.intel.com/content/www/tw/zh/ark/products/97452/intel-celeron-processor-g3930-2m-cache-2-90-ghz.html">G3930</a>，只要1000出頭便可以入手。網路的部分也是一樣，因為現今的挖礦幾乎都採用了我們前幾天提到的Stratum協定，因此一台礦機只需要幾KB的上下載速度便足夠了！</p>
+<h3 id="主機板"><a class="header" href="#主機板">主機板</a></h3>
+<p>主機板的使用就一個要點：能夠接上GPU的PCIE插槽越多越好，因為主機零件(CPU、RAM、SSD)是有成本的，如果能夠在一台主機上插上越多的GPU，就代表每張GPU需要攤提的主機成本就越低也越有競爭力，主流八卡機是採用<a href="https://www.asus.com/tw/Motherboards/ROG-STRIX-B250H-GAMING/">B250H Gaming</a>這張主機板，但其實上面只有六個PCIE插槽，其餘兩個需要從M.2轉接。專業或想要挑戰的人可以選用<a href="https://www.asus.com/us/Motherboards/B250-MINING-EXPERT/">ASUS Mining Expert</a>，上頭甚至有19個PCIE插槽！雖然說插槽數一多成本也下降，但隨之而來除錯上的困難也是必須考慮的。</p>
+<h3 id="psu電源供應器"><a class="header" href="#psu電源供應器">PSU(電源供應器)</a></h3>
+<p>PSU(電源供應器)的使用只有兩個要點：務必足瓦、請使用金牌以上認證的PSU。足瓦是為了保證供電是有餘裕的避免突波造成電器的損壞，如果瓦數不足有時候會透過雙電源啟動線(下圖)來提供足夠的供電(畢竟如果你真的用了19張顯示卡在Mining Expert那張板子上，光靠一台電源供應器一定是推不動的。)，金牌以上的電源供應器是為了保證電源使用的效率，畢竟電費是開始挖礦後最大的開支，因此電源的轉換效率會直接決定日後的電費多寡。</p>
+<p>補充說明一下：80PLUS的認證依序可以分成：銅牌、銀牌、金牌、白金、鈦金，通常越往上電源轉換效率越好、越省電，但價格也會越高。</p>
+<p><img src="images/day18_68573.jpg" alt="雙電源啟動線" /><br />
+圖片來源：<a href="https://www.armygroup.com.tw/shop/goods-3598.html">改裝軍團</a></p>
+<h3 id="gpu"><a class="header" href="#gpu">GPU</a></h3>
+<p>在確保你的GPU有辦法提供你想要的算力與性價比後(通常是RX570、RX580、GTX 1060、GTX1070)，GPU的選用主要有兩點：保固期與記憶體廠牌，保固期決定了你的顯示卡能夠被使用多久，即便損壞你還是能夠跟原廠換一張新的過來，而記憶體的製造商主要有三大廠，一般而言：<code>三星&gt;美光&gt;海力士</code>。因為對於Ethereum的算法而言，記憶體的頻寬是重要的，而在實測上三星與美光能夠超頻並提供高一點的算力(其中三星又&gt;美光)，而海力士則幾乎不能超頻。</p>
+<h2 id="選擇作業系統"><a class="header" href="#選擇作業系統">選擇作業系統</a></h2>
+<p>作業系統的選用除了常見的Windows與Linux外，目前也有許多開發出專門應用在挖礦上的作業系統，像是<a href="https://hiveos.farm/">Hiveos</a>、<a href="http://ethosdistro.com/">ETHOS</a>、SparkOS等作業系統，如果是專門挖礦、平常不會拿來使用的主機強烈建議安裝挖礦專用的作業系統，裏頭整合了驅動程式與挖礦控制等軟體，可以避免安裝驅動程式不合或是難以監控的問題。另外一點是隨著時間過去，DAG也會增加，AMD預設的顯示卡架構會印為DAG的增加造成大幅度的算力下降，選擇挖礦的作業系統能夠幫助你輕鬆解決這個問題而不需要另外設定。(一般Windows你安裝AMD的驅動後必須在驅動程式介面啟動運算模式以避免DAG增大帶來的負面影響)。</p>
+<h2 id="選擇挖礦軟體"><a class="header" href="#選擇挖礦軟體">選擇挖礦軟體</a></h2>
+<p>Ethereum主要的挖礦軟體有Claymore、Ethminer、Phoenix Miner等，其中臺灣最多人使用的就是Claymore，即使它會抽取你1%不等的算力(你可以指定不要讓Claymore抽1%，但Claymore會讓你算力減少2%)，但因為Claymore目前仍是主要公認效能最好的挖礦軟體(沒有之一)，因此還是最主流的挖礦軟體。你可以到<a href="https://bitcointalk.org/index.php?topic=1433925.0">bitcoin talk</a>下載最新的Claymore來使用。</p>
+<h1 id="實際畫面"><a class="header" href="#實際畫面">實際畫面</a></h1>
+<p>這裡我用家裡的電腦(Win10)搭配<a href="https://www.techpowerup.com/gpu-specs/radeon-rx-460.c2849">RX460</a>做示範，RX 460擁有112GB/s的頻寬，理論上能夠跑到約14Mh/s，但因為這裡我沒有超頻與優化，而只有看到11~12Mh/s的算力。也可以在畫面中看到DAG的載入，這就是我們昨天所說的Dagger-Hashimoto演算法裏頭的DAG！</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day19_4.JPG" alt="Miner Demo" /></p>
+<h1 id="ref"><a class="header" href="#ref">Ref:</a></h1>
+<ul>
+<li><a href="https://www.asicminervalue.com/">Asicminervalue</a></li>
+<li><a href="https://whattomine.com/">Whattomine</a></li>
+<li><a href="https://bitcointalk.org/">bitcointalk</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/80_PLUS">維基百科-80PLUS</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="day17.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="day19.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="day17.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="day19.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

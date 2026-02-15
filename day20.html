@@ -1,0 +1,301 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day20|P2P網路(1)：P2P網路基礎知識 - 區塊鏈到底在幹嘛 - 30天系列</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">區塊鏈到底在幹嘛 - 30天系列</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day20p2p網路1p2p網路基礎知識"><a class="header" href="#day20p2p網路1p2p網路基礎知識">Day20|P2P網路(1)：P2P網路基礎知識</a></h1>
+<h1 id="傳統的網路架構"><a class="header" href="#傳統的網路架構">傳統的網路架構</a></h1>
+<p><img src="images/day20_35224.png" alt="Client–server model" /></p>
+<p>圖片來源：<a href="https://en.wikipedia.org/wiki/Client%E2%80%93server_model">Wikipedia</a></p>
+<p>傳統的網路架構是每一張圖片、影片、網站、APP都會有存放的伺服器(<code>server</code>)，每個伺服器會有自己像門牌一般的ip位址，當我們(<code>client</code>)瀏覽網頁時，其實就是透過ip位址向伺服器發出請求(request)，再由伺服器回傳我們瀏覽網頁上的資源(圖片、影片、html等)給我們。可以說伺服器本身掌控了話語權，也決定了我們能看到甚麼。</p>
+<p>因此傳統的架構又稱為<code>Client–Server model</code>。</p>
+<p>以facebook為例，你在facebook的所有帳戶、照片、好友資料通通都存在facebook的伺服器中，facebook也有權力決定要給你看到/看不到甚麼，所以與其說是你的帳戶，不如說是facebook擁有你自願上傳的資訊，當你有需求時再順道回傳給你一份罷了。</p>
+<p><img src="https://www.dcsorg.com/images/centralized-management.jpg" alt="Centralized" /></p>
+<p>圖片來源：<a href="https://www.dcsorg.com/centralized-management.php/">Digital Currency Systems</a></p>
+<p>所以傳統的中心化架構就是所有使用者的請求都會被送到同一個伺服器處理。另一個中心化的例子就是銀行的金流系統，當我們要匯款時便是向銀行的伺服器發出請求，請伺服器驗證我們的身分並且針對我們的請求加以處理，同時我們也信任伺服器的處理結果，整個流程都由銀行端完成。</p>
+<p>這種架構的優點就是處理迅速，我們只需要等待單一伺服器的回應就可以知道結果。但其中卻有兩大缺陷：</p>
+<h2 id="scalability"><a class="header" href="#scalability">Scalability</a></h2>
+<p>Scalability代表的是可擴充性，也就是當使用者的數目成長時，系統接收並處理請求的伺服器數目卻是固定的，固定的伺服器規格代表能處理的使用者數目或是單位時間內的請求數是會有上限的，如果想要拉高上限，代表的是營運成本也會跟著上升(但其實近年因為硬體的進步與分散式系統的發達已經很大解決Scalability的問題了)。</p>
+<h2 id="reliability"><a class="header" href="#reliability">Reliability</a></h2>
+<p>Reliability代表的是系統的可靠度，也就是系統的妥善率有多少。傳統的<code>Client–Server model</code>仰賴單一伺服器與節點的運行，所以一旦伺服器出錯或是維修，整個服務就會終止，也因如此我們偶爾還是會聽到facebbok斷線或是銀行服務會有固定的停止服務時間等等。</p>
+<h1 id="peer-to-peerp2p網路"><a class="header" href="#peer-to-peerp2p網路">Peer to Peer(P2P)網路</a></h1>
+<p>傳統的網站架構是把所有的資源都放置在同一台伺服器上，有需要的用戶再向伺服器檢索。Peer to Peer(P2P)網路則是網路上的所有人都負責儲存了全部或部分的所有資料，除了向其他IP位址發起請求外，本身也需要負責處理收到的請求，<strong>自身既是Client也是Server</strong> 。</p>
+<p>但其實P2P網路並非是非常新的概念，在常聽到的<a href="https://zh.wikipedia.org/zh-tw/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F">TCP/IP通訊協定</a>中其實就是一種終端到終端(end to end)的概念，通訊的兩端是彼此平等不分client與server的！只是因為實務上我們上網幾乎都是在檢索其他網站的資料，為了效率與實務上應用的考量網站經營者才會把所有資源集中存放與處理。</p>
+<p><img src="https://www.skalex.io/wp-content/uploads/2017/06/p2p-web-model-transparent.png" alt="P2P" /></p>
+<p>圖片來源：<a href="https://www.skalex.io/blockchain-p2p-web/">https://www.skalex.io</a></p>
+<p>P2P網路在Scalability與Reliability都具有很大的優勢，因為每個獨立的終端都可以視作Server，當終端數目增加，Server數目也隨之增加，所有可運用的硬體資源與網路頻寬也隨之增加，在Scalability會具有很大的優勢。而Reliability的部分因為每個終端都可以獨立運作，所以不存在傳統中心化架構中一旦單一伺服器停擺就會造成整個服務中斷的問題。</p>
+<p>除了Scalability與Reliability外，P2P網路也因為沒有中心化的伺服器，而讓資料沒有被中心化機構掌控或修改的可能，也確保了資訊的安全。</p>
+<h2 id="p2p網路的難題"><a class="header" href="#p2p網路的難題">P2P網路的難題</a></h2>
+<p>雖然P2P網路可以有效解決傳統中心化網路在Scalability與Reliability的問題，但在技術上因為需要參照與協調許多終端所以技術的複雜度會比傳統Client–Server model複雜。以下簡述幾種P2P網路實作上的難題。</p>
+<h3 id="工作的分配"><a class="header" href="#工作的分配">工作的分配</a></h3>
+<p>雖然P2P網路的硬體資源與頻寬會隨著終端數目的增加而增加，但如何配置與分享彼此間閒置的資源是一大難題，畢竟即便資源增加，若沒有好好地被分配與利用也是徒然。以下簡述幾種工作分配的方式：</p>
+<h4 id="opportunistic-load-balancingolb"><a class="header" href="#opportunistic-load-balancingolb">Opportunistic Load Balancing(OLB)</a></h4>
+<p>Opportunistic Load Balancing是將目前的工作隨意分配給一台閒置的電腦，目標是讓所有的電腦都處於工作的狀態，但因為沒有考量每個工作的工作量與每台電腦獨立且不同的運算能力，所以不適用於由異質終端所構成的P2P網路。</p>
+<h4 id="minimum-execution-timemet"><a class="header" href="#minimum-execution-timemet">Minimum Execution Time(MET)</a></h4>
+<p>Minimum Execution Time是不考慮電腦目前的工作狀態，直接把這項工作分配給執行時間最短的電腦，但缺點是會造成負載的不平衡，運算能力最強的電腦會被分派到最多工作，運算能力最弱的就會一直閒置，所以同樣不適用於由異質終端所構成的P2P網路。</p>
+<h4 id="minimum-completion-timemet"><a class="header" href="#minimum-completion-timemet">Minimum Completion Time(MET)</a></h4>
+<p>Minimum Completion Time是根據電腦的最小完成時間(目前的工作要多久才會結束)來分派工作，越快結束的電腦就會被優先指派然後計算，所以並不保證執行時間(Execution Time)會最短。</p>
+<h4 id="min-min"><a class="header" href="#min-min">Min-Min</a></h4>
+<p>Min-Min是根據工作在每一台電腦預估可以完成的時間，所以也會將電腦目前的工作狀態列入考量。完成時間的意思便是等待時間加上執行時間(上面的Execution Time)，所以雖然能確保工作能在最短時間內被完成，但預估完成時間也是難事。</p>
+<h3 id="節點的搜尋"><a class="header" href="#節點的搜尋">節點的搜尋</a></h3>
+<p>既然P2P網路是由許多獨立的Peer所構成，那要怎麼知道參與網路的節點確切的ip位址呢？你只能透過一些中心化的網站或是上網搜尋其他人提供的節點位置，比方說<a href="https://bitnodes.earn.com/">這個網站</a>就記錄了Bitcoin網路線上的所有節點(下圖)，找到節點們的資訊後你才能參與整個P2P網路的運作。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day21_1.JPG" alt="Peer Location" /></p>
+<p>圖片擷取自：<a href="https://bitnodes.earn.com/">bitnodes</a></p>
+<h3 id="取得peer間的共識"><a class="header" href="#取得peer間的共識">取得Peer間的共識</a></h3>
+<p>另一個P2P網路的難題是要取得終端/節點間的共識，P2P網路間必須共享同一份資料與彼此間的資訊才能夠協作，且因為TCP/IP的網路是兩兩連接而成的，由簡單的排列組合可以得知當節點有N個時，所有節點可以組成的連線個數便是CN取2，就是N*(N-1)，大約取決於N^2，這在節點數一多的狀況下要取得Peer間的共識會非常困難，更何況有時候會有惡意的節點加入並且散步造假過的資訊，我們明日會在根據拜占庭將軍問題詳談如何解決這個問題。</p>
+<p><img src="https://chart.googleapis.com/chart?cht=tx&amp;chl=C%5EN_2%3DN!%2F(k*(N-2)!)%3DN*(N-1)" alt="https://chart.googleapis.com/chart?cht=tx&amp;chl=C%5EN_2%3DN!%2F(k*(N-2)!)%3DN*(N-1)" /></p>
+<h3 id="無法徹底去中心化"><a class="header" href="#無法徹底去中心化">無法徹底去中心化</a></h3>
+<p>最後一個問題是P2P網路雖然可以稍微擺脫被單一中心化機構掌控資源的風險，但實際上P2P網路沒有辦法達到完全的去中心化，原因是網路提供商ISP或是<a href="https://zh.wikipedia.org/zh-tw/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F">DNS</a>還是掌控在中心化機構手中，像是上面節點的搜尋也需要仰賴別人提供的資訊，因此充其也只是最後資訊的儲存與處理是去中心化，底層的通訊還是得仰賴特殊的機構完成。</p>
+<h3 id="資料的重複儲存與不穩定性"><a class="header" href="#資料的重複儲存與不穩定性">資料的重複儲存與不穩定性</a></h3>
+<p>因為P2P網路的節點是可以自由加入與退出的，也就是每個節點的穩定性並無法確認，也無法得知每個節點可存續的時間，為了求取資料的安全便需要在複數個位置上儲存同樣的資料，相較於中心化網路會多耗費許多空間，即便如此在儲存使用者分享的檔案時也無法確保該檔案能存在多久。</p>
+<h2 id="p2p網路的分類"><a class="header" href="#p2p網路的分類">P2P網路的分類</a></h2>
+<p>根據P2P網路處理資訊與分配工作的方式大致又可以分成三種：</p>
+<p><img src="https://www.researchgate.net/profile/Taoufik_Yeferny/publication/332539196/figure/fig2/AS:749686013034497@1555750482262/P2P-architectures-at-a-glance-a-Centralized-architecture-b-Pure-P2P-architecture.png" alt="P2P Category" /></p>
+<p>圖片來源：<a href="https://www.researchgate.net/figure/P2P-architectures-at-a-glance-a-Centralized-architecture-b-Pure-P2P-architecture_fig2_332539196">P2P architectures at a glance.</a></p>
+<h3 id="中央式p2p"><a class="header" href="#中央式p2p">中央式P2P</a></h3>
+<p>也就是上圖的(a)，代表整個P2P有一個中心伺服器專責處理工作的分派與分流，也會記錄節點們的清單與位置，但中心節點並不實際處理資訊或是資料的儲存，只負責節點間的溝通與工作的調度。</p>
+<h3 id="純p2p"><a class="header" href="#純p2p">純P2P</a></h3>
+<p>純P2P代表整個P2P網路中的節點都是平等的，彼此並沒有工作或是權力上的分別，也就是上圖的(b)。</p>
+<h3 id="混合-p2p"><a class="header" href="#混合-p2p">混合 p2p</a></h3>
+<p>混合式P2P很像是中央式P2P，但其跟中央式P2P網路不同的地方是它擁有複數個中心伺服器負責資訊的轉發與協調，<a href="https://eos.io/">EOS</a>本身就擁有了21個超級節點。</p>
+<h1 id="p2p與區塊鏈"><a class="header" href="#p2p與區塊鏈">P2P與區塊鏈</a></h1>
+<p>整個Bitcoin全節點可以看作是一種純P2P網路，節點間並沒有先來後到之分，但為了保持資料的一致性(所有節點手上的帳本必須同步)，所以在傳遞或廣播上必須考量到效率與攻擊者假造節點的狀況，因此我們明天就要來介紹究竟在P2P網路中要如何確保節點間的同步與讓正確的共識被形成呢？</p>
+<p>到目前為止的文章都會放置在<a href="https://github.com/lkm543/it_iron_man_2019">Github</a>上。</p>
+<h1 id="ref"><a class="header" href="#ref">Ref:</a></h1>
+<ul>
+<li><a href="https://sls.weco.net/node/12916">Peer-to-Peer (P2P) System</a></li>
+<li><a href="http://bm.nsysu.edu.tw/tutorial/htt/dkl/SearchEngine-nsysu041230.pdf">P2P-顛覆網際網路傳統觀念</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Client%E2%80%93server_model">Wikipedia-Client–server model</a></li>
+<li><a href="https://dannylin3000.pixnet.net/blog/post/31271397-p2p%E7%9A%84%E7%B6%B2%E8%B7%AF%E5%85%B1%E4%BA%AB%E4%B8%96%E7%95%8C">P2P的網路共享世界</a></li>
+<li><a href="https://www.itread01.com/content/1546608974.html">P2P對等網路技術原理整合</a></li>
+<li><a href="https://blog.csdn.net/qq_33850438/article/details/79700133">P2P原理以及如何实现（整理）</a></li>
+<li><a href="http://ir.lib.cyut.edu.tw:8080/bitstream/310901800/6479/1/Two+phases+scheduling+in+P2P.pdf">以兩階段排程演算法提昇動態階層式點對點網路拓樸之負載平衡</a></li>
+<li><a href="https://www.itread01.com/content/1545529340.html">詳解區塊鏈P2P網路</a></li>
+<li><a href="https://slideplayer.com/slide/4806764/">Towards Efficient Simulation of Large Scale P2P Networks</a></li>
+<li><a href="https://www.shs.edu.tw/works/essay/2008/10/2008103101062756.pdf">點對點網際網路技術(P2P)和軟體之概論</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="day19.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="day21.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="day19.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="day21.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day03|打造一個簡易的區塊鏈(2)：產生創世塊與挖掘新區塊 - 區塊鏈到底在幹嘛 - 30天系列</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">區塊鏈到底在幹嘛 - 30天系列</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day03打造一個簡易的區塊鏈2產生創世塊與挖掘新區塊"><a class="header" href="#day03打造一個簡易的區塊鏈2產生創世塊與挖掘新區塊">Day03|打造一個簡易的區塊鏈(2)：產生創世塊與挖掘新區塊</a></h1>
+<p>我們在昨天已經定義完交易、區塊、區塊鏈的主要格式與資料，今天的目標是架構起我們的簡易區塊鏈，並且能夠做到下面這四件事情</p>
+<ol>
+<li>產生哈希/湊雜數(Hash)</li>
+<li>產生創世塊</li>
+<li>放置交易明細至新區塊中</li>
+<li>挖掘新區塊</li>
+</ol>
+<h1 id="產生哈希數hash"><a class="header" href="#產生哈希數hash">產生哈希數(Hash)</a></h1>
+<p>哈希/湊雜數可以想做是一種轉換方式，可以把<strong>任意長度的輸入轉換成固定長度的輸出</strong> ，以SHA-1為例，它能夠把輸入值轉換成固定20個位元組的輸出。</p>
+<p>哈希函數(<code>hash function</code>)必須同時滿足兩個條件：</p>
+<blockquote>
+<ol>
+<li>同樣的輸入值必定得到相同的輸出值</li>
+<li>得到的哈希數無法反推回原本的資料</li>
+</ol>
+</blockquote>
+<p>以下面為例，<code>Hello World!</code>的字串能夠透過<code>SHA-1</code>的哈希函數轉換成：</p>
+<blockquote>
+<p>2ef7bde608ce5404e97d5f042f95f89f1c232871</p>
+</blockquote>
+<p>但同時產生的<code>2ef7bde608ce5404e97d5f042f95f89f1c232871</code>無法反推回原本的<code>Hello World!</code>。由於輸入資料的不同，往往我們可以把哈希數視作幾近隨機的位元組所構成(但仍然會因為哈希函數的不同而有所變異)</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day3_1.jpg" alt="hash" /><br />
+<a href="https://www.fileformat.info/tool/hash.htm">這個網址</a>有更多的哈希函式的轉換可以試玩看看，以<code>Hello World!</code>這個字串為例，各種轉換法輸出的哈希值也不相同。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day3_2.jpg" alt="Hello World!" /></p>
+<p>在這裡我們先把下面這些資料連接後作為哈希函式的輸入：</p>
+<ol>
+<li>前一個區塊的哈希值(<code>previous_hash</code>)</li>
+<li>區塊產生當下的時間戳(<code>timestamp</code>)</li>
+<li>所有的交易明細(<code>transactions</code>)</li>
+<li>挖掘中的<code>nonce</code>值</li>
+</ol>
+<p><img src="https://www.lkm543.site/it_iron_man/day3_3.jpg" alt="Our Hash" /></p>
+<p>下面是我們今天的程式碼，其中<code>transaction_to_string</code>負責把交易明細轉換成字串、<code>get_transactions_string</code>負責把區塊紀錄的所有交易明細轉換成一個字串、<code>get_hash</code>負責依據這四筆資料產生相對應的哈希數。</p>
+<pre><code>import hashlib
+
+def transaction_to_string(self, transaction):
+    transaction_dict = {
+        'sender': str(transaction.sender),
+        'receiver': str(transaction.receiver),
+        'amounts': transaction.amounts,
+        'fee': transaction.fee,
+        'message': transaction.message
+    }
+    return str(transaction_dict)
+
+def get_transactions_string(self, block):
+    transaction_str = ''
+    for transaction in block.transactions:
+        transaction_str += self.transaction_to_string(transaction)
+    return transaction_str
+
+def get_hash(self, block, nonce):
+    s = hashlib.sha1()
+    s.update(
+        (
+            block.previous_hash
+            + str(block.timestamp)
+            + self.get_transactions_string(block)
+            + str(nonce)
+        ).encode("utf-8")
+    )
+    h = s.hexdigest()
+    return h
+</code></pre>
+<h1 id="產生創世塊genesis-block"><a class="header" href="#產生創世塊genesis-block">產生創世塊(genesis block)</a></h1>
+<p>創世塊就是開始部署區塊鏈時所產生的第一個區塊，創世塊通常具有劃時代的意義，雖然以第一個區塊的角度而言它不需要帶有任何交易紀錄、是個空區塊，但創造鏈的人可以把精神或是象徵性的東西寫入創世塊中藉此提醒後人(?)，並以比特幣來說，比特幣的創世塊可以在<a href="https://sourceforge.net/p/bitcoin/code/133/tree/trunk/main.cpp#l1630">這個網址</a>查詢到。</p>
+<pre><code>const char* pszTimestamp = "The Times 03/Jan/2009 Chancellor on brink of second bailout for banks";
+</code></pre>
+<blockquote>
+<p>The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.</p>
+</blockquote>
+<p>是中本聰寫入創世塊中的一句話，這也是2009/01/03英國《泰晤士報》的頭版標題，這時候的世界還陷在2008金融風暴的危機中，這篇報導敘述了當時的英國正考慮進行財務紓困，或許中本聰只是單純想證明這區塊確實是當天寫入的，又或許透過《泰晤士報》的頭版標題又對政府與中心化金融機構進行一次諷刺。</p>
+<p><img src="https://image1.thenewslens.com/2018/1/56z78h9i5pg5erdou6gjbgmmfejc15.jpg" alt="The Times" /><br />
+圖片來源：<a href="https://hk.thenewslens.com/">The News Lens</a></p>
+<p>由於這是我們的第一個區塊鏈，所以我們就在<code>previous_hash</code>的欄位給...........<code>Hello World!</code> 藉此紀念一下 ，並且難度與挖礦獎勵設定成區塊鏈的預設值，礦工這裡就直接填入我們的姓名，產生創世塊後就直接把創世塊加入到<code>chain</code>之中</p>
+<pre><code>def create_genesis_block(self):
+    print("Create genesis block...")
+    new_block = Block('Hello World!', self.difficulty, 'lkm543', self.miner_rewards)
+    new_block.hash = self.get_hash(new_block, 0)
+    self.chain.append(new_block)
+</code></pre>
+<h1 id="放置交易紀錄至新區塊中"><a class="header" href="#放置交易紀錄至新區塊中">放置交易紀錄至新區塊中</a></h1>
+<p>區塊過大會導致在網路傳播上的不易與耗時，也因此每個區塊的承載量是有容量大小的上限，那礦工如何選擇哪幾筆交易應該被優先處理呢？礦工通常會根據自身的利益選擇手續費高的交易優先被處理，因此在這裡我們選擇手續費最高的幾筆交易優先加入區塊中。但如果等待中的交易(<code>pending_transactions</code>)數目沒有到區塊的承載量上限的話，那麼自然我們可以全部處理了！</p>
+<p>而大家所熟知的Bitcoin的區塊容量上限是<code>1MB</code>，在1MB的容量下平均可以接受<code>3.3-7 TPS</code>(Transaction per Seconds，每秒幾筆交易)(<a href="https://en.wikipedia.org/wiki/Bitcoin_scalability_problem">來源</a>)，這數字大家可能沒甚麼概念，但與大家常使用的Visa做個比較─Visa的平均處理速度為<code>1700 TPS</code>(<a href="https://hackernoon.com/the-blockchain-scalability-problem-the-race-for-visa-like-transaction-speed-5cce48f9d44">來源</a>)，因此在bitcoin大規模被應用之前如何改進與增大TPS為社群熱門的研究題目，中本聰原先給的解決方案是增加區塊的容量，也就是提升原先設定的1MB區塊容量大小限制即可應對，增加TPS的路線與方法的不同甚至導致了社群的分裂，甚至產生了分岔(Fork)而生成了新的貨幣Bitcoin Cash(BCH)，關於BTC與BCH的路線之爭與差異有興趣繼續深入研究的人可以參考<a href="https://cointelegraph.com/bitcoin-cash-for-beginners/btc-bch-differences">這裡</a>，關於分岔的議題之後我們會再探討。</p>
+<p>而Ethereum的區塊容量則是根據耗用資源的多寡以<code>Gas</code>為單位，每個區塊有<code>800萬Gas</code>的限制，關於Ethereum耗用Gas的機制因為較為複雜，我們之後也會另外說明，它們都有區塊容量的上限以確保挖角到新區塊後廣播過程的順利。</p>
+<pre><code>def add_transaction_to_block(self, block):
+    # Get the transaction with highest fee by block_limitation
+    self.pending_transactions.sort(key=lambda x: x.fee, reverse=True)
+    if len(self.pending_transactions) &gt; self.block_limitation:
+        transcation_accepted = self.pending_transactions[:self.block_limitation]
+        self.pending_transactions = self.pending_transactions[self.block_limitation:]
+    else:
+        transcation_accepted = self.pending_transactions
+        self.pending_transactions = []
+    block.transactions = transcation_accepted
+</code></pre>
+<h1 id="挖掘新區塊"><a class="header" href="#挖掘新區塊">挖掘新區塊</a></h1>
+<p>接著我們就可以來挖掘產生新區塊了，挖掘的步驟是透過改變<code>nonce</code>值(從0,1,2,3....直到找到符合的<code>nonce</code>)而得到新的哈希數，在這裡我們把難度定義為"開頭有幾個0"，也就是每次改變<code>nonce</code>、產生一個新的<code>hash</code>數後來確認有沒有符合要求(開頭有幾個0)，如果符合就代表我們找到一個合規<code>nonce</code>值了！但如果沒有，就只好持續的往下找了。也因為運算量越大能夠找到合規的<code>nonce</code>值的機率也越大，也因此這個方法又被稱為<code>Proof of Work(POW)</code>。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day3_4.jpg" alt="Mine" /></p>
+<p>但透過這個方式區塊的產生時間會非常地不穩定，你可以到<a href="https://www.blockchain.com/explorer">bitcoin的區塊瀏覽器</a>看看產出的時間，bitcoin預設是每十分鐘應該要產出一個區塊，但也可以發現實際上每個區塊的產生時間會跟十分鐘有點落差，這是POW的必然結果。</p>
+<p>在這裡的實作中，我們生成一個區塊後不停計算不一樣的<code>nonce</code>值，直到我們能夠找到合規的<code>nonce</code>為止，直到發現(挖掘)合規的<code>nonce</code>之後，就可以把挖出來的區塊置入鏈裡頭。</p>
+<pre><code>def mine_block(self, miner):
+    start = time.process_time()
+
+    last_block = self.chain[-1]
+    new_block = Block(last_block.hash, self.difficulty, miner, self.miner_rewards)
+
+    self.add_transaction_to_block(new_block)
+    new_block.previous_hash = last_block.hash
+    new_block.difficulty = self.difficulty
+    new_block.hash = self.get_hash(new_block, new_block.nonce)
+
+    while new_block.hash[0: self.difficulty] != '0' * self.difficulty:
+        new_block.nonce += 1
+        new_block.hash = self.get_hash(new_block, new_block.nonce)
+
+    time_consumed = round(time.process_time() - start, 5)
+    print(f"Hash found: {new_block.hash} @ difficulty {self.difficulty}, time cost: {time_consumed}s")
+    self.chain.append(new_block)
+</code></pre>
+<h1 id="今天的問題"><a class="header" href="#今天的問題">今天的問題</a></h1>
+<p>問題來了：如果參與挖掘的人越來越多，那麼區塊不是一下就會被挖掘出來了嗎？是的，所以明天我們會來談談怎麼根據實際情形改變挖掘的難度！</p>
+<p>到目前為止的文章都會放置在<a href="https://github.com/lkm543/it_iron_man_2019">Github</a>上，至於程式碼則放在<a href="https://github.com/lkm543/it_iron_man_2019/blob/master/code/day03.py">這裡</a>。</p>
+<h1 id="ref"><a class="header" href="#ref">Ref</a></h1>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%95%A3%E5%88%97%E5%87%BD%E6%95%B8">維基百科-雜湊函式</a></li>
+<li><a href="https://www.tsnien.idv.tw/Security_WebBook/%E7%AC%AC%E5%9B%9B%E7%AB%A0%20%E9%9B%9C%E6%B9%8A%E8%88%87%E4%BA%82%E6%95%B8%E6%BC%94%E7%AE%97%E6%B3%95.html">資訊與網路安全概論-粘添壽</a></li>
+<li><a href="https://bigdatafinance.tw/index.php/finance/fintech/465-2017-10-07-15-08-09">區塊鏈原理最清晰最直觀的解釋</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="day02.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="day04.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="day02.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="day04.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

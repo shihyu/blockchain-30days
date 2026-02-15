@@ -1,0 +1,537 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day27|現實中的區塊鏈(4)：用Command Line操作Bitcoin - 區塊鏈到底在幹嘛 - 30天系列</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">區塊鏈到底在幹嘛 - 30天系列</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day27現實中的區塊鏈4用command-line操作bitcoin"><a class="header" href="#day27現實中的區塊鏈4用command-line操作bitcoin">Day27|現實中的區塊鏈(4)：用Command Line操作Bitcoin</a></h1>
+<h1 id="操作bitcoin"><a class="header" href="#操作bitcoin">操作Bitcoin</a></h1>
+<p>在提完Bitcoin的交易架構與幾個重要發展後，我們來實際體驗如何操作Bitcoin的匯款與收款。因為使用圖形化介面(GUI)相較容易，但卻不利於後續的二次開發、使用上也較不彈性，因此我們今天主要是講解如何直接使用Command Line來進行Bitcoin上的各式交易與匯款。</p>
+<h1 id="圖形化介面"><a class="header" href="#圖形化介面">圖形化介面</a></h1>
+<p>如果你沒有二次開發或是發送一些特殊交易的需求，那麼使用一般的圖形化介面(GUI)進行收款或匯款就可以了，至於要選擇使用何種程式，你可以到<a href="https://bitcoin.org/en/">bitcoin.org</a>根據你的要求選擇，選擇過程中(下圖)你也可以看到我們昨天講到的<code>多重簽名(Multisig)</code>或是<code>隔離見證(SegWit)</code>的功能，在這裡可以都勾起來，畢竟不確定之後何時會使用到。</p>
+<p><img src="http://www.lkm543.site/it_iron_man/day28_1.JPG" alt="Multisig&amp;Segwit" /></p>
+<p>圖片擷取自: <a href="https://bitcoin.org/en/">bitcoin.org</a></p>
+<p>最後<a href="https://bitcoin.org/en/">bitcoin.org</a>推薦我用<a href="https://electrum.org/#download">electrum</a>這套軟體，下載安裝後打開，可以選擇想要開啟的錢包種類。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day28_2.JPG" alt="Wallet Tye" /></p>
+<p>圖片擷取自: <a href="https://electrum.org">electrum</a></p>
+<p>最後開完錢包就大功告成啦！下圖是它的介面，有收款與付款兩大功能可以選擇，裏頭還蠻清楚的，因此就不另外詳述如何使用了。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day28_3.JPG" alt="UI" /></p>
+<p>圖片擷取自: <a href="https://electrum.org">electrum</a></p>
+<h1 id="bitcoin-core"><a class="header" href="#bitcoin-core">Bitcoin-core</a></h1>
+<p>我們今天主要的重點是<code>Bitcoin-core</code>的安裝與使用，<code>Bitcoin-core</code>是Bitcoin目前最主流與廣泛使用的主程式，裏頭包含了bitcoind、bitcoin-qt與bitcoin-cli三隻程式，先就這三個做簡單介紹。</p>
+<ul>
+<li>
+<p>bitcoind<br />
+<code>bitcoind</code>的字尾d可以看作是develop的縮寫，這隻城市的特色就是可以透過<a href="https://zh.wikipedia.org/wiki/%E9%81%A0%E7%A8%8B%E9%81%8E%E7%A8%8B%E8%AA%BF%E7%94%A8">RPC</a>呼叫裏頭的子程式，可以把它看作是client-server架構下的server，所以特別適合用來做比特幣相關服務的二次開發或營運。跟我們之前寫的簡易區塊鏈比較，就是節點端的程式，功能也是負責接收外界的請求。</p>
+</li>
+<li>
+<p>bitcoin-qt<br />
+<code>bitcoin-qt</code>的特色就是提供了圖形化前端介面(下圖)，讓一般非程式開發者也可以很容易地使用。</p>
+</li>
+</ul>
+<p><img src="https://en.bitcoinwiki.org/upload/en/images/6/62/Bitcoin-qt.png" alt="bitcoin-qt" /></p>
+<p>圖片來源: <a href="https://en.bitcoinwiki.org/wiki/Bitcoin-Qt">Wikipedia</a></p>
+<ul>
+<li>bitcoin-cli<br />
+<code>bitcoin-cli</code>的字尾cli是client客戶端的縮寫，它允許你直接發送<a href="https://zh.wikipedia.org/wiki/%E9%81%A0%E7%A8%8B%E9%81%8E%E7%A8%8B%E8%AA%BF%E7%94%A8">RPC</a>給bitcoind，可以把它看作是client-server架構下的client，可以讓你在沒有營運一個完整節點的情形下仍然可以向其他節點發出交易或查詢的請求。跟我們之前寫的簡易區塊鏈比較，就是客戶端的程式，功能是向節點發出查詢餘額或是交易請求。</li>
+</ul>
+<h2 id="環境設定"><a class="header" href="#環境設定">環境設定</a></h2>
+<p>我測試的環境是在win10下開一個Ubuntu的子系統，如果你也想在win10下測試的話可以參考<a href="https://zhuanlan.zhihu.com/p/62658094">這裡</a>進行安裝。安裝後你就你可以到<a href="https://bitcoin.org/en/download">bitcoin.org</a>找最新版本的Bitcoin-core來下載，你可以先開個資料夾後再下載並且展開。</p>
+<pre><code>mkdir bitcoin
+wget https://bitcoin.org/bin/bitcoin-core-0.18.1/bitcoin-0.18.1-x86_64-linux-gnu.tar.gz
+tar xf bitcoin-0.18.1-x86_64-linux-gnu.tar.gz
+</code></pre>
+<p>安裝完後記得把bin資料夾放入環境變數(PATH)中，因為我安裝在d槽下，所以我的路徑是<code>/mnt/d/bitcoin/bitcoin-0.18.1/bin/</code></p>
+<pre><code>export PATH=$PATH:/mnt/d/bitcoin/bitcoin-0.18.1/bin/
+</code></pre>
+<p>在Linux系統下，上面三隻程式的設定值都會在下面這個檔案中</p>
+<blockquote>
+<p>$HOME/.bitcoin/bitcoin.conf</p>
+</blockquote>
+<p>以nano打開後</p>
+<pre><code>nano $HOME/.bitcoin/bitcoin.conf
+</code></pre>
+<p>可以在裏頭設定RPC用的密碼，但我們之後的測試是在模擬環境下測試，所以不設定也沒關係</p>
+<pre><code>rpcpassword=YOUR_PASSWORD
+</code></pre>
+<p>在這裡另外說明一下，測試的方式有兩種：<code>Testnet</code>或<code>Regtest</code>，Testnet是連上比特幣的測試網路，也就是外網；而Regtest則是在本機端開啟一個完全私人的環境來做測試，目前主流的開發都是用Regtest了，因此我們之後的示範也會使用Regtest，但如果想要用testnet的話就在<code>$HOME/.bitcoin/bitcoin.conf</code>裏頭新增這一行就可以了。</p>
+<pre><code>testnet=1
+</code></pre>
+<p>另外修改權限只有我們能夠讀寫這個檔案</p>
+<pre><code>chmod 600 bitcoin.conf
+</code></pre>
+<p>到此就設定完畢了！</p>
+<h2 id="啟動與停止"><a class="header" href="#啟動與停止">啟動與停止</a></h2>
+<p>在開始使用前先把bitcoind打開(如果使用testnet則不需要加-regtest)</p>
+<pre><code>bitcoind -regtest -daemon
+</code></pre>
+<p>接著你就會看到下面這行字，代表成功開啟了</p>
+<pre><code>Bitcoin server starting
+</code></pre>
+<p>要停止也很容易，下stop指令便行了。</p>
+<pre><code>bitcoin-cli stop
+</code></pre>
+<p>成功結束你會看到</p>
+<pre><code>Bitcoin server stopping
+</code></pre>
+<h2 id="挖掘新區塊"><a class="header" href="#挖掘新區塊">挖掘新區塊</a></h2>
+<p>創建新錢包的方式是透過<code>getnewaddress</code>指令</p>
+<pre><code>bitcoin-cli -regtest getnewaddress
+</code></pre>
+<p>因為regtest模式下block需要經過100個確認後才能夠花用裏頭的餘額，所以我們可以用<code>generatetoaddress</code>使產出的地址挖掘101個區塊，確保我們有50BTC可以用於後續的交易。</p>
+<pre><code>bitcoin-cli -regtest generatetoaddress 101 $(bitcoin-cli -regtest getnewaddress)
+</code></pre>
+<p>挖掘出來後你就可以利用<code>getbalance</code>查詢目前可支用的餘額</p>
+<pre><code>bitcoin-cli -regtest getbalance
+</code></pre>
+<p>就會發現裏頭有50元可以使用了！</p>
+<pre><code>50.00000000
+</code></pre>
+<h2 id="發起交易"><a class="header" href="#發起交易">發起交易</a></h2>
+<p>發起交易前我們先創建一個新的收款錢包</p>
+<pre><code>bitcoin-cli -regtest getnewaddress
+</code></pre>
+<blockquote>
+<p>2N1yF65i3KfXHJ7Pv6oxBeGoUSnGK2idzuQ</p>
+</blockquote>
+<p>接著就可以利用<code>sendtoaddress</code>匯款給對方了</p>
+<pre><code>bitcoin-cli -regtest sendtoaddress 2N1yF65i3KfXHJ7Pv6oxBeGoUSnGK2idzuQ 5.00
+</code></pre>
+<p>匯款完後看到的這一連串Bytes便是我們的Transaction id!</p>
+<pre><code>7862877e89f9b2e14c42e508f31646c68f38d99e404c335769ad1092c9b33822
+</code></pre>
+<p>交易完之後記得再挖掘出一個新區塊，我們的交易才會被打包進去喔</p>
+<pre><code>bitcoin-cli -regtest generatetoaddress 1 $(bitcoin-cli -regtest getnewaddress)
+</code></pre>
+<h2 id="手動簽發一筆交易"><a class="header" href="#手動簽發一筆交易">手動簽發一筆交易</a></h2>
+<p>上面的交易其實省略了相當多步驟，也沒有逐步的簽署，所以我們來試試怎麼一步步從初始化交易到使用私鑰來簽發這比交易！但如果手動簽發出錯的話，手上的BTC可能會永久遺失，所以使用上請務必小心。</p>
+<h3 id="查詢utxo"><a class="header" href="#查詢utxo">查詢UTXO</a></h3>
+<p>輸入<code>listunspent</code>指令就可以查詢目前還沒被使用的UTXO。</p>
+<pre><code>bitcoin-cli -regtest listunspent
+</code></pre>
+<p><img src="http://www.lkm543.site/it_iron_man/day28_4.JPG" alt="UTXO" /></p>
+<h3 id="初始化一筆交易"><a class="header" href="#初始化一筆交易">初始化一筆交易</a></h3>
+<p>假設我們現在想要動用3ab2be755f676c9978c6a3bf42f87cfcb8f7393d10cf5c962a1590e3449c38d4這筆UTXO，那麼我們可以先設定：</p>
+<blockquote>
+<p>UTXO_ID=3ab2be755f676c9978c6a3bf42f87cfcb8f7393d10cf5c962a1590e3449c38d4<br />
+UTXO_VOUT=0</p>
+</blockquote>
+<p>接著我們利用<code>createrawtransaction</code>來初始化一筆交易，txid指我們想動用的UTXO編號，vout可以想成這筆UTXO的次序(可以在UTXO列表中找到這個值)。第二個JSON則是收款地址以及收款金額，注意收款金額與UTXO餘額的差就是手續費，兩者的差距必須小於0.1否則便會報錯。</p>
+<pre><code>bitcoin-cli -regtest createrawtransaction '''
+    [
+      {
+        "txid": "'$UTXO_ID'",
+        "vout": '$UTXO_VOUT'
+      }
+    ] 
+    ''' '''
+    {
+      "2MyFEzBFSYb5PimVKGmeehY9MrxHJQrhGZF": 44.998
+    }
+    '''
+</code></pre>
+<p>接著就可以得到這筆交易的編碼後的資料了！</p>
+<pre><code>0200000001d4389c44e390152a965ccf103d39f7b8fc7cf842bfa3c678996c675f75beb23a0000000000ffffffff01c07f350c0100000017a91441d196828171b72dd14bf48378b5659bfde9e6ab8700000000
+</code></pre>
+<p>你可以用<code>decoderawtransaction</code>指令來看原本的交易內容</p>
+<pre><code>bitcoin-cli -regtest decoderawtransaction 0200000001d4389c44e390152a965ccf103d39f7b8fc7cf842bfa3c678996c675f75beb23a0000000000ffffffff01c07f350c0100000017a91441d196828171b72dd14bf48378b5659bfde9e6ab8700000000
+</code></pre>
+<p><img src="http://www.lkm543.site/it_iron_man/day28_5.JPG" alt="UTXO" /></p>
+<h3 id="簽署這筆交易"><a class="header" href="#簽署這筆交易">簽署這筆交易</a></h3>
+<p>用<code>signrawtransactionwithwallet</code>指令來簽署這筆交易</p>
+<pre><code>bitcoin-cli -regtest signrawtransactionwithwallet 0200000001d4389c44e390152a965ccf103d39f7b8fc7cf842bfa3c678996c675f75beb23a0000000000ffffffff01c07f350c0100000017a91441d196828171b72dd14bf48378b5659bfde9e6ab8700000000
+</code></pre>
+<p>可以得到下面的回應，其中hex裏頭就是我的數位簽章了！你也可以發現它比交易的資料長非常多，這也是我們昨天有提到數位簽章的資料通常會佔到整體資料大小的2/3以上。</p>
+<pre><code>{
+  "hex": "02000000000101d4389c44e390152a965ccf103d39f7b8fc7cf842bfa3c678996c675f75beb23a0000000017160014d3c8facb4eb70ba6b14992951c1bb7260a759118ffffffff01c07f350c0100000017a91441d196828171b72dd14bf48378b5659bfde9e6ab870247304402204031dd9a2c8e78d4c41e8e758d2c33518f75012551793d086213f74edebe8efa0220161919fc3743dcbdfabf1f2ea44464bd59437cec2c225c0e27685e2d8cc4245b012103518af844b06091b5bed9ee5cf50ea372af8a1425afba9142a71d27b5ee38642a00000000",
+  "complete": true
+}
+</code></pre>
+<p>把數位簽章儲存成變數</p>
+<blockquote>
+<p>SIGNATURE=02000000000101d4389c44e390152a965ccf103d39f7b8fc7cf842bfa3c678996c675f75beb23a0000000017160014d3c8facb4eb70ba6b14992951c1bb7260a759118ffffffff01c07f350c0100000017a91441d196828171b72dd14bf48378b5659bfde9e6ab870247304402204031dd9a2c8e78d4c41e8e758d2c33518f75012551793d086213f74edebe8efa0220161919fc3743dcbdfabf1f2ea44464bd59437cec2c225c0e27685e2d8cc4245b012103518af844b06091b5bed9ee5cf50ea372af8a1425afba9142a71d27b5ee38642a00000000</p>
+</blockquote>
+<p>最後就可以利用<code>sendrawtransaction</code>指令與我們剛剛簽發的數位簽章、想要動用的UTXO來交易了！</p>
+<pre><code>bitcoin-cli -regtest sendrawtransaction $SIGNATURE
+</code></pre>
+<p>你就可以得到一筆Transaction ID了</p>
+<blockquote>
+<p>1089bff77424764ffadfaac6f12683b1c2265ebe0726598ee0cb28cf02dd017a</p>
+</blockquote>
+<p>一樣挖掘新區塊後，就可以查詢有沒有新的UTXO生成</p>
+<pre><code>bitcoin-cli -regtest generatetoaddress 1 $(bitcoin-cli -regtest getnewaddress)
+bitcoin-cli -regtest listunspent
+</code></pre>
+<p>新生成的UTXO結果如下</p>
+<pre><code> {
+    "txid": "1089bff77424764ffadfaac6f12683b1c2265ebe0726598ee0cb28cf02dd017a",
+    "vout": 0,
+    "address": "2MyFEzBFSYb5PimVKGmeehY9MrxHJQrhGZF",
+    "label": "",
+    "redeemScript": "0014eac13ffacbced6b25fe7262ff14d8c4ffcf6b229",
+    "scriptPubKey": "a91441d196828171b72dd14bf48378b5659bfde9e6ab87",
+    "amount": 44.99800000,
+    "confirmations": 1,
+    "spendable": true,
+    "solvable": true,
+    "desc": "sh(wpkh([e6960773/0'/0'/2']038906fb9fb8259c15978872e186bc21897f4b51c01834f90ad53ed3056f44a328))#02k7gp80",
+    "safe": true
+  }
+</code></pre>
+<h2 id="多重簽名"><a class="header" href="#多重簽名">多重簽名</a></h2>
+<h3 id="創設多重簽名的付款帳號"><a class="header" href="#創設多重簽名的付款帳號">創設多重簽名的付款帳號</a></h3>
+<p>多重簽名的交易方法跟上面很類似，假設我們要創建一個2 of 3多重簽名的支付，利用<code>addmultisigaddress</code>指令：</p>
+<pre><code>bitcoin-cli -regtest addmultisigaddress 2 "
+    [\"2MwgVmbPVRF9a44ar9AUB7sCHCrdDf81oxL\",
+     \"2MwgVmbPVRF9a44ar9AUB7sCHCrdDf81oxL\", 
+     \"2N1yF65i3KfXHJ7Pv6oxBeGoUSnGK2idzuQ\"
+    ]
+    "
+</code></pre>
+<p>就可以得到P2SH的新多重簽名收款地址了：</p>
+<pre><code>{
+  "address": "2MxKFjxNftmEnCJE2tmTktwVJKUqMAPQ1K3",
+  "redeemScript": "522103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc92103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc921036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd53ae"
+}
+</code></pre>
+<p>要付款給多重簽名的地址也只要把它當一般地址便可以了。</p>
+<blockquote>
+<p>bitcoin-cli -regtest sendtoaddress 2MxKFjxNftmEnCJE2tmTktwVJKUqMAPQ1K3 10.00</p>
+</blockquote>
+<h3 id="動用多重簽名的資金"><a class="header" href="#動用多重簽名的資金">動用多重簽名的資金</a></h3>
+<p>首先一樣先利用下面這個指令把我們想要花用的UTXO編號找出來：</p>
+<blockquote>
+<p>bitcoin-cli -regtest listunspent</p>
+</blockquote>
+<pre><code>{
+    "txid": "241bb7af4262e475ee2bff4586a3b1c0b4a2f9efb8cb0901f5e16d7794451b83",
+    "vout": 0,
+    "address": "2MxKFjxNftmEnCJE2tmTktwVJKUqMAPQ1K3",
+    "label": "",
+    "redeemScript": "0020809d97cffc439727dd9fd38548c0e9c5a576e90f9ef11d99ef15635516453bcc",
+    "witnessScript": "522103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc92103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc921036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd53ae",
+    "scriptPubKey": "a914379bc18d46b35fed27f75c1128a8f36659615d5e87",
+    "amount": 10.00000000,
+    "confirmations": 1,
+    "spendable": true,
+    "solvable": true,
+    "desc": "sh(wsh(multi(2,[e6960773/0'/0'/0']03ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc9,[e6960773/0'/0'/0']03ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc9,[e6960773/0'/0'/1']036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd)))#ys6kgphk",
+    "safe": true
+  }
+</code></pre>
+<p>一樣先初始化交易，假設我們要把裏頭的資金移轉到2NFZxvqDfa9EKvw7bMaBpRkAUfJZKUVCiKV</p>
+<pre><code>bitcoin-cli -regtest createrawtransaction '''
+[
+  {
+    "txid": "241bb7af4262e475ee2bff4586a3b1c0b4a2f9efb8cb0901f5e16d7794451b83",
+    "vout": 0
+  }
+]
+''' '''
+{
+ "2NFZxvqDfa9EKvw7bMaBpRkAUfJZKUVCiKV": 9.998
+}'''
+</code></pre>
+<blockquote>
+<p>RAW_TX=0200000001831b4594776de1f50109cbb8eff9a2b4c0b1a38645ff2bee75e46242afb71b240000000000ffffffff01c0bc973b0000000017a914f4de1976c0e707fadff4a908f271d7091032268a8700000000</p>
+</blockquote>
+<p>接著利用<code>dumpprivkey</code>把其中兩個私鑰取出，因為是2 of 3多重簽名，所以至少要經過兩個私鑰的簽署</p>
+<pre><code>bitcoin-cli -regtest dumpprivkey 2MwgVmbPVRF9a44ar9AUB7sCHCrdDf81oxL
+bitcoin-cli -regtest dumpprivkey 2N1yF65i3KfXHJ7Pv6oxBeGoUSnGK2idzuQ
+</code></pre>
+<p>得到兩把私鑰</p>
+<blockquote>
+<p>cVaV7TWQodB8DhhMe4fiNtfV9paFpBmupQsbyWnwdBhN15EUhW9P<br />
+cN3gCnSnyENguQQ49zyQ4SPrucTrCHVapvqq5qaYKVueSmTGpCoZ</p>
+</blockquote>
+<p>接著先用第一把私鑰利用<code>signrawtransactionwithkey</code>簽署，並填入相對應的txid、vout、scriptPubKey、redeemScript、amount</p>
+<pre><code>bitcoin-cli -regtest signrawtransactionwithkey $RAW_TX '''
+    [
+      "cVaV7TWQodB8DhhMe4fiNtfV9paFpBmupQsbyWnwdBhN15EUhW9P"
+    ]''' ''' 
+    [
+      {
+        "txid": "241bb7af4262e475ee2bff4586a3b1c0b4a2f9efb8cb0901f5e16d7794451b83",
+        "vout": 0,
+        "redeemScript": "0020809d97cffc439727dd9fd38548c0e9c5a576e90f9ef11d99ef15635516453bcc",
+        "witnessScript": "522103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc92103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc921036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd53ae",
+        "scriptPubKey": "a914379bc18d46b35fed27f75c1128a8f36659615d5e87",        
+        "amount": 10.00000000
+      }
+    ]
+    '''
+</code></pre>
+<p>就可以得到以第一把私鑰簽過的數位簽章</p>
+<pre><code>{
+  "hex": "02000000000101831b4594776de1f50109cbb8eff9a2b4c0b1a38645ff2bee75e46242afb71b240000000023220020809d97cffc439727dd9fd38548c0e9c5a576e90f9ef11d99ef15635516453bccffffffff01c0bc973b0000000017a914f4de1976c0e707fadff4a908f271d7091032268a870400473044022047587f7a10c0f2107fa88bedb5268fbcbc6406d1cd14ae11dc90bed57dd5a849022070f6654daee33ee65e088754c54d301cf062f8fb434053617db82b6f3b42d5a301473044022047587f7a10c0f2107fa88bedb5268fbcbc6406d1cd14ae11dc90bed57dd5a849022070f6654daee33ee65e088754c54d301cf062f8fb434053617db82b6f3b42d5a30169522103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc92103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc921036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd53ae00000000",
+  "complete": true
+}
+</code></pre>
+<blockquote>
+<p>FIRST_SIGNATURE=02000000000101831b4594776de1f50109cbb8eff9a2b4c0b1a38645ff2bee75e46242afb71b240000000023220020809d97cffc439727dd9fd38548c0e9c5a576e90f9ef11d99ef15635516453bccffffffff01c0bc973b0000000017a914f4de1976c0e707fadff4a908f271d7091032268a870400473044022047587f7a10c0f2107fa88bedb5268fbcbc6406d1cd14ae11dc90bed57dd5a849022070f6654daee33ee65e088754c54d301cf062f8fb434053617db82b6f3b42d5a301473044022047587f7a10c0f2107fa88bedb5268fbcbc6406d1cd14ae11dc90bed57dd5a849022070f6654daee33ee65e088754c54d301cf062f8fb434053617db82b6f3b42d5a30169522103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc92103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc921036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd53ae00000000</p>
+</blockquote>
+<p>接著拿來簽章第二把</p>
+<pre><code>bitcoin-cli -regtest signrawtransactionwithkey $FIRST_SIGNATURE '''
+    [
+      "cN3gCnSnyENguQQ49zyQ4SPrucTrCHVapvqq5qaYKVueSmTGpCoZ"
+    ]''' ''' 
+    [
+      {
+        "txid": "241bb7af4262e475ee2bff4586a3b1c0b4a2f9efb8cb0901f5e16d7794451b83",
+        "vout": 0,
+        "redeemScript": "0020809d97cffc439727dd9fd38548c0e9c5a576e90f9ef11d99ef15635516453bcc",
+        "witnessScript": "522103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc92103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc921036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd53ae",
+        "scriptPubKey": "a914379bc18d46b35fed27f75c1128a8f36659615d5e87",        
+        "amount": 10.00000000
+      }
+    ]
+    '''
+</code></pre>
+<p>得到最後簽署的結果了！</p>
+<pre><code>{
+  "hex": "02000000000101831b4594776de1f50109cbb8eff9a2b4c0b1a38645ff2bee75e46242afb71b240000000023220020809d97cffc439727dd9fd38548c0e9c5a576e90f9ef11d99ef15635516453bccffffffff01c0bc973b0000000017a914f4de1976c0e707fadff4a908f271d7091032268a870400473044022047587f7a10c0f2107fa88bedb5268fbcbc6406d1cd14ae11dc90bed57dd5a849022070f6654daee33ee65e088754c54d301cf062f8fb434053617db82b6f3b42d5a301473044022047587f7a10c0f2107fa88bedb5268fbcbc6406d1cd14ae11dc90bed57dd5a849022070f6654daee33ee65e088754c54d301cf062f8fb434053617db82b6f3b42d5a30169522103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc92103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc921036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd53ae00000000",
+  "complete": true
+}
+</code></pre>
+<p>把最後的結果用<code>sendrawtransaction</code>發送出去，便可以移動資產了！</p>
+<blockquote>
+<p>bitcoin-cli -regtest sendrawtransaction 02000000000101831b4594776de1f50109cbb8eff9a2b4c0b1a38645ff2bee75e46242afb71b240000000023220020809d97cffc439727dd9fd38548c0e9c5a576e90f9ef11d99ef15635516453bccffffffff01c0bc973b0000000017a914f4de1976c0e707fadff4a908f271d7091032268a870400473044022047587f7a10c0f2107fa88bedb5268fbcbc6406d1cd14ae11dc90bed57dd5a849022070f6654daee33ee65e088754c54d301cf062f8fb434053617db82b6f3b42d5a301473044022047587f7a10c0f2107fa88bedb5268fbcbc6406d1cd14ae11dc90bed57dd5a849022070f6654daee33ee65e088754c54d301cf062f8fb434053617db82b6f3b42d5a30169522103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc92103ad88fdadd957df816e167d6598aad34f4b82cdc537b820b75fbe03e8e48c5cc921036874be266591da071920e700514ddc4571c67f465787888d4f16b1ce06e2decd53ae00000000</p>
+</blockquote>
+<p>一樣交易後會得到一個交易id</p>
+<blockquote>
+<p>fd06828e8443aaa3e587e870c78752184a9a3712560c2fc666e3882778c825a0</p>
+</blockquote>
+<p>這樣一來就完成多重簽名了，而且簽名的過程中可以分別在不同的本機簽署以避免私鑰外流的資安疑慮！另外一提，<a href="https://bitcoin.org/en/developer-examples#testing-applications">bitcoin.org</a>裏頭的教學很多都是舊版的，如果用最新版(0.18.1)的話要注意一下寫法是不同的(踩了不少坑QQ)。</p>
+<p>到目前為止的文章都會放置在<a href="https://github.com/lkm543/it_iron_man_2019">Github</a>上。</p>
+<h1 id="ref"><a class="header" href="#ref">Ref:</a></h1>
+<ul>
+<li><a href="https://github.com/ChristopherA/Learning-Bitcoin-from-the-Command-Line">Learning-Bitcoin-from-the-Command-Line</a></li>
+<li><a href="https://blog.csdn.net/a013152/article/details/81668629">比特币bitcoin-cli转账与交易的api使用总结</a></li>
+<li><a href="https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_calls_list">Original Bitcoin client/API calls list</a></li>
+<li><a href="https://blog.51cto.com/11975865/2384841">bitcoin全节点部署及bitcoind bitcoin-cli命令使用解释</a></li>
+<li><a href="https://bitcoin.org/en/developer-examples#testing-applications">Bitcoin Developer Examples</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="day26.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="day28.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="day26.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="day28.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

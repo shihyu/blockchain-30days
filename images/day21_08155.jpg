@@ -1,0 +1,677 @@
+
+    <!doctype html>
+      <html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB">
+        <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+            new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,"script","dataLayer","GTM-5K3PMNBV");</script>
+            <!-- End Google Tag Manager -->
+            <!-- Hotjar Tracking Code for yourgenome -->
+            <script>
+            (function(h,o,t,j,a,r){
+              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+              h._hjSettings={hjid:5360279,hjsv:6};
+              a=o.getElementsByTagName("head")[0];
+              r=o.createElement("script");r.async=1;
+              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+              a.appendChild(r);
+              })(window,document,"https://static.hotjar.com/c/hotjar-",".js?sv=");
+            </script>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="robots" content="index,follow">
+<!--<title>Home</title>--><title>Your Genome - A free collection of high quality genetics and genomics learning resources.</title>
+<!-- META DATA     --><meta name="title"               content="Your Genome - A free collection of high quality genetics and genomics learning resources.">
+                      <meta name="description"         content="Discover more about DNA, genes and genomes" />
+<!-- FACEBOOK/GEN  --><meta property="og:url"          content="https://www.yourgenome.org/">
+                      <meta property="og:type"         content="article" />
+                      <meta property="og:title"        content="Your Genome - A free collection of high quality genetics and genomics learning resources." />
+                      <meta property="og:description"  content="Discover more about DNA, genes and genomes">
+                      <meta property="og:image"        content="">
+                      <meta property="og:locale"       content="en_GB" />
+<!-- FACEBOOK      --><meta property="og:profile_id"  content="yourgenome" />
+<!-- TWITTER/X     --><meta name="twitter:card"        content="summary_large_image">
+                      <meta name="twitter:site"        content="@yourgenome">
+                      <meta name="twitter:creator"     content="www-core (Sanger webteam)">
+                      <meta name="twitter:title"       content="Your Genome - A free collection of high quality genetics and genomics learning resources.">
+                      <meta name="twitter:description" content="Discover more about DNA, genes and genomes">
+                      <meta name="twitter:image"       content="">
+<!-- JSON SOLR     --><meta name="solr"                content="{&quot;search_type&quot;:&quot;page&quot;,&quot;seo_description&quot;:&quot;Discover more about DNA, genes and genomes&quot;,&quot;image&quot;:&quot;&lt;img src=\&quot;https:\/\/www.yourgenome.org\/wp-content\/uploads\/2024\/09\/barcoding-7656-768x512.jpg\&quot; class=\&quot;attachment-medium size-medium wp-post-image\&quot; alt=\&quot;4 students wearing labcoats looking excited during science experiment.\&quot; decoding=\&quot;async\&quot; \/&gt;&quot;}">
+<!-- JSON LD       --><script type="application/ld+json">{"@type":"Article","@id":"https:\/\/www.yourgenome.org\/","headline":"Home","description":"Discover more about DNA, genes and genomes","0":"","publisher":{"@type":"Organization","name":"Wellcome connecting science"},"url":"https:\/\/www.yourgenome.org\/","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/google.com\/article"},"@context":"http:\/\/www.schema.org"}</script>
+<!-- EXTRA META    -->
+          <meta name='robots' content='max-image-preview:large' />
+    <style id='wp-img-auto-sizes-contain-inline-css'>
+    img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+    /*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+    </style>
+    <link rel='stylesheet' id='simple-cookie-css' href="/wp-content/plugins/wordpress-simple-cookie-plugin/cookies-min.css" media='' />
+    <link rel='stylesheet' id='theme-style-css' href="/wp-content/themes/new_your_genome/dist/assets/css/style.css" media='' />
+    <script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+    <script src="/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+    <link rel="canonical" href="https://www.yourgenome.org/" />
+    <meta name="simplecookie_policy"  content="https://www.yourgenome.org/cookie-policy/" />
+    <noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><link rel="icon" href="/wp-content/uploads/2023/10/LogoWhite-150x150.png" sizes="32x32" />
+    <link rel="icon" href="/wp-content/uploads/2023/10/LogoWhite-300x300.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/wp-content/uploads/2023/10/LogoWhite-300x300.png" />
+    <meta name="msapplication-TileImage" content="/wp-content/uploads/2023/10/LogoWhite-300x300.png" />
+        <style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+</head>
+      <body class="page">
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5K3PMNBV"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div id="page" class=" home doublehelixblur">
+      <header>
+        <div class="logo-container"><a href="/" class="rst" data-wpel-link="internal"><img class="logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="YourGenome" title="YourGenome" data-src="/wp-content/themes/new_your_genome/dist/assets/svg/logos/LogoBlack.svg" decoding="async"><noscript><img class="logo" src="/wp-content/themes/new_your_genome/dist/assets/svg/logos/LogoBlack.svg" alt="YourGenome" title="YourGenome" data-eio="l"></noscript></a></div>
+        <div id="nav-menu" class="nav-container"><div class="menu-primary-container"><ul id="menu-primary" class="menu"><li id="menu-item-783" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-783"><a href="/explore-genomics/" data-wpel-link="internal">Explore genomics</a>
+    <ul class="sub-menu">
+    	<li id="menu-item-1209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1209"><a href="/explore-genomics/introduction-to-genomics/" data-wpel-link="internal">Introduction to genomics</a></li>
+    	<li id="menu-item-792" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-792"><a href="/explore-genomics/in-the-cell/" data-wpel-link="internal">In the cell</a></li>
+    	<li id="menu-item-789" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-789"><a href="/explore-genomics/health-and-disease/" data-wpel-link="internal">Health and disease</a></li>
+    	<li id="menu-item-793" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-793"><a href="/explore-genomics/living-things/" data-wpel-link="internal">Living things</a></li>
+    	<li id="menu-item-791" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-791"><a href="/explore-genomics/methods-and-technology/" data-wpel-link="internal">Methods and technology</a></li>
+    	<li id="menu-item-790" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-790"><a href="/explore-genomics/science-in-society/" data-wpel-link="internal">Science in society</a></li>
+    </ul>
+    </li>
+    <li id="menu-item-784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-784"><a href="/students-and-teachers/" data-wpel-link="internal">Students and teachers</a>
+    <ul class="sub-menu">
+    	<li id="menu-item-989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-989"><a href="/students-and-teachers/resources-for-5-12-year-olds/" data-wpel-link="internal">Resources for 5-12 year olds</a></li>
+    	<li id="menu-item-987" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-987"><a href="/students-and-teachers/resources-for-13-18-year-olds/" data-wpel-link="internal">Resources for 13-18 year olds</a></li>
+    	<li id="menu-item-990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-990"><a href="/students-and-teachers/resources-for-educators/" data-wpel-link="internal">Resources for educators</a></li>
+    	<li id="menu-item-1286" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1286"><a href="/explore-genomics/genomic-conversations/" data-wpel-link="internal">Resources for discussions</a></li>
+    	<li id="menu-item-2449" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2449"><a href="/students-and-teachers/videos/" data-wpel-link="internal">Videos</a></li>
+    </ul>
+    </li>
+    <li id="menu-item-785" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-785"><a href="/careers-in-genomics/" data-wpel-link="internal">Careers in genomics</a>
+    <ul class="sub-menu">
+    	<li id="menu-item-2512" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2512"><a href="/careers-in-genomics/career-profiles/" data-wpel-link="internal">Career profiles</a></li>
+    	<li id="menu-item-2511" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2511"><a href="/careers-in-genomics/career-videos/" data-wpel-link="internal">Career videos</a></li>
+    	<li id="menu-item-2578" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2578"><a href="/theme/wellcome-sanger-institute-virtual-work-experience/" data-wpel-link="exclude">Virtual Work Experience</a></li>
+    </ul>
+    </li>
+    <li id="menu-item-2416" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2416"><a href="/glossary-terms/" data-wpel-link="internal">Glossary</a></li>
+    <li id="menu-item-787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-787"><a href="/about-us/" data-wpel-link="internal">About us</a></li>
+    </ul></div></div>
+        <div class="search-container">
+          <div class="icon">
+            <div id="header-search" class="search keep" aria-label="Search"></div>
+          </div>
+        </div>
+        <div class="mobile-container">
+          <div class="icon">
+            <div id="mobile-nav" class="hamburger keep"></div>
+          </div>
+        </div>
+      </header>
+       <div id="mobile-nav-menu" class="mobile-nav-container"><div class="menu-primary-container"><ul id="menu-primary-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-783"><a href="/explore-genomics/" data-wpel-link="internal">Explore genomics</a>
+    <ul class="sub-menu">
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1209"><a href="/explore-genomics/introduction-to-genomics/" data-wpel-link="internal">Introduction to genomics</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-792"><a href="/explore-genomics/in-the-cell/" data-wpel-link="internal">In the cell</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-789"><a href="/explore-genomics/health-and-disease/" data-wpel-link="internal">Health and disease</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-793"><a href="/explore-genomics/living-things/" data-wpel-link="internal">Living things</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-791"><a href="/explore-genomics/methods-and-technology/" data-wpel-link="internal">Methods and technology</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-790"><a href="/explore-genomics/science-in-society/" data-wpel-link="internal">Science in society</a></li>
+    </ul>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-784"><a href="/students-and-teachers/" data-wpel-link="internal">Students and teachers</a>
+    <ul class="sub-menu">
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-989"><a href="/students-and-teachers/resources-for-5-12-year-olds/" data-wpel-link="internal">Resources for 5-12 year olds</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-987"><a href="/students-and-teachers/resources-for-13-18-year-olds/" data-wpel-link="internal">Resources for 13-18 year olds</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-990"><a href="/students-and-teachers/resources-for-educators/" data-wpel-link="internal">Resources for educators</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1286"><a href="/explore-genomics/genomic-conversations/" data-wpel-link="internal">Resources for discussions</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2449"><a href="/students-and-teachers/videos/" data-wpel-link="internal">Videos</a></li>
+    </ul>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-785"><a href="/careers-in-genomics/" data-wpel-link="internal">Careers in genomics</a>
+    <ul class="sub-menu">
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2512"><a href="/careers-in-genomics/career-profiles/" data-wpel-link="internal">Career profiles</a></li>
+    	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2511"><a href="/careers-in-genomics/career-videos/" data-wpel-link="internal">Career videos</a></li>
+    	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2578"><a href="/theme/wellcome-sanger-institute-virtual-work-experience/" data-wpel-link="exclude">Virtual Work Experience</a></li>
+    </ul>
+    </li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2416"><a href="/glossary-terms/" data-wpel-link="internal">Glossary</a></li>
+    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-787"><a href="/about-us/" data-wpel-link="internal">About us</a></li>
+    </ul></div>
+          <div id="mobile-back" class="mobile-nav-back hide">Back</div>
+          </div>
+          <main id="main">
+            <div class="panels">
+      <div class="panel home-hero">
+      <div class="doublehelixleft keep"></div>
+      <div class="doublehelixright keep"></div>
+        <div class="panel-wrapper ">
+          <div class="container-hero-search">
+            <div class="hero-summary">
+              <h1 class="long">Discover more about DNA, genes and genomes</h1>
+            </div>
+            <div id="hero-search" class="hero-search">
+              <form id="search-form" class="" action="/search/" method="get" autocomplete="on">
+                <input title="Reset" type="reset" class="reset search-reset btn-reset" value="X">
+                <input id="q" class="hero-search-input" name="q" type="text" placeholder="Enter search term e.g. What is a genome?">
+                <input type="submit" class="submit" value=""  aria-label="Search">
+              </form>
+              <div id="top-results" name="top-results">
+                <h5 class="uc top">Top results</h5>
+    <ul>
+      <li  data-text="code crackers in this activity learners discover how genes encode proteins using a codon wheel and protein profiles " ><a href="/theme/code-crackers/" data-wpel-link="internal">Code Crackers</a></li>
+      <li  data-text="tech in the lab use a micro bit to explore how creative coding and sensors can help scientists solve tricky problems lab " ><a href="/theme/tech-in-the-lab/" data-wpel-link="internal">Tech in the Lab</a></li>
+      <li  data-text="recreate a face discover how dna can provide clues to recreate the faces of people from past " ><a href="/theme/recreate-a-face/" data-wpel-link="internal">Recreate a Face</a></li>
+      <li  data-text="science for everyone primary resources discover science career activities to help young students explore everyday and highlight a diverse range of scientists " ><a href="/theme/science-for-everyone-primary-resources/" data-wpel-link="internal">Science For Everyone Primary Resources</a></li>
+      <li  data-text="barcoding for beginners information and resources educators students participating in the project" ><a href="/theme/barcoding-for-beginners/" data-wpel-link="internal">Barcoding for beginners</a></li>
+      <li  data-text="genome generation express explore discuss and reflect on the social ethical issues associated with genetic genomic science " ><a href="/theme/genome-generation-express/" data-wpel-link="internal">Genome Generation Express</a></li>
+      <li  data-text="extracting dna from fruit this hands-on activity allows you to extract the using household items " ><a href="/theme/extracting-dna-from-fruit/" data-wpel-link="internal">Extracting DNA from fruit</a></li>
+      <li  data-text="function finders discover how dna sequences code for proteins with different roles and functions " ><a href="/theme/function-finders/" data-wpel-link="internal">Function Finders</a></li>
+      <li  data-text="function finders blast decode dna sequences and discover the proteins they code for using online scientific databases " ><a href="/theme/function-finders-blast/" data-wpel-link="internal">Function Finders: BLAST!</a></li>
+      <li  data-text="zoom in on dna this animation starts with a whole human and zooms through the organs tissues to cells finally you can see how all these different levels of organisation fit together relative scale each level " ><a href="/theme/zoom-in-on-dna/" data-wpel-link="internal">Zoom in on DNA</a></li>
+      <li  data-text="dna extraction an animation showing the process of this is used by scientists who want to study " ><a href="/theme/dna-extraction/" data-wpel-link="internal">DNA extraction</a></li>
+      <li  data-text="polymerase chain reaction this animation shows the steps in polymerase chain reaction that scientists use to make lots of copies a dna sample " ><a href="/theme/polymerase-chain-reaction/" data-wpel-link="internal">Polymerase Chain Reaction</a></li>
+      <li  data-text="agarose gel electrophoresis this animation shows the steps for running an and explains how this works to separate dna fragments " ><a href="/theme/agarose-gel-electrophoresis/" data-wpel-link="internal">Agarose gel electrophoresis</a></li>
+      <li  data-text="decode dna with the codon wheel this interactive codon wheel helps learners explore how codes for proteins triplets one at a time and build protein chain just as cells do use full screen best experience " ><a href="/theme/decode-dna-with-the-codon-wheel/" data-wpel-link="internal">Decode DNA with the Codon Wheel</a></li>
+      <li  data-text="career profile software developer in this career tamara describes her role as a software developer this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-software-developer/" data-wpel-link="internal">Career profile: software developer</a></li>
+      <li  data-text="career profile bioinformatics developer in this career disha describes her role as a bioinformatics developer this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-bioinformatics-developer/" data-wpel-link="internal">Career profile: bioinformatics developer</a></li>
+      <li  data-text="career profile casm informatics team leader in this career victoria describes her role as a informatics team leader this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-casm-informatics-team-leader/" data-wpel-link="internal">Career profile: CASM informatics team leader</a></li>
+      <li  data-text="career profile data analyst in this career ene describes her role as a data analyst this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-data-analyst/" data-wpel-link="internal">Career profile: data analyst</a></li>
+      <li  data-text="career profile research software engineer in this career kim describes her role as a research software engineer this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-research-software-engineer/" data-wpel-link="internal">Career profile: research software engineer</a></li>
+      <li  data-text="careers collection - biology with computers this collection brings together people who use biology and to do a variety of different jobs " ><a href="/theme/careers-collection-biology-with-computers/" data-wpel-link="internal">Careers Collection - Biology with computers</a></li>
+      <li  data-text="career profile senior scientific manager in this career priyanka describes her role as a senior scientific manager this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-senior-scientific-manager/" data-wpel-link="internal">Career profile: senior scientific manager</a></li>
+      <li  data-text="career profile training coordinator in this career paballo describes his role as a this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-training-coordinator/" data-wpel-link="internal">Career profile: training coordinator</a></li>
+      <li  data-text="career profile quality officer in this career ellie describes her role as a quality officer this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-quality-officer/" data-wpel-link="internal">Career profile: quality officer</a></li>
+      <li  data-text="from dna to protein this d animation shows how proteins are made in the cell from information code " ><a href="/theme/from-dna-to-protein/" data-wpel-link="internal">From DNA to protein</a></li>
+      <li  data-text="career profile postdoctoral scientist malaria in this career sunil describes his role as a postdoctoral scientist this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-postdoctoral-scientist-malaria/" data-wpel-link="internal">Career profile: postdoctoral scientist (malaria)</a></li>
+      <li  data-text="my career in genomics bioinformatics in this film tobi alegbe discusses his phd studying crohn s disease this is one of a series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-bioinformatics/" data-wpel-link="internal">My career in genomics: bioinformatics</a></li>
+      <li  data-text="career profile postdoctoral research fellow cancer in this career giulia describes her role as a postdoctoral research fellow this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-postdoctoral-research-fellow-cancer/" data-wpel-link="internal">Career profile: postdoctoral research fellow (cancer)</a></li>
+      <li  data-text="genomics lite how does dna mutate is a series of public webinars in this session we explored how mutates " ><a href="/theme/genomics-lite-how-does-dna-mutate/" data-wpel-link="internal">Genomics Lite: How does DNA mutate?</a></li>
+      <li  data-text="career profile in-country training assistant in this career tom describes his role as an in-country training assistant this is one of a series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-in-country-training-assistant/" data-wpel-link="internal">Career profile: in-country training assistant</a></li>
+      <li  data-text="career profile research assistant cystic fibrosis in this career shevaniee describes her role as a research assistant this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-research-assistant-cystic-fibrosis/" data-wpel-link="internal">Career profile: research assistant (cystic fibrosis)</a></li>
+      <li  data-text="career profile advanced research assistant pathogens in this career ben describes his role as an advanced research assistant this is one of a series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-advanced-research-assistant-pathogens/" data-wpel-link="internal">Career profile: advanced research assistant (pathogens)</a></li>
+      <li  data-text="career profile recruitment and immigration adviser in this career ben describes his role as a recruitment immigration adviser this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-recruitment-and-immigration-adviser/" data-wpel-link="internal">Career profile: recruitment and immigration adviser</a></li>
+      <li  data-text="career profile senior media officer and social lead in this career rachael describes her role as a senior media officer social lead this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-senior-media-officer-and-social-media-lead/" data-wpel-link="internal">Career profile: senior media officer and social media lead</a></li>
+      <li  data-text="mastering micropipetting become familiar with what a micropipette is it used for and how to accurately use one moving small volumes of liquid " ><a href="/theme/mastering-micropipetting/" data-wpel-link="internal">Mastering micropipetting</a></li>
+      <li  data-text="data centre alarm use a micro bit to explore how simple coding can keep data centre safe by creating your own alarm system " ><a href="/theme/data-centre-alarm/" data-wpel-link="internal">Data Centre Alarm</a></li>
+      <li  data-text="career profile schools engagement officer in this career cindy describes her role as a science engagement officer for this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-schools-engagement-officer/" data-wpel-link="internal">Career profile: schools engagement officer</a></li>
+      <li  data-text="career profile staff scientist in this career petra describes her role as a staff scientist who focuses on specific science project this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-staff-scientist/" data-wpel-link="internal">Career profile: staff scientist</a></li>
+      <li  data-text="career profile postdoctoral research scientist ecology in this career katie describes her role as a postdoctoral research scientist working in this is one of series profiles exploring lots different jobs genomics " ><a href="/theme/career-profile-postdoctoral-research-scientist-ecology/" data-wpel-link="internal">Career profile: postdoctoral research scientist (ecology)</a></li>
+      <li  data-text="career profile postdoctoral research fellow diseases in this career anne describes her role as a postdoctoral research fellow this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-postdoctoral-research-fellow-diseases/" data-wpel-link="internal">Career profile: postdoctoral research fellow (diseases)</a></li>
+      <li  data-text="career profile advanced research assistant malaria in this career abey describes his role as an working on this is one of a series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-advanced-research-assistant-malaria/" data-wpel-link="internal">Career profile: advanced research assistant (malaria)</a></li>
+      <li  data-text="career profile engagement officer in this career sam describes his role as a community engagement officer this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-engagement-officer/" data-wpel-link="internal">Career profile: engagement officer</a></li>
+      <li  data-text="my career in genomics management trainee in this film jessica talks about her diverse and varied role as a this is one of series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-management-trainee/" data-wpel-link="internal">My career in genomics: management trainee</a></li>
+      <li  data-text="what is mitosis mitosis a process where single cell divides into two identical daughter cells division " ><a href="/theme/what-is-mitosis/" data-wpel-link="internal">What is mitosis?</a></li>
+      <li  data-text="my career in genomics product manager in this film joshua describes his role as a this is one of series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-product-manager/" data-wpel-link="internal">My career in genomics: product manager</a></li>
+      <li  data-text="what is meiosis meiosis a process where single cell divides twice to produce four cells containing half the original amount of genetic information " ><a href="/theme/what-is-meiosis/" data-wpel-link="internal">What is meiosis?</a></li>
+      <li  data-text="my career in genomics illustrator and graphic designer in this film laura introduces her creative varied role creating scientific illustrations designs data visualisations this is one of a series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-illustrator-and-graphic-designer/" data-wpel-link="internal">My career in genomics: illustrator and graphic designer</a></li>
+      <li  data-text="mitosis versus meiosis cells divide and reproduce in two ways mitosis results identical daughter cells whereas four sex below we highlight the key differences similarities between types of cell division " ><a href="/theme/mitosis-versus-meiosis/" data-wpel-link="internal">Mitosis versus meiosis</a></li>
+      <li  data-text="my career in genomics scientific communications in this film leonie talks about her as part of the cosmic team this is one a series films providing unique insight into different careers field " ><a href="/theme/my-career-in-genomics-scientific-communications/" data-wpel-link="internal">My career in genomics: scientific communications  </a></li>
+      <li  data-text="my career in genomics compliance manager in this film rachel introduces her role and background law science this is one of a series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-compliance-manager/" data-wpel-link="internal">My career in genomics: compliance manager</a></li>
+      <li  data-text="my career in genomics learning and development lead in this film sarah discusses her role as a professional hr this is one of series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-learning-and-development-lead/" data-wpel-link="internal">My career in genomics: learning and development lead  </a></li>
+      <li  data-text="my career in genomics conservation genetics in this film edel sheerin describes her role as an advanced research assistant working the field of this is one a series films providing unique insight into different careers " ><a href="/theme/my-career-in-genomics-conservation-genetics/" data-wpel-link="internal">My career in genomics: conservation genetics</a></li>
+      <li  data-text="what is a cell all living things are made of cells they the basic building blocks life the human body composed trillions all with their own specialised function " ><a href="/theme/what-is-a-cell/" data-wpel-link="internal">What is a cell?</a></li>
+      <li  data-text="what is dna the long molecule that contains your unique genetic code a bit like a recipe book it holds instructions cells need to make all proteins in body " ><a href="/theme/what-is-dna/" data-wpel-link="internal">What is DNA?</a></li>
+      <li  data-text="my career in genomics data science in this film georgia whitton talks about her job as a senior scientist working the genomic surveillance unit this is one of series films providing unique insight into different careers field " ><a href="/theme/my-career-in-genomics-data-science/" data-wpel-link="internal">My career in genomics: data science</a></li>
+      <li  data-text="what is a gene genes are small sections of dna that code for functional product like protein " ><a href="/theme/what-is-a-gene/" data-wpel-link="internal">What is a gene?</a></li>
+      <li  data-text="my career in genomics cellular operations in this film jade smith talks about her role as an advanced research assistant working this is one of a series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-cellular-operations/" data-wpel-link="internal">My career in genomics: cellular operations</a></li>
+      <li  data-text="what is a chromosome chromosomes are tightly coiled bundles of dna found in the nucleus almost every cell our body " ><a href="/theme/what-is-a-chromosome/" data-wpel-link="internal">What is a chromosome?</a></li>
+      <li  data-text="my career in genomics cell biology in this film lucy holland describes her role as a higher laboratory scientist apprentice working this is one of series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-cell-biology/" data-wpel-link="internal">My career in genomics: cell biology</a></li>
+      <li  data-text="what is a genome a an organism s complete set of genetic instructions each contains all the information needed to build that and allow it grow develop " ><a href="/theme/what-is-a-genome/" data-wpel-link="internal">What is a genome?</a></li>
+      <li  data-text="my career in genomics genetic counselling in this film sasha henriques talks about her as a counsellor this is one of series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-genetic-counselling/" data-wpel-link="internal">My career in genomics: genetic counselling</a></li>
+      <li  data-text="what is rna a nucleic acid similar to dna but with only single helical strand of bases it plays key role in turning instructions into functional proteins " ><a href="/theme/what-is-rna/" data-wpel-link="internal">What is RNA?</a></li>
+      <li  data-text="what is genetic counselling genetic counsellors are health professionals who help people faced with the possibility of a disease to make informed decisions about their futures " ><a href="/theme/what-is-genetic-counselling/" data-wpel-link="internal">What is genetic counselling?</a></li>
+      <li  data-text="how is dna turned into protein the central dogma of molecular biology a model describing the way information stored in our converted functional product such as it was first proposed by francis crick who co-discovered structure " ><a href="/theme/how-is-dna-turned-into-protein-the-central-dogma-of-molecular-biology/" data-wpel-link="internal">How is DNA turned into protein? The Central Dogma of Molecular Biology</a></li>
+      <li  data-text="what is a mutation a change that occurs in our dna sequence this can be caused by normal processes inside the cell or environmental factors such as uv light " ><a href="/theme/what-is-a-mutation/" data-wpel-link="internal">What is a mutation?</a></li>
+      <li  data-text="what is inheritance inheritance the way that genetic information passed from a parent to child " ><a href="/theme/what-is-inheritance/" data-wpel-link="internal">What is inheritance?</a></li>
+      <li  data-text="my career in genomics cancer biology in this film niki patel talks about her research looking at the genetics of this is one a series films providing unique insight into different careers field " ><a href="/theme/my-career-in-genomics-cancer-biology/" data-wpel-link="internal">My career in genomics: cancer biology</a></li>
+      <li  data-text="my career in genomics immune diseases in this film gosia trynka talks about her research looking at the effect of genetic changes on system this is one a series films providing unique insight into different careers field " ><a href="/theme/my-career-in-genomics-immune-diseases/" data-wpel-link="internal">My career in genomics: immune diseases</a></li>
+      <li  data-text="what is a genetic condition a usually medical or illness caused by change in person s dna sequence " ><a href="/theme/what-is-a-genetic-condition/" data-wpel-link="internal">What is a genetic condition?</a></li>
+      <li  data-text="my career in genomics evolution in this film roland schwarz talks about his research using computers to model and understand this is one of a series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-evolution/" data-wpel-link="internal">My career in genomics: evolution</a></li>
+      <li  data-text="what is genetic testing genetic looks for changes and variations in dna that could put a person at higher risk of condition " ><a href="/theme/what-is-genetic-testing/" data-wpel-link="internal">What is genetic testing?</a></li>
+      <li  data-text="my career in genomics antibiotic resistance in this film christine boinett talks about her research looking at bacteria this is one of a series films providing unique insight into different careers the field " ><a href="/theme/my-career-in-genomics-antibiotic-resistance/" data-wpel-link="internal">My career in genomics: antibiotic resistance</a></li>
+      <li  data-text="what are infectious diseases infectious caused by microorganisms such as viruses bacteria fungi or parasites and can spread between individuals " ><a href="/theme/what-are-infectious-diseases/" data-wpel-link="internal">What are infectious diseases?</a></li>
+      <li  data-text="what is dna sequencing the process of working out exact order four chemical building blocks called bases in a section " ><a href="/theme/what-is-dna-sequencing/" data-wpel-link="internal">What is DNA sequencing?</a></li>
+      <li  data-text="life in the lab working dna sequencing pipeline this film follows louise aigrain a senior staff scientist her life lab is one of series films exploring " ><a href="/theme/life-in-the-lab-working-in-dna-sequencing-pipeline/" data-wpel-link="internal">Life in the Lab: working in DNA sequencing pipeline</a></li>
+      <li  data-text="what is genome editing genome a way of making specific changes to cell or organism s dna such as adding removing altering the sequence this can be used change characteristics " ><a href="/theme/what-is-genome-editing/" data-wpel-link="internal">What is genome editing?</a></li>
+      <li  data-text="life in the lab working with human gut microbiota this film follows phd student hilary browne his life a microbiology lab is one of series films exploring " ><a href="/theme/life-in-the-lab-working-with-human-gut-microbiota/" data-wpel-link="internal">Life in the Lab: working with human gut microbiota</a></li>
+      <li  data-text="the human genome project was a large international project that generated the first sequence of human genome " ><a href="/theme/the-human-genome-project/" data-wpel-link="internal">The Human Genome Project</a></li>
+      <li  data-text="life in the lab working a malaria lab this film follows alena pance senior staff scientist her life is one of series films exploring " ><a href="/theme/life-in-the-lab-working-in-a-malaria-lab/" data-wpel-link="internal">Life in the Lab: working in a malaria lab</a></li>
+      <li  data-text="genomics beyond the classroom discover our free interactive resources and virtual experiences to support teaching spark curiosity - anytime anywhere " ><a href="/theme/genomics-beyond-the-classroom/" data-wpel-link="internal">Genomics beyond the classroom</a></li>
+      <li  data-text="sharing your dna what people think around the world this article explores ways that public trust can be built by scientists who collect and share data over people across countries shared their views helping researchers better connect with communities they serve " ><a href="/theme/sharing-your-dna-what-people-think-around-the-world/" data-wpel-link="internal">Sharing Your DNA: What People Think Around the World</a></li>
+      <li  data-text="exploring dna like a game of genetic musical chairs this article explores process called chromoplexy which involves the mixing up inside our cells and can affect how body works " ><a href="/theme/exploring-dna-like-a-game-of-genetic-musical-chairs/" data-wpel-link="internal">Exploring DNA Like a Game of "Genetic Musical Chairs"</a></li>
+      <li  data-text="timeline history of genomics explore key events in genomics and genetics research alongside those historical popular culture " ><a href="/theme/timeline-history-of-genomics/" data-wpel-link="internal">Timeline: History of Genomics</a></li>
+      <li  data-text="life in the lab working a malaria genome modification pipeline this film follows senior computational biologist frank schwach his life lab is one of series films exploring " ><a href="/theme/life-in-the-lab-working-in-a-malaria-genome-modification-pipeline/" data-wpel-link="internal">Life in the Lab: working in a malaria genome modification pipeline</a></li>
+      <li  data-text="wellcome sanger institute virtual work experience from laboratory roles to communication and management positions students get an in-depth understanding of the diverse career options available at designed for aged above this program allows participants explore various careers in genomics science data without leaving their homes " ><a href="/theme/wellcome-sanger-institute-virtual-work-experience/" data-wpel-link="internal">Wellcome Sanger Institute Virtual Work Experience</a></li>
+      <li  data-text="alpha-bungarotoxin protein snake venoms contain a multitude of biologically active toxins that work together to overpower and kill prey one which is alpha-bungarotoxin " ><a href="/theme/alpha-bungarotoxin-protein/" data-wpel-link="internal">Alpha-bungarotoxin Protein</a></li>
+      <li  data-text="what is a chromosome condition a results from change in the number or structure of chromosomes " ><a href="/theme/what-is-a-chromosome-condition/" data-wpel-link="internal">What is a chromosome condition?</a></li>
+      <li  data-text="the discovery of dna the molecule life marked a milestone in our understanding natural world in mid s scientists found important evidence on how links to inheritance " ><a href="/theme/the-discovery-of-dna-the-molecule-of-life/" data-wpel-link="internal">The discovery of DNA: the molecule of life</a></li>
+      <li  data-text="what is gene expression gene the process our cells use to convert instructions in dna into a functional product such as protein " ><a href="/theme/what-is-gene-expression/" data-wpel-link="internal">What is gene expression?</a></li>
+      <li  data-text="evolution of modern humans the origin is probably one the most debated issues in evolutionary biology " ><a href="/theme/evolution-of-modern-humans/" data-wpel-link="internal">Evolution of modern humans</a></li>
+      <li  data-text="what are helminths helminths worm-like parasites that survive by feeding on a living host to gain nourishment and protection sometimes resulting in illness of the " ><a href="/theme/what-are-helminths/" data-wpel-link="internal">What are helminths?</a></li>
+      <li  data-text="what is selective breeding selective involves selecting individuals of a species that have characteristics interest in the hope their offspring inherit those desirable " ><a href="/theme/what-is-selective-breeding/" data-wpel-link="internal">What is selective breeding?</a></li>
+      <li  data-text="genomics lite how many cells do i have in this we ll explore the required to build a human " ><a href="/theme/genomics-lite-how-many-cells-do-i-have/" data-wpel-link="internal">Genomics Lite: How many cells do I have?</a></li>
+      <li  data-text="what is gel electrophoresis electrophoresis a technique commonly used in the lab to separate charged molecules like dna according size " ><a href="/theme/what-is-gel-electrophoresis/" data-wpel-link="internal">What is gel electrophoresis?</a></li>
+      <li  data-text="what happens in dna replication is the process by which makes a copy of itself this during cell division making sure that each new receives same genetic information as parent " ><a href="/theme/what-happens-in-dna-replication/" data-wpel-link="internal">What happens in DNA replication?</a></li>
+      <li  data-text="what is evolution in biology the change in characteristics of a species over several generations and relies on process natural selection " ><a href="/theme/what-is-evolution/" data-wpel-link="internal">What is evolution?</a></li>
+      <li  data-text="origami dna this hands-on activity allows you to create your own paper model of a double helix " ><a href="/theme/origami-dna/" data-wpel-link="internal">Origami DNA</a></li>
+      <li  data-text="what is pcr polymerase chain reaction a technique used in the lab to make millions of copies particular section dna " ><a href="/theme/what-is-pcr-polymerase-chain-reaction/" data-wpel-link="internal">What is PCR (polymerase chain reaction)?</a></li>
+      <li  data-text="what is crispr-cas a genome editing tool that creating buzz in the science world it faster cheaper and more accurate than previous techniques of dna has wide range potential applications " ><a href="/theme/what-is-crispr-cas9/" data-wpel-link="internal">What is CRISPR-Cas9?</a></li>
+      <li  data-text="genomics lite how do cells grow is a series of public webinars in this session we explore how both the body and lab " ><a href="/theme/genomics-lite-how-do-cells-grow/" data-wpel-link="internal">Genomics Lite: How do cells grow?</a></li>
+      <li  data-text="giants in genomics john sulston sir was the founding director of sanger centre now institute from until when working draft human genome sequence completed " ><a href="/theme/giants-in-genomics-john-sulston/" data-wpel-link="internal">Giants in genomics: John Sulston</a></li>
+      <li  data-text="giants in genomics james watson was the co-discoverer of double helix structure dna for this fundamental finding francis crick and maurice wilkins were awarded nobel prize for physiology or medicine " ><a href="/theme/giants-in-genomics-james-watson/" data-wpel-link="internal">Giants in genomics: James Watson</a></li>
+      <li  data-text="sequencing at speed this d animation gives a simple overview of next generation dna sequencing known as massively parallel " ><a href="/theme/sequencing-at-speed/" data-wpel-link="internal">Sequencing at speed</a></li>
+      <li  data-text="dna sequencing this d animation shows the basic steps in method of that was used during human genome project " ><a href="/theme/dna-sequencing/" data-wpel-link="internal">DNA sequencing</a></li>
+      <li  data-text="career profile research governance manager in this career george describes his role as a research governance manager understanding the ethics behind science this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-research-governance-manager/" data-wpel-link="internal">Career profile: research governance manager</a></li>
+      <li  data-text="what is sanger sequencing the sequencing method enabled scientists to read the genetic code for first time " ><a href="/theme/what-is-sanger-sequencing/" data-wpel-link="internal">What is Sanger Sequencing?</a></li>
+      <li  data-text="what is oxford nanopore technologies ont sequencing developed third generation sequencers that are portable able to sequence dna in remote locations and produce ultra-long reads " ><a href="/theme/what-is-oxford-nanopore-technologies-ont-sequencing/" data-wpel-link="internal">What is Oxford Nanopore Technologies (ONT) sequencing?</a></li>
+      <li  data-text="using artificial intelligence for genomic research scientists use ai to improve our understanding of many aspects biology applications range from insights into biological processes better knowledge complex diseases or health issues and tools engineering new drugs but what exactly is on this page we break down the key concepts in explain how these technologies help scientists make discoveries " ><a href="/theme/using-artificial-intelligence-for-genomic-research/" data-wpel-link="internal">Using artificial intelligence for genomic research</a></li>
+      <li  data-text="dna to data explore how scientists get sequence data from samples " ><a href="/theme/dna-to-data/" data-wpel-link="internal">DNA to Data</a></li>
+      <li  data-text="whose poo some animals can be hard to find even when they are living right under our noses however the things leave behind often provide useful clues for understanding what creatures in a particular habitat " ><a href="/theme/whose-poo/" data-wpel-link="internal">Whose Poo?</a></li>
+      <li  data-text="our animal dna use bioinformatic tools to compare different genes across the tree of life " ><a href="/theme/our-animal-dna/" data-wpel-link="internal">Our Animal DNA</a></li>
+      <li  data-text="is cancer a genetic disease cancer is the most common human the transition from normal cell to malignant driven by changes s dna also known as mutations " ><a href="/theme/is-cancer-a-genetic-disease/" data-wpel-link="internal">Is cancer a genetic disease?</a></li>
+      <li  data-text="handshake hazard discover how microbes such as bacteria and viruses can be spread from person to " ><a href="/theme/handshake-hazard/" data-wpel-link="internal">Handshake Hazard</a></li>
+      <li  data-text="contamination detectives play detective and uncover how microbes spread around the surfaces you touch if don t wash your hands properly " ><a href="/theme/contamination-detectives/" data-wpel-link="internal">Contamination Detectives</a></li>
+      <li  data-text="yummy gummy dna make your own edible double helix out of sweets " ><a href="/theme/yummy-gummy-dna/" data-wpel-link="internal">Yummy Gummy DNA</a></li>
+      <li  data-text="classify what makes a bird or mammal grouping creatures together can show what links different " ><a href="/theme/classify/" data-wpel-link="internal">Classify!</a></li>
+      <li  data-text="wild dna use sequences and an online scientific database to discover a new ecological survey technique " ><a href="/theme/wild-dna/" data-wpel-link="internal">Wild DNA</a></li>
+      <li  data-text="genomics lite why trust science is a series of public webinars in this session we explore why people do or don t " ><a href="/theme/genomics-lite-why-trust-science/" data-wpel-link="internal">Genomics Lite: Why trust science?</a></li>
+      <li  data-text="genomics lite what is the microbiome a series of public webinars in this session we explore world " ><a href="/theme/genomics-lite-what-is-the-microbiome/" data-wpel-link="internal">Genomics Lite: What is the microbiome?</a></li>
+      <li  data-text="model organisms the clawed frog much of our current knowledge about early development vertebrates comes from studies using african xenopus laevis and western tropicalis " ><a href="/theme/model-organisms-the-clawed-frog/" data-wpel-link="internal">Model organisms: the clawed frog</a></li>
+      <li  data-text="unsung heroes in science marie maynard daly the first black woman us to receive a phd chemistry worked on nucleic acids cholesterol links heart disease and protein synthesis " ><a href="/theme/unsung-heroes-in-science-marie-maynard-daly/" data-wpel-link="internal">Unsung heroes in science: Marie Maynard Daly</a></li>
+      <li  data-text="what are dominant and recessive alleles different versions of a gene called alleles described as either or depending on their associated traits " ><a href="/theme/what-are-dominant-and-recessive-alleles/" data-wpel-link="internal">What are dominant and recessive alleles?</a></li>
+      <li  data-text="the discovery of dna the first building blocks marked a milestone in our understanding natural world in mid nineteenth century scientists made initial discoveries uncovering an important chemical nucleus cells " ><a href="/theme/the-discovery-of-dna-the-first-building-blocks/" data-wpel-link="internal">The discovery of DNA: the first building blocks</a></li>
+      <li  data-text="the discovery of dna unravelling the double helix marked a milestone in our understanding natural world understanding dnas spiral structure was an important step " ><a href="/theme/the-discovery-of-dna-unravelling-the-double-helix/" data-wpel-link="internal">The discovery of DNA: unravelling the double helix</a></li>
+      <li  data-text="are humans still evolving for much of nature natural selection and survival the fittest play a dominant role only strongest can survive in wild as little as few hundred years ago same was true for " ><a href="/theme/are-humans-still-evolving/" data-wpel-link="internal">Are humans still evolving?</a></li>
+      <li  data-text="evolution of the human brain the is staggeringly complex and product millions years evolution " ><a href="/theme/evolution-of-the-human-brain/" data-wpel-link="internal">Evolution of the human brain</a></li>
+      <li  data-text="what is a gmo stands for genetically modified organism an that has had their characteristics changed through the modification of dna " ><a href="/theme/what-is-a-gmo/" data-wpel-link="internal">What is a GMO?</a></li>
+      <li  data-text="what is a telomere telomeres are distinctive structures found at the ends of our chromosomes they consist same short dna sequence repeated over and again " ><a href="/theme/what-is-a-telomere/" data-wpel-link="internal">What is a telomere?</a></li>
+      <li  data-text="genomics lite what is gene expression a series of public webinars in this session we explore " ><a href="/theme/genomics-lite-what-is-gene-expression/" data-wpel-link="internal">Genomics Lite: What is gene expression?</a></li>
+      <li  data-text="genomics lite what is antimicrobial resistance a series of public webinars in this session we explore what " ><a href="/theme/genomics-lite-what-is-antimicrobial-resistance/" data-wpel-link="internal">Genomics Lite: What is antimicrobial resistance?</a></li>
+      <li  data-text="genomics lite how is river water helping to track disease a series of public webinars in this session we explore how us diseases and the spread antimicrobial resistance an issue that has implications for health " ><a href="/theme/genomics-lite-how-is-river-water-helping-to-track-disease/" data-wpel-link="internal">Genomics Lite: How is river water helping to track disease?</a></li>
+      <li  data-text="giants in genomics janet thornton professor dame was director of the european molecular biology laboratory s bioinformatics institute embl-ebi which shares wellcome genome campus with trust sanger from to " ><a href="/theme/giants-in-genomics-janet-thornton/" data-wpel-link="internal">Giants in genomics: Janet Thornton</a></li>
+      <li  data-text="genomic conversations animals in biomedical research how do you feel about being used in this conversation page we ll explore how are - including some of the benefits and limitations what future may hold " ><a href="/theme/genomic-conversations-animals-in-biomedical-research/" data-wpel-link="internal">Genomic conversations: animals in biomedical research</a></li>
+      <li  data-text="genomic conversations whole genome sequencing of babies from birth how do you feel about the at in this conversation page we ll explore use in newborn including some benefits risks and what future may hold " ><a href="/theme/genomic-conversations-whole-genome-sequencing-of-babies-from-birth/" data-wpel-link="internal">Genomic conversations: whole genome sequencing of babies from birth</a></li>
+      <li  data-text="genomic conversations direct-to-consumer genetic testing have you ever wanted to know more about your make-up in this conversation page we ll explore including some of the benefits and limitations these tests what future may hold " ><a href="/theme/genomic-conversations-direct-to-consumer-genetic-testing/" data-wpel-link="internal">Genomic conversations: direct-to-consumer genetic testing</a></li>
+      <li  data-text="genomic conversations genetically editing animals for agriculture how do you feel about the genetic of farm such as chickens sheep pigs and cows in this conversation page we ll explore role in some benefits risks what future may hold " ><a href="/theme/genomic-conversations-genetically-editing-animals-for-agriculture/" data-wpel-link="internal">Genomic conversations: genetically editing animals for agriculture  </a></li>
+      <li  data-text="genomic conversations animals in conservation and biodiversity research how do you feel about the use of such as species monitoring or evolutionary studies in this conversation page we ll explore how are used including some benefits risks what future may hold " ><a href="/theme/genomic-conversations-animals-in-conservation-and-biodiversity-research/" data-wpel-link="internal">Genomic conversations: animals in conservation and biodiversity research</a></li>
+      <li  data-text="genomics lite how do species evolve is a series of public webinars in this session we explore how different have evolved " ><a href="/theme/genomics-lite-how-do-species-evolve/" data-wpel-link="internal">Genomics Lite: How do species evolve?</a></li>
+      <li  data-text="genomics lite why are some genes dominant is a series of public webinars in this session we explored why and others recessive " ><a href="/theme/genomics-lite-why-are-some-genes-dominant/" data-wpel-link="internal">Genomics Lite: Why are some genes dominant?</a></li>
+      <li  data-text="cell snap this activity allows you to explore the key features of a human cell the aim is match up different its function " ><a href="/theme/cell-snap/" data-wpel-link="internal">Cell Snap</a></li>
+      <li  data-text="sneeze zone through this fun activity you can learn more about the spread of microbes and their potential to infect people " ><a href="/theme/sneeze-zone/" data-wpel-link="internal">Sneeze Zone</a></li>
+      <li  data-text="career profile senior technical specialist histology in this career yvette describes her role as a senior technical specialist working with variety of tissue samples this is one series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-senior-technical-specialist-histology/" data-wpel-link="internal">Career profile: senior technical specialist (histology)</a></li>
+      <li  data-text="construct a bug follow the dna clues to discover what genes an unknown bacterial sample contains " ><a href="/theme/construct-a-bug/" data-wpel-link="internal">Construct a Bug</a></li>
+      <li  data-text="post-sequencing storing and sharing sequenced genomes how are stored shared " ><a href="/theme/post-sequencing-storing-and-sharing-sequenced-genomes/" data-wpel-link="internal">Post-sequencing: storing and sharing sequenced genomes</a></li>
+      <li  data-text="post-sequencing sequence comparisons how do you find out the significance of a genome after sequencing " ><a href="/theme/post-sequencing-sequence-comparisons/" data-wpel-link="internal">Post-sequencing: sequence comparisons</a></li>
+      <li  data-text="post-sequencing sequence annotation how do you identify the genes in a genome " ><a href="/theme/post-sequencing-sequence-annotation/" data-wpel-link="internal">Post-sequencing: sequence annotation</a></li>
+      <li  data-text="post-sequencing putting the sequence back together how do you put a genome after sequencing " ><a href="/theme/post-sequencing-putting-the-sequence-back-together/" data-wpel-link="internal">Post-sequencing: putting the sequence back together</a></li>
+      <li  data-text="post-sequencing quality control what happens to dna sequence when it comes off a sequencing machine step is " ><a href="/theme/post-sequencing-quality-control/" data-wpel-link="internal">Post-sequencing: quality control</a></li>
+      <li  data-text="what is malaria a global public health challenge one of the most common infectious diseases in world " ><a href="/theme/what-is-malaria/" data-wpel-link="internal">What is malaria?</a></li>
+      <li  data-text="what is a clinical trial a research investigation when new treatment first given to humans establish if it safe and effective at treating the disease " ><a href="/theme/what-is-a-clinical-trial/" data-wpel-link="internal">What is a clinical trial?</a></li>
+      <li  data-text="what is cystic fibrosis cystic a relatively common genetic condition in which the lungs and digestive system become clogged with thick sticky mucus " ><a href="/theme/what-is-cystic-fibrosis/" data-wpel-link="internal">What is cystic fibrosis?</a></li>
+      <li  data-text="what is huntington s disease a progressive neurodegenerative disorder that usually develops in middle to late adult life " ><a href="/theme/what-is-huntingtons-disease/" data-wpel-link="internal">What is Huntington’s disease?</a></li>
+      <li  data-text="malaria the search for a vaccine after decades of research world s first safe effective malaria began being given to children at high-risk disease in " ><a href="/theme/malaria-the-search-for-a-vaccine/" data-wpel-link="internal">Malaria: the search for a vaccine</a></li>
+      <li  data-text="applications of gene therapy gene has held great potential since its first in-person use in the s it currently used to treat a small number genetic conditions and is being tested see if it could be others " ><a href="/theme/applications-of-gene-therapy/" data-wpel-link="internal">Applications of gene therapy</a></li>
+      <li  data-text="what is personalised medicine personalised looks at a person s individual genes environment and lifestyle to guide decisions about their healthcare the prevention diagnosis treatment of specific conditions " ><a href="/theme/what-is-personalised-medicine/" data-wpel-link="internal">What is personalised medicine?</a></li>
+      <li  data-text="types of genome edits genome editing is used to change the characteristics a cell or organism by making specific changes its dna " ><a href="/theme/types-of-genome-edits/" data-wpel-link="internal">Types of genome edits</a></li>
+      <li  data-text="microbe maker discover how dna can provide clues to microbes work and whether they are good or bad " ><a href="/theme/microbe-maker/" data-wpel-link="internal">Microbe Maker</a></li>
+      <li  data-text="braf from gene to cancer therapy take on the role of a genome researcher and look at real cancer dna datasets taken from patients find areas mutation in gene " ><a href="/theme/braf-from-gene-to-cancer-therapy/" data-wpel-link="internal">BRAF: From Gene to Cancer Therapy</a></li>
+      <li  data-text="genome challenge discover some of the most fundamental differences between living things and ask question what really counts for complexity " ><a href="/theme/genome-challenge/" data-wpel-link="internal">Genome Challenge</a></li>
+      <li  data-text="model organisms the fruit fly the drosophila melanogaster has been used in research for more than years revealing important information about genetics and development " ><a href="/theme/model-organisms-the-fruit-fly/" data-wpel-link="internal">Model organisms: the fruit fly</a></li>
+      <li  data-text="genomics lite whose genome was sequenced first is a series of public webinars in this session we unpicked the human genome project with two guests who worked on landmark initiative and find out whose dna " ><a href="/theme/genomics-lite-whose-genome-was-sequenced-first/" data-wpel-link="internal">Genomics Lite: Whose genome was sequenced first?</a></li>
+      <li  data-text="genomics lite how is ai used in bioscience a series of public webinars this session we explored what and how it being on the wellcome genome campus large research organisation " ><a href="/theme/genomics-lite-how-is-ai-used-in-bioscience/" data-wpel-link="internal">Genomics Lite: How is AI used in bioscience?</a></li>
+      <li  data-text="when was the human genome project completed in two years ahead of schedule scientists announced that human genome had been sequenced with an accuracy it described as end beginning " ><a href="/theme/when-was-the-human-genome-project-completed/" data-wpel-link="internal">When was the Human Genome Project completed?</a></li>
+      <li  data-text="investigate what makes us similar and what different carry out your own genetic variation investigation using a selection of household items " ><a href="/theme/investigate/" data-wpel-link="internal">Investigate!</a></li>
+      <li  data-text="build a bacteria discover the diversity of bacteria and get creative making your own model " ><a href="/theme/build-a-bacteria/" data-wpel-link="internal">Build a Bacteria!</a></li>
+      <li  data-text="genomics lite what s the biggest genome is a series of public webinars in this session we explored size what organism has largest and how do go about sequencing these large genomes " ><a href="/theme/genomics-lite-whats-the-biggest-genome/" data-wpel-link="internal">Genomics Lite: What's the biggest genome?</a></li>
+      <li  data-text="career profile research governance assistant in this career jess describes her role as a understanding the ethics behind science this is one of series profiles exploring lots different jobs in genomics " ><a href="/theme/career-profile-research-governance-assistant/" data-wpel-link="internal">Career profile: research governance assistant</a></li>
+      <li  data-text="genomics lite ancient dna - excavating fact from fiction is a series of public webinars in this session we explored what mean when say ancient and can actually learn it " ><a href="/theme/genomics-lite-ancient-dna-excavating-fact-from-fiction/" data-wpel-link="internal">Genomics Lite: Ancient DNA - Excavating fact from fiction!</a></li>
+      <li  data-text="how do you map a genome there are two main ways to genetic mapping and physical they re used identify record the location of genes distances between on chromosome " ><a href="/theme/how-do-you-map-a-genome/" data-wpel-link="internal">How do you map a genome?</a></li>
+      <li  data-text="what is genome mapping genome used to identify and record the location of genes distances between on a chromosome " ><a href="/theme/what-is-genome-mapping/" data-wpel-link="internal">What is genome mapping?</a></li>
+      <li  data-text="what is african sleeping sickness trypanosomiasis a parasitic disease transmitted by the tsetse fly it s dubbed because symptoms can include disturbed sleep pattern " ><a href="/theme/what-is-african-sleeping-sickness/" data-wpel-link="internal">What is African sleeping sickness?</a></li>
+      <li  data-text="what is gene therapy gene when dna introduced into a patient to treat genetic disease the new usually contains functioning modify the effect of mutated that s causing " ><a href="/theme/what-is-gene-therapy/" data-wpel-link="internal">What is gene therapy?</a></li>
+      <li  data-text="how do we use crispr gene editing to study diseases crispr-cas is a genome tool used alter specific sequences of dna in cell it has many uses both research and helping us understand disease " ><a href="/theme/how-do-we-use-crispr-gene-editing-to-study-diseases/" data-wpel-link="internal">How do we use CRISPR gene editing to study diseases?</a></li>
+      <li  data-text="what is dna profiling used to identify an individual from a sample of by looking at unique patterns in the sequence " ><a href="/theme/what-is-dna-profiling/" data-wpel-link="internal">What is DNA profiling?</a></li>
+      <li  data-text="what are bac libraries bacterial artificial chromosome used alongside clone-by-clone sequencing a way of assembling long fragment dna such as gene chromosome or even whole genome from shorter reads " ><a href="/theme/what-are-bac-libraries/" data-wpel-link="internal">What are BAC libraries?</a></li>
+      <li  data-text="what is clone-by-clone sequencing clone-by-clone a way of assembling long fragment dna such as gene chromosome or even whole genome from shorter reads " ><a href="/theme/what-is-clone-by-clone-sequencing/" data-wpel-link="internal">What is clone-by-clone sequencing?</a></li>
+      <li  data-text="the evolution of genome editing tools genome-editing have evolved since the s enabling scientists to make increasingly precise edits a " ><a href="/theme/the-evolution-of-genome-editing-tools/" data-wpel-link="internal">The evolution of genome editing tools</a></li>
+      <li  data-text="how is genomics being used to tackle schistosomiasis schistosomiasis a neglected tropical disease caused by parasitic worm it s transmitted through contact with fresh water that has been contaminated the parasite larvae " ><a href="/theme/how-is-genomics-being-used-to-tackle-schistosomiasis/" data-wpel-link="internal">How is genomics being used to tackle schistosomiasis?</a></li>
+      <li  data-text="what is schistosomiasis schistosomiasis a tropical disease caused by parasitic worm it s transmitted through contact with fresh water that has been contaminated the parasite larvae " ><a href="/theme/what-is-schistosomiasis/" data-wpel-link="internal">What is schistosomiasis?</a></li>
+      <li  data-text="c elegans the early worm gets sequence since emergence of nematode as a model organism in s it helped to unlock important information and unravel mysteries biology " ><a href="/theme/ic-elegans-i-the-early-worm-gets-the-sequence/" data-wpel-link="internal"><i>C elegans</i>: the early worm gets the sequence</a></li>
+      <li  data-text="what is rna sequencing a technique used to identify the sequence of bases that make up molecule " ><a href="/theme/what-is-rna-sequencing/" data-wpel-link="internal">What is RNA sequencing?</a></li>
+      <li  data-text="what are streptococcal infections any type of infection caused by the group bacteria streptococcus " ><a href="/theme/what-are-streptococcal-infections/" data-wpel-link="internal">What are Streptococcal infections?</a></li>
+      <li  data-text="what dna is profiling used for looking at unique patterns in different people s known as can help to solve crime and link biological relatives " ><a href="/theme/what-dna-is-profiling-used-for/" data-wpel-link="internal">What DNA is profiling used for?</a></li>
+      <li  data-text="what is dementia dementia used to describe a general decline in all areas of mental ability " ><a href="/theme/what-is-dementia/" data-wpel-link="internal">What is dementia?</a></li>
+      <li  data-text="model organisms the mouse the shares many similarities with humans in terms of anatomy physiology and genetics making it a useful model organism " ><a href="/theme/model-organisms-the-mouse/" data-wpel-link="internal">Model organisms: the mouse</a></li>
+      <li  data-text="what is phylogenetics phylogenetics the study of evolutionary relationships between organisms based on their genetic material revealed through dna and rna sequencing " ><a href="/theme/what-is-phylogenetics/" data-wpel-link="internal">What is phylogenetics?</a></li>
+      <li  data-text="what is capillary sequencing an evolution of sanger made it possible to sequence the human genome " ><a href="/theme/what-is-capillary-sequencing/" data-wpel-link="internal">What is capillary sequencing?</a></li>
+      <li  data-text="what is third generation sequencing a fundamentally different way to sequence dna brought a cheaper faster and more sophisticated approach genomics " ><a href="/theme/what-is-third-generation-sequencing/" data-wpel-link="internal">What is third generation sequencing?</a></li>
+      <li  data-text="what is pacbio smrt sequencing a type of third generation single-molecule sequencing in real time made it possible to sequence the dna from single cells for first time " ><a href="/theme/what-is-pacbio-smrt-sequencing/" data-wpel-link="internal">What is PacBio SMRT sequencing?</a></li>
+      <li  data-text="what is next generation sequencing next dramatically cut the time and cost needed to sequence a genome " ><a href="/theme/what-is-next-generation-sequencing/" data-wpel-link="internal">What is next generation sequencing?</a></li>
+      <li  data-text="what is familial adenomatous polyposis familial an inherited genetic condition that makes people more likely to develop early-onset colorectal cancer and some other types " ><a href="/theme/what-is-familial-adenomatous-polyposis/" data-wpel-link="internal">What is familial adenomatous polyposis?</a></li>
+      <li  data-text="how are drugs designed and developed drug development is the process that takes us from an idea in lab through extensive testing to a final product can be used treat people with specific conditions " ><a href="/theme/how-are-drugs-designed-and-developed/" data-wpel-link="internal">How are drugs designed and developed?</a></li>
+      <li  data-text="covid- variants and genomic surveillance covid arise when mutations in sars-cov- virus affect how infectious or deadly it is genomic helps track new their impact " ><a href="/theme/covid-19-variants-and-genomic-surveillance/" data-wpel-link="internal">Covid-19 variants and genomic surveillance</a></li>
+      <li  data-text="what is covid- coronavirus disease often called covid or a new viral which caused global pandemic from the end of into s " ><a href="/theme/what-is-covid-19/" data-wpel-link="internal">What is Covid-19?</a></li>
+      <li  data-text="what are model organisms model non-human species that used in research to help us understand specific areas of biology " ><a href="/theme/what-are-model-organisms/" data-wpel-link="internal">What are model organisms?</a></li>
+      <li  data-text="what is pharmacogenomics pharmacogenomics a form of personalised medicine where the dose and type drug given to person decided based on their genetic makeup " ><a href="/theme/what-is-pharmacogenomics/" data-wpel-link="internal">What is pharmacogenomics?</a></li>
+      <li  data-text="timeline the human genome project the which began officially in was largest international collaboration ever undertaken biology and involved thousands of scientists " ><a href="/theme/timeline-the-human-genome-project/" data-wpel-link="internal">Timeline: the Human Genome Project </a></li>
+      <li  data-text="the uk national dna database holds profiles and samples from across the to help police forces investigate crime " ><a href="/theme/the-uk-national-dna-database/" data-wpel-link="internal">The UK National DNA Database</a></li>
+      <li  data-text="what is colorectal cancer colorectal also known as bowel a complex condition that s influenced by multiple genes and environmental factors " ><a href="/theme/what-is-colorectal-cancer/" data-wpel-link="internal">What is colorectal cancer?</a></li>
+      <li  data-text="what is hereditary haemochromatosis hereditary an inherited condition in which iron accumulates the blood often because too much absorbed from food during digestion " ><a href="/theme/what-is-hereditary-haemochromatosis/" data-wpel-link="internal">What is hereditary haemochromatosis?</a></li>
+      <li  data-text="what is hereditary non-polyposis colorectal cancer hereditary a rare condition but it s the most common type of inherited it typically caused by an called lynch syndrome " ><a href="/theme/what-is-hereditary-non-polyposis-colorectal-cancer/" data-wpel-link="internal">What is hereditary non-polyposis colorectal cancer?</a></li>
+      <li  data-text="what is sickle cell anaemia sickle an inherited blood condition in which red cells develop atypically " ><a href="/theme/what-is-sickle-cell-anaemia/" data-wpel-link="internal">What is sickle cell anaemia?</a></li>
+      <li  data-text="what is alzheimer s disease a progressive that causes damage to person brain " ><a href="/theme/what-is-alzheimers-disease/" data-wpel-link="internal">What is Alzheimer’s disease?</a></li>
+      <li  data-text="what is down s syndrome a genetic condition caused by the presence of all or part an extra copy chromosome " ><a href="/theme/what-is-downs-syndrome/" data-wpel-link="internal">What is Down’s syndrome?</a></li>
+      <li  data-text="what is achondroplasia achondroplasia a genetic condition that affects bone development and results in short-limb restricted growth " ><a href="/theme/what-is-achondroplasia/" data-wpel-link="internal">What is achondroplasia?</a></li>
+      <li  data-text="giants in genomics mike stratton sir served as the director of wellcome trust sanger institute from to he also initiated and co-leads cancer genome project " ><a href="/theme/giants-in-genomics-mike-stratton/" data-wpel-link="internal">Giants in genomics: Mike Stratton</a></li>
+      <li  data-text="different types of mutations throughout life our dna can accumulate changes to its sequence known as there are lots different that occur in " ><a href="/theme/different-types-of-mutations/" data-wpel-link="internal">Different types of mutations</a></li>
+      <li  data-text="dna replication this d animation shows you how is copied in a cell it both strands of the helix are unzipped and to produce two identical molecules " ><a href="/theme/dna-replication/" data-wpel-link="internal">DNA replication</a></li>
+      <li  data-text="what is genetic variation genetic a term used to describe the in dna sequence each of our genomes " ><a href="/theme/what-is-genetic-variation/" data-wpel-link="internal">What is genetic variation?</a></li>
+      <li  data-text="treating the bubble babies gene therapy in use severe combined immunodeficiency scid is a genetic disorder characterised by reduced number of immune cells some children with condition have been treated using " ><a href="/theme/treating-the-bubble-babies-gene-therapy-in-use/" data-wpel-link="internal">Treating the bubble babies: gene therapy in use</a></li>
+      <li  data-text="what are staphylococcal infections caused by the bacterium staphylococcus infection symptoms range in severity from skin conditions like boils to blood sepsis " ><a href="/theme/what-are-staphylococcal-infections/" data-wpel-link="internal">What are Staphylococcal infections?</a></li>
+      <li  data-text="what are haemophilia a b haemophilia and two conditions characterised by slow or inefficient formation of blood clots leading to prolonged bleeding spontaneous internal " ><a href="/theme/what-are-haemophilia-a-amp-b/" data-wpel-link="internal">What are haemophilia A &amp; B?</a></li>
+      <li  data-text="what is muscular dystrophy muscular refers to a group of inherited genetic conditions characterised by progressive muscle wasting " ><a href="/theme/what-is-muscular-dystrophy/" data-wpel-link="internal">What is muscular dystrophy?</a></li>
+      <li  data-text="what is fragile-x syndrome fragile x an inherited condition that may cause mild or moderate degrees of learning intellectual difficulties " ><a href="/theme/what-is-fragile-x-syndrome/" data-wpel-link="internal">What is Fragile-X syndrome?</a></li>
+      <li  data-text="what is genetic engineering genetic refers to the direct manipulation of dna alter an organism s characteristics in a particular way " ><a href="/theme/what-is-genetic-engineering/" data-wpel-link="internal">What is genetic engineering?</a></li>
+      <li  data-text="timeline how has the human genome project been used what s happened since finished in " ><a href="/theme/timeline-how-has-the-human-genome-project-been-used/" data-wpel-link="internal">Timeline: how has the Human Genome Project been used?</a></li>
+      <li  data-text="genomic surveillance in action sequences and monitors the genetic material of disease-causing pathogens such as viruses bacteria so we can identify track control them it s become an essential tool tackling disease epidemics " ><a href="/theme/genomic-surveillance-in-action/" data-wpel-link="internal">Genomic surveillance in action</a></li>
+      <li  data-text="giants in genomics jennifer doudna anne is a biochemist who won the nobel prize for her work developing crispr-cas genome editing technology " ><a href="/theme/giants-in-genomics-jennifer-doudna/" data-wpel-link="internal">Giants in genomics: Jennifer Doudna</a></li>
+      <li  data-text="how inbreeding mice led to lifesaving treatments humans have been breeding animals for millennia bring out desirable characteristics in research this has the mouse model a valuable tool studying genetics and disease " ><a href="/theme/how-inbreeding-mice-led-to-lifesaving-treatments/" data-wpel-link="internal">How inbreeding mice led to lifesaving treatments</a></li>
+      <li  data-text="the human genome project personal stories this film features personal accounts from scientists the usa and uk who were involved in " ><a href="/theme/the-human-genome-project-personal-stories/" data-wpel-link="internal">The Human Genome Project: Personal Stories</a></li>
+      <li  data-text="what is a stem cell a has the unique ability to develop into other specialised types in body " ><a href="/theme/what-is-a-stem-cell/" data-wpel-link="internal">What is a stem cell?</a></li>
+      <li  data-text="how are stem cells used in research and medicine stem can provide valuable information about early human development why different diseases occur could lead to new therapies replace lost or damaged " ><a href="/theme/how-are-stem-cells-used-in-research-and-medicine/" data-wpel-link="internal">How are stem cells used in research and medicine?</a></li>
+      <li  data-text="model organisms the zebrafish since s danio rerio has become increasingly important to scientific research it many characteristics that make it a valuable model for studying human genetics and disease " ><a href="/theme/model-organisms-the-zebrafish/" data-wpel-link="internal">Model organisms: the zebrafish</a></li>
+      <li  data-text="sequencing bracelets in this activity learners make a bracelet of dna sequence from organisms including human chimpanzee butterfly carnivorous plant or flesh-eating bacteria " ><a href="/theme/sequencing-bracelets/" data-wpel-link="internal">Sequencing Bracelets</a></li>
+      <li  data-text="genome-wide association studies compare the genomes of people with and without certain conditions to look for genetic variation that might be responsible " ><a href="/theme/genome-wide-association-studies/" data-wpel-link="internal">Genome-wide association studies</a></li>
+      <li  data-text="what was the human genome project for the largest international collaboration ever undertaken in biology and involved thousands of scientists around world including those at wellcome sanger institute cambridge uk " ><a href="/theme/what-was-the-human-genome-project-for/" data-wpel-link="internal">What was the Human Genome Project for? </a></li>
+      <li  data-text="how did the human genome project come about the was so big that at time no one thought it would be possible but with support of key scientists and considerable funding officially began in " ><a href="/theme/how-did-the-human-genome-project-come-about/" data-wpel-link="internal">How did the Human Genome Project come about?</a></li>
+      <li  data-text="what was sequencing like before the human genome project the sanger method developed in enabled scientists to read genetic code for first time over next two decades technology evolved until it fit use by " ><a href="/theme/what-was-sequencing-like-before-the-human-genome-project/" data-wpel-link="internal">What was sequencing like before the Human Genome Project? </a></li>
+      <li  data-text="who was involved in the human genome project worldwide collaboration would be essential to sequence human genome and brought together scientists from across world " ><a href="/theme/who-was-involved-in-the-human-genome-project/" data-wpel-link="internal">Who was involved in the Human Genome Project? </a></li>
+      <li  data-text="the pilot project for the human genome project sequencing c elegans nematode worm caenorhabditis was first animal to have its genome fully sequenced this milestone provided proof of principle many people needed that would be possible " ><a href="/theme/the-pilot-project-for-the-human-genome-project-sequencing-ic-elegans-i/" data-wpel-link="internal">The pilot project for the Human Genome Project: sequencing <i>C. elegans</i></a></li>
+      <li  data-text="how did patenting cause conflicts within the human genome project despite collaborative nature of it was not without its and disagreements including some scientists trying to patent sections dna sequence for their own financial gain " ><a href="/theme/how-did-patenting-cause-conflicts-within-the-human-genome-project/" data-wpel-link="internal">How did patenting cause conflicts within the Human Genome Project? </a></li>
+      <li  data-text="how did the human genome project make science more accessible the is widely regarded as a model for open access making results freely available to everyone " ><a href="/theme/how-did-the-human-genome-project-make-science-more-accessible/" data-wpel-link="internal">How did the Human Genome Project make science more accessible? </a></li>
+      <li  data-text="why was there a race to sequence the human genome the entry of private company celera genomics into sequencing arena in galvanised public effort leading " ><a href="/theme/why-was-there-a-race-to-sequence-the-human-genome/" data-wpel-link="internal">Why was there a race to sequence the human genome? </a></li>
+      <li  data-text="what was the draft sequence of human genome project the announcement first human genome on june big news and not without its surprises " ><a href="/theme/what-was-the-draft-sequence-of-the-human-genome-project/" data-wpel-link="internal">What was the ‘draft sequence’ of the Human Genome Project? </a></li>
+      <li  data-text="timeline organisms that have had their genomes sequenced since dna sequencing was developed in the s scientists used it to learn more about different organisms and " ><a href="/theme/timeline-organisms-that-have-had-their-genomes-sequenced/" data-wpel-link="internal">Timeline: Organisms that have had their genomes sequenced</a></li>
+      <li  data-text="science in the time of cholera cholera remains a major public health problem many parts world especially places with inadequate access to clean water genomics research is helping bring us closer understanding how we may eliminate it once and for all " ><a href="/theme/science-in-the-time-of-cholera/" data-wpel-link="internal">Science in the time of cholera</a></li>
+      <li  data-text="what is antibiotic resistance a major public health issue when bacteria develop the ability to survive exposure antibiotics designed kill them or stop their growth " ><a href="/theme/what-is-antibiotic-resistance/" data-wpel-link="internal">What is antibiotic resistance?</a></li>
+      <li  data-text="using genomic surveillance to track mrsa superbugs infectious diseases can spread quickly in a hospital environment particularly if the pathogen that causes disease is resistant drugs relied on fight it genomics may be able help these pathogens and nip them bud before they become widespread " ><a href="/theme/using-genomic-surveillance-to-track-mrsa-superbugs/" data-wpel-link="internal">Using genomic surveillance to track MRSA 'superbugs'</a></li>
+      <li  data-text="pharmacogenomics and cancer is a form of personalised medicine where the dose type drug given to person decided based on their genetic makeup " ><a href="/theme/pharmacogenomics-and-cancer/" data-wpel-link="internal">Pharmacogenomics and cancer</a></li>
+      <li  data-text="how is pharmacogenomics being used beyond cancer pharmacogenomics a form of personalised medicine where the dose and type drug given to person decided based on their genetic makeup " ><a href="/theme/how-is-pharmacogenomics-being-used-beyond-cancer/" data-wpel-link="internal">How is pharmacogenomics being used beyond cancer?</a></li>
+      <li  data-text="what is hiv a virus that attacks the immune system if left untreated it can cause aids " ><a href="/theme/what-is-hiv/" data-wpel-link="internal">What is HIV?</a></li>
+      <li  data-text="what is rna splicing splicing occurs during protein synthesis and involves cutting out rearranging sections of mrna " ><a href="/theme/what-is-rna-splicing/" data-wpel-link="internal">What is RNA splicing?</a></li>
+      <li  data-text="what is bioinformatics and how do we use it bioinformatics the science of both storing lots complex biological data analysing to find new insights which in many different ways " ><a href="/theme/what-is-bioinformatics-and-how-do-we-use-it/" data-wpel-link="internal">What is bioinformatics and how do we use it?</a></li>
+      <li  data-text="adverse drug reactions an adverse reaction is when a medication given as instructed but has an unwanted or harmful effect on the patient " ><a href="/theme/adverse-drug-reactions/" data-wpel-link="internal">Adverse drug reactions</a></li>
+      <li  data-text="what are single gene disorders single caused by dna changes in one particular and often have predictable inheritance patterns " ><a href="/theme/what-are-single-gene-disorders/" data-wpel-link="internal">What are single gene disorders?</a></li>
+      <li  data-text="what is salmonella a group of bacteria that cause wide spectrum diseases in humans and animals" ><a href="/theme/what-is-salmonella/" data-wpel-link="internal">What is Salmonella?</a></li>
+      <li  data-text="what is tuberculosis tuberculosis an infectious disease caused by a type of bacteria and mainly affects the lungs " ><a href="/theme/what-is-tuberculosis/" data-wpel-link="internal">What is tuberculosis?</a></li>
+      <li  data-text="what is genomic surveillance surveillance involves sequencing the genetic material of pathogens and identifying changes linked to origins or characteristics a disease " ><a href="/theme/what-is-genomic-surveillance/" data-wpel-link="internal">What is Genomic Surveillance?</a></li>
+      <li  data-text="model organisms the nematode worm while fruit fly has a long history as model organism caenorhabditis elegans only been used since early s " ><a href="/theme/model-organisms-the-nematode-worm/" data-wpel-link="internal">Model organisms: the nematode worm</a></li>
+      <li  data-text="model organisms yeast yeast is commonly used to investigate genetics the biological processes that occur in cells and work out connections between genes proteins they code for " ><a href="/theme/model-organisms-yeast/" data-wpel-link="internal">Model organisms: yeast</a></li>
+      <li  data-text="unsung heroes in science henrietta lacks although not a scientist has been instrumental biological research as her cancer cells became the first successful line of human to be grown lab her story also prompted many ethical and moral questions about how scientific is conducted " ><a href="/theme/unsung-heroes-in-science-henrietta-lacks/" data-wpel-link="internal">Unsung heroes in science: Henrietta Lacks</a></li>
+      <li  data-text="unsung heroes in science barbara mcclintock was a pioneering geneticist who discovered that genes can jump this discovery led to her receiving the nobel prize physiology or medicine " ><a href="/theme/unsung-heroes-in-science-barbara-mcclintock/" data-wpel-link="internal">Unsung heroes in science: Barbara McClintock</a></li>
+      <li  data-text="unsung heroes in science margaret hamilton was a computer scientist who spearheaded software engineering whilst working at nasa during the apollo missions " ><a href="/theme/unsung-heroes-in-science-margaret-hamilton/" data-wpel-link="internal">Unsung heroes in science: Margaret Hamilton</a></li>
+      <li  data-text="giants in genomics rosalind franklin elsie was a british biophysicist and x-ray crystallographer whose fundamental research critical to watson crick s discovery of the structure dna " ><a href="/theme/giants-in-genomics-rosalind-franklin/" data-wpel-link="internal">Giants in genomics: Rosalind Franklin</a></li>
+      <li  data-text="how is malaria treated and prevented malaria a disease that preventable treatable when tackled early " ><a href="/theme/how-is-malaria-treated-and-prevented/" data-wpel-link="internal">How is malaria treated and prevented?</a></li>
+      <li  data-text="giants in genomics maurice wilkins shared the nobel prize with francis crick and james watson for their joint discovery of structure dna naturally reticent didn t initially stand forward to give his own account story so few knew direct involvement project " ><a href="/theme/giants-in-genomics-maurice-wilkins/" data-wpel-link="internal">Giants in genomics: Maurice Wilkins</a></li>
+      <li  data-text="giants in genomics fred sanger the institute takes its name from the double nobel prize winner and father of frederick " ><a href="/theme/giants-in-genomics-fred-sanger/" data-wpel-link="internal">Giants in genomics: Fred Sanger</a></li>
+      <li  data-text="giants in genomics eric lander is the founding director of broad institute massachusetts technology mit and harvard he was one leaders human genome project he has developed important tools to investigate disease " ><a href="/theme/giants-in-genomics-eric-lander/" data-wpel-link="internal">Giants in genomics: Eric Lander</a></li>
+      <li  data-text="giants in genomics allan bradley was director of the wellcome trust sanger institute from to his appointment as coincided with completion draft human genome sequence by human genome project " ><a href="/theme/giants-in-genomics-allan-bradley/" data-wpel-link="internal">Giants in genomics: Allan Bradley</a></li>
+      <li  data-text="giants in genomics francis collins led the human genome project from he was also responsible for discovering genes mutated cystic fibrosis and huntington s disease " ><a href="/theme/giants-in-genomics-francis-collins/" data-wpel-link="internal">Giants in genomics: Francis Collins</a></li>
+      <li  data-text="giants in genomics francis crick was the co-discoverer of double helix structure dna for this fundamental finding james watson and maurice wilkins were awarded nobel prize for physiology or medicine " ><a href="/theme/giants-in-genomics-francis-crick/" data-wpel-link="internal">Giants in genomics: Francis Crick</a></li>
+      <li  data-text="giants in genomics robert waterston is an american biologist well known for his work on sequencing the genome of nematode worm alongside john sulston he also recognised part human mouse and chimpanzee genomes " ><a href="/theme/giants-in-genomics-robert-waterston/" data-wpel-link="internal">Giants in genomics: Robert Waterston</a></li>
+      <li  data-text="fruit flies in the laboratory the fruit fly or drosophila melanogaster has longest history genetics and research out of all model organisms " ><a href="/theme/fruit-flies-in-the-laboratory/" data-wpel-link="internal">Fruit flies in the laboratory </a></li>
+      <li  data-text="tiny fish big splash the story of zebrafish the tropical danio rerio is a relatively new addition to suite model organisms used by researchers better understand biology " ><a href="/theme/tiny-fish-big-splash-the-story-of-the-zebrafish/" data-wpel-link="internal">Tiny fish, big splash: the story of the zebrafish</a></li>
+      <li  data-text="leaps forward lessons learned from the clawed frog without african our understanding of early development would not have progressed to where it is today " ><a href="/theme/leaps-forward-lessons-learned-from-the-clawed-frog/" data-wpel-link="internal">Leaps forward: lessons learned from the clawed frog</a></li>
+      <li  data-text="personal genomics the future of healthcare sequences and analyses an individual s genome before giving them detailed information about their genomic makeup " ><a href="/theme/personal-genomics-the-future-of-healthcare/" data-wpel-link="internal">Personal genomics: the future of healthcare?</a></li>
+      <li  data-text="using phylogenetics to track disease outbreaks phylogenetics is the study of evolutionary relationships between organisms based on their genomes - now used down globally " ><a href="/theme/using-phylogenetics-to-track-disease-outbreaks/" data-wpel-link="internal">Using phylogenetics to track disease outbreaks</a></li>
+      <li  data-text="the dawn of dna profiling the eureka moment that revolutionised crime solving in alec jeffreys developed technique fingerprinting in his laboratory at university leicester these techniques have way police solve crimes " ><a href="/theme/the-dawn-of-dna-profiling-the-eureka-moment-that-revolutionised-crime-solving/" data-wpel-link="internal">The dawn of DNA profiling: the ‘eureka’ moment that revolutionised crime solving</a></li>
+      <li  data-text="what is a complex disease many common diseases are influenced by combination of multiple genes and environmental factors these referred to as " ><a href="/theme/what-is-a-complex-disease/" data-wpel-link="internal">What is a complex disease?</a></li>
+      <li  data-text="how is genomics being used to tackle leishmania leishmaniasis a neglected tropical disease caused by protozoan parasites called leishmanias which are transmitted humans the bite of infected sandflies " ><a href="/theme/how-is-genomics-being-used-to-tackle-leishmania/" data-wpel-link="internal">How is genomics being used to tackle leishmania?</a></li>
+      <li  data-text="how is genomics being used to tackle guinea worm disease the also known as the little dragon or dracunculus medinensis a water-transmitted parasite that develops over year in its host before painfully emerging from skin " ><a href="/theme/how-is-genomics-being-used-to-tackle-guinea-worm-disease/" data-wpel-link="internal">How is genomics being used to tackle Guinea worm disease? </a></li>
+      <li  data-text="genomics lite drug targets to validation our guest speakers for this session were salman tamaddon-jahromi and xiangyu jack ge an advanced research assistant a statistical geneticist respectively at open targets exploring the drug development process " ><a href="/theme/genomics-lite-drug-targets-to-validation/" data-wpel-link="internal">Genomics Lite: Drug targets to validation</a></li>
+      <li  data-text="genomics lite exploring genome function our guest speaker for this session was gareth girling a technical specialist at the wellcome sanger institute exploring what we know so far about human " ><a href="/theme/genomics-lite-exploring-genome-function/" data-wpel-link="internal">Genomics Lite: Exploring genome function</a></li>
+      <li  data-text="genomics lite what is a gene our guest speaker for this zachary ardern research fellow at the wellcome sanger institute exploring what we still don t know about genes " ><a href="/theme/genomics-lite-what-is-a-gene/" data-wpel-link="internal">Genomics Lite: What is a gene?</a></li>
+      <li  data-text="types of genome sequencing we often refer to as part the human genome project which read entire human but it can be used for whole genomes right down very specific areas dna " ><a href="/theme/types-of-genome-sequencing/" data-wpel-link="internal">Types of genome sequencing</a></li>
+      <li  data-text="using genomics to understand malaria sequencing the genome of parasite has revealed interesting clues as how it is able evade human immune system for long enough cause disease " ><a href="/theme/using-genomics-to-understand-malaria/" data-wpel-link="internal">Using genomics to understand malaria</a></li>
+      <li  data-text="what was the method of dna sequencing in life sciences launched first next-generation sequencer a big leap forward in technology that made it possible to sequence many samples simultaneously " ><a href="/theme/what-was-the-454-method-of-dna-sequencing/" data-wpel-link="internal">What was the 454 method of DNA sequencing?</a></li>
+      <li  data-text="what is shotgun sequencing shotgun a way of assembling long fragment dna such as gene chromosome or even whole genome from shorter reads it s sometimes called " ><a href="/theme/what-is-shotgun-sequencing/" data-wpel-link="internal">What is shotgun sequencing?</a></li>
+      <li  data-text="genomics lite genetic alchemy our guest speaker for this session was dr nneka anyanwu head of gene editing at the wellcome sanger institute exploring how gene editing is transforming genome " ><a href="/theme/genomics-lite-genetic-alchemy/" data-wpel-link="internal">Genomics Lite: Genetic alchemy</a></li>
+      <li  data-text="how is genomics being used to tackle neglected tropical diseases neglected are a group of conditions that most common in regions the world and mainly affect people already living poverty " ><a href="/theme/how-is-genomics-being-used-to-tackle-neglected-tropical-diseases/" data-wpel-link="internal">How is genomics being used to tackle neglected tropical diseases?</a></li>
+      <li  data-text="genomics lite genomic cartography - generating a human cell atlas our guest speakers for our march were dr elena winheim and feri torabi postdoctoral researcher advanced research assistant respectively at the wellcome sanger institute exploring how they are working towards generating map of all cells in body " ><a href="/theme/genomics-lite-genomic-cartography-generating-a-human-cell-atlas/" data-wpel-link="internal">Genomics Lite: Genomic cartography - Generating a human cell atlas</a></li>
+      <li  data-text="genomics lite genomic cartography - navigating with a human cell atlas our guest speakers for our april were dr laure gambardella and chloe admane senior staff scientist visiting respectively at the wellcome sanger institute exploring world of stem cells " ><a href="/theme/genomics-lite-genomic-cartography-navigating-with-a-human-cell-atlas/" data-wpel-link="internal">Genomics Lite: Genomic cartography - Navigating with a human cell atlas</a></li>
+      <li  data-text="what is the illumina method of dna sequencing launched in allowing scientists to sequence million bases one single run " ><a href="/theme/what-is-the-illumina-method-of-dna-sequencing/" data-wpel-link="internal">What is the Illumina method of DNA sequencing?</a></li>
+      <li  data-text="timeline the past present and future of sequencing technologies since s scientists ability to sequence a genome has evolved from laborious expensive process one that is quick accurate able reveal important information about biology medicine " ><a href="/theme/timeline-the-past-present-and-future-of-sequencing-technologies/" data-wpel-link="internal">Timeline: the past, present and future of sequencing technologies </a></li>
+      <li  data-text="malaria an ongoing battle against drug-resistance resistance to antimalarial drugs is one of the biggest problems facing malaria control recent studies looking at genome parasite are helping scientists understand how drug resistance evolves and we could keep it in check " ><a href="/theme/malaria-an-ongoing-battle-against-drug-resistance/" data-wpel-link="internal">Malaria: an ongoing battle against drug-resistance</a></li></ul>
+                <h5 class="uc bot" id="all-results"><a class="uc" href="/search/" data-wpel-link="internal">See all results</a></h5>
+              </div>
+            </div>
+            <div class="hero-discover">
+              <a class="clr" href="#explore">
+                <div class="icon"><div class="discover keep">Explore</div></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+          <div class="panel">
+            <div class="panel-wrapper border-b">
+              <div class="container-outer-wide">
+                <div class="container-cta">
+                  <div><h3>A free collection of genetics and genomics learning resources.</h3></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <div class="panel">
+        <div class="panel-wrapper ">
+          <div id="explore" class="container-explore">
+            <div class="strande keep"></div>
+              <div class="container-explore-themes">
+                <div class="explore-title"><h2>Our themes</h2></div>
+                <div class="icon-1">
+                  <a href="/explore-genomics/in-the-cell/" data-wpel-link="internal">
+                    <button class="btn-round-inthecell"  aria-label="In the cell">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                      <rect width="30" height="30" rx="15" transform="matrix(-1 0 0 1 30 0)" fill="#0A0A0A"/>
+                      <rect x="14" y="11" width="2" height="8" fill="white"/>
+                      <rect x="19" y="14" width="2" height="8" transform="rotate(90 19 14)" fill="white"/>
+                      </svg>
+                    </button>
+                  </a>
+                </div>
+                <div class="icon-2">
+                  <a href="/explore-genomics/science-in-society/" data-wpel-link="internal">
+                    <button class="btn-round-scienceinsociety" aria-label="Science in society">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                      <rect width="30" height="30" rx="15" transform="matrix(-1 0 0 1 30 0)" fill="#0A0A0A"/>
+                      <rect x="14" y="11" width="2" height="8" fill="white"/>
+                      <rect x="19" y="14" width="2" height="8" transform="rotate(90 19 14)" fill="white"/>
+                      </svg>
+                    </button>
+                  </a>
+                </div>
+                <div class="icon-3">
+                <a href="/explore-genomics/methods-and-technology/" data-wpel-link="internal">
+                  <button class="btn-round-methodsandtechnology"  aria-label="Methods and technology">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <rect width="30" height="30" rx="15" transform="matrix(-1 0 0 1 30 0)" fill="#0A0A0A"/>
+                    <rect x="14" y="11" width="2" height="8" fill="white"/>
+                    <rect x="19" y="14" width="2" height="8" transform="rotate(90 19 14)" fill="white"/>
+                    </svg>
+                  </button>
+                  </a>
+                </div>
+                <div class="icon-4">
+                  <a href="/explore-genomics/health-and-disease/" data-wpel-link="internal">
+                    <button class="btn-round-healthanddisease"  aria-label="Health and disease">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                      <rect width="30" height="30" rx="15" transform="matrix(-1 0 0 1 30 0)" fill="#0A0A0A"/>
+                      <rect x="14" y="11" width="2" height="8" fill="white"/>
+                      <rect x="19" y="14" width="2" height="8" transform="rotate(90 19 14)" fill="white"/>
+                      </svg>
+                    </button>
+                  </a>
+                </div>
+                <div class="icon-5">
+                  <a href="/explore-genomics/living-things/" data-wpel-link="internal">
+                    <button class="btn-round-livingthings" aria-label="Living things">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                      <rect width="30" height="30" rx="15" transform="matrix(-1 0 0 1 30 0)" fill="#0A0A0A"/>
+                      <rect x="14" y="11" width="2" height="8" fill="white"/>
+                      <rect x="19" y="14" width="2" height="8" transform="rotate(90 19 14)" fill="white"/>
+                      </svg>
+                    </button>
+                  </a>
+                </div>
+                <div class="title-1">
+                  <h5>In the Cell</h5>
+                </div>
+                <div class="title-2">
+                  <h5>Science and Society</h5>
+                </div>
+                <div class="title-3">
+                  <h5>Methods and Technology</h5>
+                </div>
+                <div class="title-4">
+                  <h5>Health and Disease</h5>
+                </div>
+                <div class="title-5">
+                  <h5>Living Things</h5>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-wrapper ">
+          <div class="header-cards"><div><h2>Featured content</h2></div></div>
+          <div class="container-cards keep">
+    <div class="column list-item" >
+      <a class="clr" href="/theme/from-dna-to-protein/" data-wpel-link="internal">
+        <div class="card" >
+            <div class="card-img">
+    <picture>
+        <source type="image/webp" media="(max-width: 375px)" srcset="/wp-content/uploads/2023/11/From-DNA-to-protein-3D-1.jpg.webp">
+        <source type="image/webp" media="(max-width: 768px)" srcset="/wp-content/uploads/2023/11/From-DNA-to-protein-3D-1-768x427.jpg.webp">
+        <source type="image/webp" media="(max-width: 1024px)" srcset="/wp-content/uploads/2023/11/From-DNA-to-protein-3D-1-768x427.jpg.webp">
+        <source type="image/webp" media="(max-width: 1440px)" srcset="/wp-content/uploads/2023/11/From-DNA-to-protein-3D-1-1024x569.jpg.webp">
+        <source type="image/webp" media="(max-width: 1920px)" srcset="/wp-content/uploads/2023/11/From-DNA-to-protein-3D-1-1024x569.jpg.webp">
+        <img src="/wp-content/uploads/2023/11/From-DNA-to-protein-3D-1-768x427.jpg" alt="illustration of DNA to protein" title="illustration of DNA to protein" data-src="https://www.yourgenome.org/wp-content/uploads/2023/11/From-DNA-to-protein-3D-1-768x427.jpg" decoding="async" class="lazyloaded" loading="lazy">
+        <noscript><img src="/wp-content/uploads/2023/11/From-DNA-to-protein-3D-1-768x427.jpg" alt="illustration of DNA to protein" title="illustration of DNA to protein" data-eio="l" /></noscript>
+    </picture>
+            </div>		
+            <div class="card-text">
+                <h4>From DNA to protein</h4>
+                <p>This 3D animation shows how proteins are made in the cell from the information in the DNA code.</p>
+            </div>
+            <div class="card-type">
+                <p class="type">In the Cell</p>
+            </div>
+        </div>
+      </a>
+    </div>
+    <div class="column list-item" >
+      <a class="clr" href="/theme/evolution-of-modern-humans/" data-wpel-link="internal">
+        <div class="card" >
+            <div class="card-img">
+    <picture>
+        <source type="image/webp" media="(max-width: 375px)" srcset="/wp-content/uploads/2023/12/1670-shutterstock_96612307.jpg.webp">
+        <source type="image/webp" media="(max-width: 768px)" srcset="/wp-content/uploads/2023/12/1670-shutterstock_96612307-768x511.jpg.webp">
+        <source type="image/webp" media="(max-width: 1024px)" srcset="/wp-content/uploads/2023/12/1670-shutterstock_96612307-768x511.jpg.webp">
+        <source type="image/webp" media="(max-width: 1440px)" srcset="/wp-content/uploads/2023/12/1670-shutterstock_96612307-1024x681.jpg.webp">
+        <source type="image/webp" media="(max-width: 1920px)" srcset="/wp-content/uploads/2023/12/1670-shutterstock_96612307-1024x681.jpg.webp">
+        <img src="/wp-content/uploads/2023/12/1670-shutterstock_96612307-768x511.jpg" alt="Basic four stage image of human evolution from early ape to modern homo sapiens" title="Basic four stage image of human evolution from early ape to modern homo sapiens" data-src="https://www.yourgenome.org/wp-content/uploads/2023/12/1670-shutterstock_96612307-768x511.jpg" decoding="async" class="lazyloaded" loading="lazy">
+        <noscript><img src="/wp-content/uploads/2023/12/1670-shutterstock_96612307-768x511.jpg" alt="Basic four stage image of human evolution from early ape to modern homo sapiens" title="Basic four stage image of human evolution from early ape to modern homo sapiens" data-eio="l" /></noscript>
+    </picture>
+            </div>		
+            <div class="card-text">
+                <h4>Evolution of modern humans</h4>
+                <p>The origin of modern humans is probably one of the most debated issues in evolutionary biology.</p>
+            </div>
+            <div class="card-type">
+                <p class="type">Living Things</p>
+            </div>
+        </div>
+      </a>
+    </div>
+    <div class="column list-item" >
+      <a class="clr" href="/theme/what-is-crispr-cas9/" data-wpel-link="internal">
+        <div class="card" >
+            <div class="card-img">
+    <picture>
+        <source type="image/webp" media="(max-width: 375px)" srcset="/wp-content/uploads/2023/11/1300-shutterstock_1103833505.jpg.webp">
+        <source type="image/webp" media="(max-width: 768px)" srcset="/wp-content/uploads/2023/11/1300-shutterstock_1103833505-768x576.jpg.webp">
+        <source type="image/webp" media="(max-width: 1024px)" srcset="/wp-content/uploads/2023/11/1300-shutterstock_1103833505-768x576.jpg.webp">
+        <source type="image/webp" media="(max-width: 1440px)" srcset="/wp-content/uploads/2023/11/1300-shutterstock_1103833505-1024x768.jpg.webp">
+        <source type="image/webp" media="(max-width: 1920px)" srcset="/wp-content/uploads/2023/11/1300-shutterstock_1103833505-1024x768.jpg.webp">
+        <img src="/wp-content/uploads/2023/11/1300-shutterstock_1103833505-768x576.jpg" alt="3d,Illustration,Of,The,Crispr-cas9,Genome,Editing,System" title="3d,Illustration,Of,The,Crispr-cas9,Genome,Editing,System" data-src="https://www.yourgenome.org/wp-content/uploads/2023/11/1300-shutterstock_1103833505-768x576.jpg" decoding="async" class="lazyloaded" loading="lazy">
+        <noscript><img src="/wp-content/uploads/2023/11/1300-shutterstock_1103833505-768x576.jpg" alt="3d,Illustration,Of,The,Crispr-cas9,Genome,Editing,System" title="3d,Illustration,Of,The,Crispr-cas9,Genome,Editing,System" data-eio="l" /></noscript>
+    </picture>
+            </div>		
+            <div class="card-text">
+                <h4>What is CRISPR-Cas9?</h4>
+                <p>CRISPR-Cas9 is a genome editing tool that is creating a buzz in the science world. It is faster, cheaper and more accurate than previous techniques of editing DNA and has a wide range of potential applications.</p>
+            </div>
+            <div class="card-type">
+                <p class="type">Methods and Technology</p>
+            </div>
+        </div>
+      </a>
+    </div>
+        </div>
+        </div>
+      </div>
+            </div>
+          </main>
+  
+      <footer id="footer">
+      <div class="bg-footer-pattern keep"></div>
+      <div class="footer-container">
+          <div class="footer-links">
+          <h4>Quick Links</h4>
+              <div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-2308" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2308"><a href="/about-us/" data-wpel-link="internal">About the team</a></li>
+    <li id="menu-item-1346" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1346"><a href="/copyright-information/" data-wpel-link="internal">Copyright information</a></li>
+    <li id="menu-item-1348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1348"><a href="/privacy-policy/" data-wpel-link="internal">Privacy policy</a></li>
+    </ul></div>
+          </div>
+          <div class="footer-text">
+            <h4>Contact</h4>
+            <p>Support</p>
+<p><a href="mailto:feedback@yourgenome.org">feedback@yourgenome.org</a></p>
+          </div>
+          <div class="footer-social">
+            <div class="footer-social-container">
+              <a class="social-footer" aria-label="Visit our Facebook page" href="https://www.facebook.com/yourgenome" data-wpel-link="external" target="_blank" rel="external noreferrer"><i class="icon-facebook keep"></i></a>
+              <a class="social-footer" aria-label="Visit our Twitter feed" href="https://twitter.com/yourgenome" data-wpel-link="external" target="_blank" rel="external noreferrer"><i class="icon-x keep"></i></a>
+              <a class="social-footer" aria-label="Visit our BlueSky feed" href="https://bsky.app/profile/yourgenome.org" data-wpel-link="external" target="_blank" rel="external noreferrer"><i class="icon-bluesky keep"></i></a>
+              <a class="social-footer" aria-label="Visit our LinkedIn feed" href="https://www.linkedin.com/company/engagewcs" data-wpel-link="external" target="_blank" rel="external noreferrer"><i class="icon-linkedin keep"></i></a>
+              <a class="social-footer" aria-label="Visit our Youtube page" href="https://www.youtube.com/yourgenome" data-wpel-link="external" target="_blank" rel="external noreferrer"><i class="icon-youtube keep"></i></a>
+            </div>
+          </div>
+          <div class="footer-logos">
+            <div class="footer-logos-container">
+              <h4>Produced by</h4>
+              <a class="footer-logo" aria-label="Wellcome Connecting Science" href="https://www.wellcomeconnectingscience.org/" data-wpel-link="external" target="_blank" rel="external noreferrer"><img class="logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Wellcome Connecting Science" title="Wellcome Connecting Science" data-src="/wp-content/themes/new_your_genome/dist/assets/svg/logos/logo-wcs-white.svg" decoding="async"><noscript><img class="logo" src="/wp-content/themes/new_your_genome/dist/assets/svg/logos/logo-wcs-white.svg" alt="Wellcome Connecting Science" title="Wellcome Connecting Science" data-eio="l"></noscript></a>
+              <a class="footer-logo" aria-label="Wellcome Sanger institute" href="https://www.sanger.ac.uk/" data-wpel-link="external" target="_blank" rel="external noreferrer"><img class="logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Wellcome Sanger Institute" title="Wellcome Sanger Institute" data-src="/wp-content/themes/new_your_genome/dist/assets/svg/logos/logo-sanger-white.svg" decoding="async"><noscript><img class="logo" src="/wp-content/themes/new_your_genome/dist/assets/svg/logos/logo-sanger-white.svg" alt="Wellcome Sanger Institute" title="Wellcome Sanger Institute" data-eio="l"></noscript></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script type="speculationrules">
+    {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/new_your_genome/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+    </script>
+    <script src="/wp-content/plugins/wordpress-simple-cookie-plugin/cookies-gcc.js" id="simple-cookie-js"></script>
+    <script id="eio-lazy-load-js-before">
+    var eio_lazy_vars = {"exactdn_domain":"","skip_autoscale":0,"bg_min_dpr":1.1,"threshold":0,"use_dpr":1};
+    //# sourceURL=eio-lazy-load-js-before
+    </script>
+    <script src="/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=831" id="eio-lazy-load-js" async data-wp-strategy="async"></script>
+    <script src="/zxtm/piwik2.js" id="matomo-js"></script>
+    <script src="/wp-content/themes/new_your_genome/dist/assets/js/bundle.js" id="theme-script-js"></script>
+  </body>
+</html>

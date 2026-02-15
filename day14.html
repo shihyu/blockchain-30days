@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html lang="zh-TW" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Day14|密碼學初探(7)：非對稱加密與數位簽章 - 區塊鏈到底在幹嘛 - 30天系列</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">區塊鏈到底在幹嘛 - 30天系列</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="day14密碼學初探7非對稱加密與數位簽章"><a class="header" href="#day14密碼學初探7非對稱加密與數位簽章">Day14|密碼學初探(7)：非對稱加密與數位簽章</a></h1>
+<h1 id="對稱與非對稱加密"><a class="header" href="#對稱與非對稱加密">對稱與非對稱加密</a></h1>
+<p>在密碼學的領域中，加密法可以根據加密、解密是否用同一把金鑰來決定，如果加解密用的是同一把鑰匙，那麼它便是<code>對稱式加密</code>，你也可以發現到目前為止我們所提到的Caesar、Monoalphabetic、Vigenère Cipher、One-Time Pad、Rail-Fence Ciphers、XOR Cipher、SPN、Feistel Cipher都是對稱式加密！如果加密、解密時用的金鑰不同則稱為<code>非對稱加密</code>，因為非對稱式加密的算法較為複雜，背後也會牽扯到數學理論，所以我們延後到這裡才做說明。</p>
+<h2 id="對稱式加密"><a class="header" href="#對稱式加密">對稱式加密</a></h2>
+<p>我們之前所有提到的加密演算法裏利用同一把金鑰就可以做到加密與解密(解密其實就是把加密算法反過來做)。這麼做的好處就是相對容易運算、(<del>我們下面非對稱式加密推導完之後你應該就會有感覺</del>)、計算量小、所需時間也少。</p>
+<p>安全性方面，利用<code>One-Time Pad</code>也是唯一一種理論上完全無法被解密的加密算法。但這樣做有甚麼問題跟缺陷呢？</p>
+<p>即便演算法本身的安全性無虞，但金鑰呢？你必須先把金鑰傳遞給對方，對方才有辦法解密，但你能夠確保金鑰的傳遞過程是安全的嗎？為了確保金鑰傳遞的安全是不是要再讓金鑰加密一次、又為了確保金鑰的金鑰是安全的，是不是又要把金鑰的金鑰又加密一次變成金鑰的金鑰的金鑰......(<del>你真的確定你有個安全的好方法能夠傳遞金鑰不被外洩，你就用那個方法傳遞明文不就好了</del>)，所以對稱式加密的癥結點在於：<strong>對稱式加密是安全的，但傳遞過程不是</strong> 。</p>
+<h2 id="非對稱式加密"><a class="header" href="#非對稱式加密">非對稱式加密</a></h2>
+<p>為了解決對稱式加密傳遞的難處，非對稱式加密每次都會產生兩把鑰匙：公鑰與私鑰。</p>
+<p><img src="images/day14_47494.png" alt="symmetric key" /><br />
+圖片來源：<a href="https://courses.cs.ut.ee/">courses.cs.ut.ee</a></p>
+<p>兩把鑰匙的差別在於：<strong>私鑰可以產出公鑰、公鑰無法產出私鑰</strong> ，因此產生的兩把鑰匙中，私鑰會放在身上、公鑰才會在外流通或傳遞，如此一來就可以避免傳遞過程中被竊聽的風險。另外因為兩把鑰匙在加密、解密上彼此可通用，因此又衍伸出兩種主要用法：</p>
+<ol>
+<li>公鑰加密、私鑰解密</li>
+<li>私鑰加密、公鑰解密</li>
+</ol>
+<p><img src="images/day14_66908.png" alt="Bob" /><br />
+圖片來源：<a href="https://www.twilio.com/">twillo</a></p>
+<p>公鑰加密、私鑰解密的應用場景就像我們之前提過的：傳私密訊息給別人；利用別人的公鑰加密後，就可以確保持有私鑰的本人有辦法解開(上圖)。</p>
+<p>私鑰加密、公鑰解密的就是數位簽章，透過數位簽章我們可以確保該訊息的確是由私鑰的持有人發出的，因此為了確保該筆交易是由本人發起的，每筆交易都必須經過<code>數位簽章</code>的確認。</p>
+<p>你在<a href="https://etherscan.io/">區塊鏈瀏覽器</a>上看到的一連串像亂碼般的錢包地址，就是透過非對稱加密產出的<code>公鑰</code>，每把公鑰都有相對應的<code>私鑰</code>，在必要的時候我們可以利用私鑰對訊息或交易做簽署，讓礦工確認這筆訊息或交易的確是由我們本人發出來的。</p>
+<p>回憶一下我們之前所寫的程式碼，在發起交易前必須都必須先用私鑰簽署以證明是本人，送上鏈前礦工會根據公鑰是否能解密來確認該筆交易是否的確由私鑰持有者發出。</p>
+<pre><code>def sign_transaction(self, transaction, private_key):
+    private_key_pkcs = rsa.PrivateKey.load_pkcs1(private_key)
+    transaction_str = self.transaction_to_string(transaction)
+    signature = rsa.sign(transaction_str.encode('utf-8'), private_key_pkcs, 'SHA-1')
+    return signature
+
+def add_transaction(self, transaction, signature):
+    public_key = '-----BEGIN RSA PUBLIC KEY-----\n'
+    public_key += transaction.sender
+    public_key += '\n-----END RSA PUBLIC KEY-----\n'
+    public_key_pkcs = rsa.PublicKey.load_pkcs1(public_key.encode('utf-8'))
+    transaction_str = self.transaction_to_string(transaction)
+    if transaction.fee + transaction.amounts &gt; self.get_balance(transaction.sender):
+        print("Balance not enough!")
+        return False
+    try:
+        # 驗證發送者
+        rsa.verify(transaction_str.encode('utf-8'), signature, public_key_pkcs)
+        print("Authorized successfully!")
+        self.pending_transactions.append(transaction)
+        return True
+    except Exception:
+        print("RSA Verified wrong!")
+</code></pre>
+<p>下面就如何產生非對稱式加密的兩大方法(RSA、ECC)做個簡單探討：</p>
+<h1 id="rsa加密"><a class="header" href="#rsa加密">RSA加密</a></h1>
+<p><code>RSA(Rivest–Shamir–Adleman)加密法</code>是1977年由Ron Rivest、Adi Shamir、Leonard Adleman共同提出(RSA取名自三個人名字加總)，背後原理是透過一個非常大的質數難以被分解，同時兩個大質數相乘後要拆解回原本的兩質數非常困難。</p>
+<h2 id="rsa公私鑰的產生"><a class="header" href="#rsa公私鑰的產生">RSA公私鑰的產生</a></h2>
+<p>在了解RSA加密如何產生公私鑰前，必須先了解兩個名詞：<code>歐拉函數</code>與<code>模反元素</code></p>
+<ul>
+<li>歐拉函數φ(N)指≦N的整數中，跟N互質的個數，如果N是由兩質數p、q構成的，可以滿足：(<a href="https://blog.csdn.net/LOI_QER/article/details/52862505">證明</a>)</li>
+</ul>
+<blockquote>
+<p>φ(N)=φ(p*q)=(p-1)(q-1)</p>
+</blockquote>
+<ul>
+<li>模反元素：整數a對同餘整數N的模反元素b會滿足以下公式</li>
+</ul>
+<blockquote>
+<p>ab ≡ 1 (mod N)</p>
+</blockquote>
+<p>≡在數學裡是同餘的意思，可以理解成ab跟1除以N的餘數會一樣(也就是1)。因此整數a對同餘整數N的模反元素b又可以理解成對a找到另一個整數b，使a*b除以N的餘數為1。</p>
+<p>公私鑰的產生步驟如下：</p>
+<ol>
+<li>選擇兩個大而且相異的質數：p與q，計算N=p*q</li>
+<li>根據<a href="https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0">歐拉函數</a>，求r=φ(N)=φ(p*q)=(p-1)(q-1)</li>
+<li>選一個小於r的整數e，使e與r互質。</li>
+<li>求e對r的<a href="https://zh.wikipedia.org/wiki/%E6%A8%A1%E5%8F%8D%E5%85%83%E7%B4%A0">模反元素</a>d，也就是ed ≡ 1 (mod r)</li>
+<li>銷毀p、q</li>
+</ol>
+<p>這時候產生的(N、e)與(N、d)就分別是RSA加密的兩把鑰匙</p>
+<p>在這裡為了方便舉例我們用一個很小的數來理解：</p>
+<ol>
+<li>使p=13、q=17，N=pq=221</li>
+<li>r=(p-1)(q-1)=12*16=192</li>
+<li>選一個小於192(r)的整數187(e)，使187(e)與192(r)互質。</li>
+<li>求187(e)對192(r)的模反元素：115(d)</li>
+<li>銷毀p、q</li>
+</ol>
+<p>產生的(221、187)與(221、115)就分別是這次RSA加密的公私鑰。(模反元素可以透過<a href="https://planetcalc.com/3311/">這裡</a>線上運算，integer填e、modulus填r)，現在我們得到(221、187)為公鑰、(221、115)為私鑰</p>
+<h2 id="rsa加密-1"><a class="header" href="#rsa加密-1">RSA加密</a></h2>
+<p>加密的過程中，先把要加密的訊息編碼成為一個&lt;N而且&gt;0的整數，如果訊息太長就切割，接著利用下面式子把n加密成密文cipher</p>
+<blockquote>
+<p>cipher ≡ n^e mod(N)</p>
+</blockquote>
+<p>如果透過公鑰(221、187)加密100這個數，就會得到cipher≡100^187 mod(221)，cipher(密文)就是9</p>
+<h2 id="rsa解密"><a class="header" href="#rsa解密">RSA解密</a></h2>
+<p>解密的過程其實就是用另一把鑰匙反過來運算</p>
+<blockquote>
+<p>n ≡ cipher^d mod(N)</p>
+</blockquote>
+<p>如果透過另一把私鑰(221、115)解密9這個數，就會得到n≡9^115 mod(221)，n就是100，原始明文就被解出來了！所以只有在兩把鑰匙相互對應的狀況下可以互相解密，這裡示範的是公鑰加密、私鑰解密，也就是傳私訊給對方，但又確保了只有對方收的到。</p>
+<h2 id="要如何攻擊rsa"><a class="header" href="#要如何攻擊rsa">要如何攻擊RSA?</a></h2>
+<p>如果攻擊者想要攻擊RSA的話，他想透過竊得的密文cipher與竊取到的整數N(221)與公鑰e(187)破解另一把私鑰d(115)，他只能透過下面這個公式：</p>
+<blockquote>
+<p>de ≡ 1 mod(r)</p>
+</blockquote>
+<p>因為r=(p-1)*(q-1)也就是代換成：</p>
+<blockquote>
+<p>de ≡ 1 mod((p-1)*(q-1))</p>
+</blockquote>
+<p>為了破解私鑰，攻擊者必須先求出p與q的值。還記得N=pq嗎？但因為N是一個非常大的數，也是由p與這q兩個非常大的質數相乘而得，這導致了N要運算回p與q非常困難，因此利用<strong>兩個大質數相乘後很難拆解回原本的兩質數來保證了RSA的安全性</strong> ，所以N的大小也決定了加密被破解的難易度。</p>
+<p>這裡我們就不對RSA加密法的正確性做嚴謹的證明，如果你對數學的證明有興趣可以參考<a href="http://pajhome.org.uk/crypt/rsa/maths.html">這裡</a>。如果你還不是很熟悉的話，<a href="https://www.cryptool.org/en/cto-highlights/rsa-step-by-step">這個網站</a>可以幫助你一步步做下來。</p>
+<h1 id="橢圓公式elliptic-curve-cryptographyecc"><a class="header" href="#橢圓公式elliptic-curve-cryptographyecc">橢圓公式(Elliptic Curve Cryptography，ECC)</a></h1>
+<p>計算完RSA後我們可以得知：非對稱加密是透過數學運算上的不可逆來打造安全性的，同時私鑰可以很容易的產生公鑰、公鑰卻無法反推回私鑰。同樣具有這個特性的還有數學上的橢圓公式(Elliptic Curve)，而且相較於RSA，ECC可以使用更少的位元數達到比RSA更強的安全性，同時在加解密的速度上也比RSA快上許多，在寸土寸金的區塊鏈上這個特性就更加重要，因此目前幾個主流的公鏈像是Bitcoin或Ethereum裡產生公私鑰的非對稱加密主要都是透過橢圓公式來達成了。</p>
+<h2 id="橢圓公式概論"><a class="header" href="#橢圓公式概論">橢圓公式概論</a></h2>
+<p><code>橢圓公式</code>跟我們之前學的橢圓是不一樣的，典型橢圓公式的定義如下：</p>
+<p><img src="https://chart.googleapis.com/chart?cht=tx&amp;chl=y%5E2%3Dax%5E3%2Bbx%5E2%2Bcx%2Bd" alt="https://chart.googleapis.com/chart?cht=tx&amp;chl=y%5E2%3Dax%5E3%2Bbx%5E2%2Bcx%2Bd" /></p>
+<p>你可以在<a href="https://www.desmos.com/calculator">這個網站</a>上畫出橢圓公式的圖形，比方說</p>
+<p><img src="https://chart.googleapis.com/chart?cht=tx&amp;chl=y%5E2%3Dx%5E3%2B2x%5E2-5x%2B1" alt="https://chart.googleapis.com/chart?cht=tx&amp;chl=y%5E2%3Dx%5E3%2B2x%5E2-5x%2B1" /></p>
+<p>就可以畫成：</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day15_1.jpg" alt="Elliptic Curve" /></p>
+<h2 id="橢圓公式的加法定理"><a class="header" href="#橢圓公式的加法定理">橢圓公式的加法定理</a></h2>
+<p>這裡我們只看會用到的加法，詳細的數學運算與推導有興趣可以參考<a href="https://www.cnblogs.com/Kalafinaian/p/7392505.html">這裡</a>。橢圓曲線上加法P+Q=R的定義是連接兩點P、Q的直線，可以得到與該直線相交的曲線另外一點R'，把R'的Y座標取負號得到的點就是R。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day15_2.jpg" alt="Elliptic Curve" /></p>
+<p>如果P=Q的情形下，P就代表橢圓切線上的切點，可以得到另外一點2P。同樣的2P可以繼續進行2P+P=3P來計算3P的座標。</p>
+<p><img src="https://www.lkm543.site/it_iron_man/day15_3.jpg" alt="Elliptic Curve" /></p>
+<h2 id="橢圓公式的離散"><a class="header" href="#橢圓公式的離散">橢圓公式的離散</a></h2>
+<p>在電腦科學中，資料的點不若幾何上的連續，資料點是離散的，因此我們在離散化的橢圓公式加入取餘數與同餘的概念，詳細的數學運算與推導有興趣同樣可以參考<a href="https://www.cnblogs.com/Kalafinaian/p/7392505.html">這裡</a>。</p>
+<p>這裡另外定義一個名詞"階"，指的是如果存在一個整數n，可以使np出現在無窮遠處或無法交出第三點，則n為p的"階"，如果不存在就稱p是無限階。</p>
+<h2 id="橢圓公式的不可逆"><a class="header" href="#橢圓公式的不可逆">橢圓公式的不可逆</a></h2>
+<p>如果我們有個式子為nP=Q，P跟Q跟上面的定義一樣都是橢圓曲線上的點，N是P的階，同時n&lt;N(代表nP必定可以交出Q)，如果給定n與P，透過加法運算nP可以很快地取得Q。但如果反過來給的是Q與P，要計算n相當困難(實際上的p與N都會很大)。</p>
+<p>所以對應這時候的P，n其實就是私鑰、Q點就是公鑰，要從私鑰解出公鑰非常容易，但要從公鑰反推私鑰就很困難了！</p>
+<p>到目前為止的文章都會放置在<a href="https://github.com/lkm543/it_iron_man_2019">Github</a>上。</p>
+<h1 id="ref"><a class="header" href="#ref">Ref:</a></h1>
+<ul>
+<li><a href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/246717/">對稱加密與非對稱加密優缺點詳解</a></li>
+<li><a href="https://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html">RSA算法原理（一）</a></li>
+<li><a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">Wikipedia-RSA</a></li>
+<li><a href="https://sites.google.com/site/danzcosmos/proof-of-the-rsa-algorithm">Proof of the RSA Algorithm</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0">維基百科-歐拉函數</a></li>
+<li><a href="https://medium.com/@RiverChan/%E5%9F%BA%E7%A4%8E%E5%AF%86%E7%A2%BC%E5%AD%B8-%E5%B0%8D%E7%A8%B1%E5%BC%8F%E8%88%87%E9%9D%9E%E5%B0%8D%E7%A8%B1%E5%BC%8F%E5%8A%A0%E5%AF%86%E6%8A%80%E8%A1%93-de25fd5fa537">基礎密碼學(對稱式與非對稱式加密技術)</a></li>
+<li><a href="https://www.itread01.com/content/1547537909.html">區塊鏈中的密碼學（三）-橢圓曲線加密算法分析</a></li>
+<li><a href="https://medium.com/cryptocow/exploring-elliptic-curve-pairings-e322a3f029e8">探索橢圓曲線對</a></li>
+<li><a href="https://blog.cloudflare.com/a-relatively-easy-to-understand-primer-on-elliptic-curve-cryptography/">A (Relatively Easy To Understand) Primer on Elliptic Curve Cryptography</a></li>
+<li><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/43964/">橢圓曲線加密演算法</a></li>
+<li><a href="https://www.itread01.com/content/1546294330.html">橢圓曲線加密演算法</a></li>
+<li><a href="https://www.cnblogs.com/Kalafinaian/p/7392505.html">ECC椭圆曲线详解(有具体实例)</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="day13.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="day15.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="day13.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="day15.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
